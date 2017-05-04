@@ -5,27 +5,27 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Hakai Data Analyst Guide</title>
-  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook.">
+  <title>Hakai Institute R Data-Analyst Guide</title>
+  <meta name="description" content="A guideline for R analysts; getting started, best practices, and collaboration">
   <meta name="generator" content="bookdown 0.3.18 and GitBook 2.6.7">
 
-  <meta property="og:title" content="Hakai Data Analyst Guide" />
+  <meta property="og:title" content="Hakai Institute R Data-Analyst Guide" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
-  <meta name="github-repo" content="rstudio/bookdown-demo" />
+  <meta property="og:description" content="A guideline for R analysts; getting started, best practices, and collaboration" />
+  <meta name="github-repo" content="br-johnson/Hakai-Data-Analyst" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Hakai Data Analyst Guide" />
+  <meta name="twitter:title" content="Hakai Institute R Data-Analyst Guide" />
   
-  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="twitter:description" content="A guideline for R analysts; getting started, best practices, and collaboration" />
   
 
 <meta name="author" content="Brett Johnson">
 
 
-<meta name="date" content="2017-04-13">
+<meta name="date" content="2017-05-03">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -87,7 +87,6 @@ code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* Com
 code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 </style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
 <body>
@@ -100,32 +99,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Minimal Book Example</a></li>
-
-<li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
-<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#acknowledgements"><i class="fa fa-check"></i><b>1.1</b> Acknowledgements</a></li>
-</ul></li>
-<li class="chapter" data-level="2" data-path="reference-guide-for-the-new-r-analyst.html"><a href="reference-guide-for-the-new-r-analyst.html"><i class="fa fa-check"></i><b>2</b> Reference Guide for the New R Analyst</a><ul>
-<li class="chapter" data-level="2.1" data-path="reference-guide-for-the-new-r-analyst.html"><a href="reference-guide-for-the-new-r-analyst.html#set-up-github"><i class="fa fa-check"></i><b>2.1</b> Set-up GitHUB</a></li>
-<li class="chapter" data-level="2.2" data-path="reference-guide-for-the-new-r-analyst.html"><a href="reference-guide-for-the-new-r-analyst.html#install-and-set-up-r-and-r-studio"><i class="fa fa-check"></i><b>2.2</b> Install and Set up R and R Studio</a></li>
-<li class="chapter" data-level="2.3" data-path="reference-guide-for-the-new-r-analyst.html"><a href="reference-guide-for-the-new-r-analyst.html#install-and-set-up-git"><i class="fa fa-check"></i><b>2.3</b> Install and set-up Git</a></li>
-<li class="chapter" data-level="2.4" data-path="reference-guide-for-the-new-r-analyst.html"><a href="reference-guide-for-the-new-r-analyst.html#familiarize-yourself-with-r-and-r-studio"><i class="fa fa-check"></i><b>2.4</b> Familiarize yourself with R and R-Studio</a></li>
-<li class="chapter" data-level="2.5" data-path="reference-guide-for-the-new-r-analyst.html"><a href="reference-guide-for-the-new-r-analyst.html#learning-objectives"><i class="fa fa-check"></i><b>2.5</b> Learning Objectives:</a></li>
-<li class="chapter" data-level="2.6" data-path="reference-guide-for-the-new-r-analyst.html"><a href="reference-guide-for-the-new-r-analyst.html#the-process-of-data-analysis"><i class="fa fa-check"></i><b>2.6</b> The Process of Data Analysis</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="guidelines-for-hakai-data-analysts.html"><a href="guidelines-for-hakai-data-analysts.html"><i class="fa fa-check"></i><b>3</b> Guidelines for Hakai Data Analysts</a><ul>
-<li class="chapter" data-level="3.1" data-path="guidelines-for-hakai-data-analysts.html"><a href="guidelines-for-hakai-data-analysts.html#programming-style-guide"><i class="fa fa-check"></i><b>3.1</b> Programming Style Guide</a></li>
-<li class="chapter" data-level="3.2" data-path="guidelines-for-hakai-data-analysts.html"><a href="guidelines-for-hakai-data-analysts.html#organization-of-a-data-analysis-workflow"><i class="fa fa-check"></i><b>3.2</b> Organization of a Data Analysis Workflow</a></li>
-<li class="chapter" data-level="3.3" data-path="guidelines-for-hakai-data-analysts.html"><a href="guidelines-for-hakai-data-analysts.html#reproducible-research-literate-programming-and-the-open-notebook"><i class="fa fa-check"></i><b>3.3</b> Reproducible Research, Literate Programming, and the Open Notebook</a></li>
-<li class="chapter" data-level="3.4" data-path="guidelines-for-hakai-data-analysts.html"><a href="guidelines-for-hakai-data-analysts.html#reproducible-research-using-markdown-notebooks-or-other-need-significant-additions-editing-and-contributions-beyond-here"><i class="fa fa-check"></i><b>3.4</b> Reproducible research using markdown, notebooks, or other (Need significant additions, editing, and contributions beyond here)</a></li>
-</ul></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="reference-guide-for-the-new-r-analyst.html"><a href="reference-guide-for-the-new-r-analyst.html"><i class="fa fa-check"></i><b>2</b> Reference Guide for the New R Analyst</a></li>
+<li class="chapter" data-level="3" data-path="guidelines-for-hakai-data-analysts.html"><a href="guidelines-for-hakai-data-analysts.html"><i class="fa fa-check"></i><b>3</b> Guidelines for Hakai Data Analysts</a></li>
 <li class="chapter" data-level="4" data-path="collaborate.html"><a href="collaborate.html"><i class="fa fa-check"></i><b>4</b> Collaborate</a></li>
 <li class="chapter" data-level="5" data-path="additional-references-and-resources.html"><a href="additional-references-and-resources.html"><i class="fa fa-check"></i><b>5</b> Additional References and Resources</a></li>
-<li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-
 </ul>
 
       </nav>
@@ -135,7 +114,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Hakai Data Analyst Guide</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Hakai Institute R Data-Analyst Guide</a>
           </h1>
         </div>
 
@@ -144,9 +123,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
             <section class="normal" id="section-">
 <div id="header">
-<h1 class="title">Hakai Data Analyst Guide</h1>
+<h1 class="title">Hakai Institute R Data-Analyst Guide</h1>
 <h4 class="author"><em>Brett Johnson</em></h4>
-<h4 class="date"><em>2017-04-13</em></h4>
+<h4 class="date"><em>2017-05-03</em></h4>
 </div>
 <div id="preface" class="section level1 unnumbered">
 <h1>Preface</h1>
@@ -189,10 +168,10 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd",
-"text": "Edit"
+"link": null,
+"text": null
 },
-"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"download": null,
 "toc": {
 "collapse": "subsection"
 }

@@ -1,21 +1,25 @@
 --- 
-title: "Hakai Data Analyst Guide"
+title: "Hakai Institute R Data-Analyst Guide"
 author: "Brett Johnson"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
-bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
-github-repo: rstudio/bookdown-demo
-description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
+github-repo: br-johnson/Hakai-Data-Analyst
+description: "A guideline for R analysts; getting started, best practices, and collaboration"
 ---
-# Preface {-}
-```{r}
-bookdown::serve_book(dir = ".", output_dir = "_book", preview = TRUE, in_session = TRUE)
+---
+```{r serve the book}
+#Once you build this book, you can serve the book to auto update in the viewer window by removing the hashtag in the code line below
+
+#bookdown::serve_book(dir = ".", output_dir = "_book", preview = TRUE, in_session = TRUE)
 
 ```
+
+
+# Preface {-}
 
 The Hakai Institute is a research organization based on the coast of
 British Columbia, Canada.

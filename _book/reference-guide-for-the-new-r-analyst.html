@@ -5,27 +5,27 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Hakai Data Analyst Guide</title>
-  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook.">
+  <title>Hakai Institute R Data-Analyst Guide</title>
+  <meta name="description" content="A guideline for R analysts; getting started, best practices, and collaboration">
   <meta name="generator" content="bookdown 0.3.18 and GitBook 2.6.7">
 
-  <meta property="og:title" content="Hakai Data Analyst Guide" />
+  <meta property="og:title" content="Hakai Institute R Data-Analyst Guide" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
-  <meta name="github-repo" content="rstudio/bookdown-demo" />
+  <meta property="og:description" content="A guideline for R analysts; getting started, best practices, and collaboration" />
+  <meta name="github-repo" content="br-johnson/Hakai-Data-Analyst" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Hakai Data Analyst Guide" />
+  <meta name="twitter:title" content="Hakai Institute R Data-Analyst Guide" />
   
-  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="twitter:description" content="A guideline for R analysts; getting started, best practices, and collaboration" />
   
 
 <meta name="author" content="Brett Johnson">
 
 
-<meta name="date" content="2017-04-13">
+<meta name="date" content="2017-05-03">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -49,45 +49,7 @@
 
 
 
-<style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-</style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
 <body>
@@ -100,32 +62,25 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Minimal Book Example</a></li>
-
-<li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
-<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#acknowledgements"><i class="fa fa-check"></i><b>1.1</b> Acknowledgements</a></li>
-</ul></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
 <li class="chapter" data-level="2" data-path="reference-guide-for-the-new-r-analyst.html"><a href="reference-guide-for-the-new-r-analyst.html"><i class="fa fa-check"></i><b>2</b> Reference Guide for the New R Analyst</a><ul>
-<li class="chapter" data-level="2.1" data-path="reference-guide-for-the-new-r-analyst.html"><a href="reference-guide-for-the-new-r-analyst.html#set-up-github"><i class="fa fa-check"></i><b>2.1</b> Set-up GitHUB</a></li>
+<li class="chapter" data-level="2.1" data-path="reference-guide-for-the-new-r-analyst.html"><a href="reference-guide-for-the-new-r-analyst.html#set-up-github"><i class="fa fa-check"></i><b>2.1</b> Set-up GitHUB</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="reference-guide-for-the-new-r-analyst.html"><a href="reference-guide-for-the-new-r-analyst.html#setup-a-github-account"><i class="fa fa-check"></i><b>2.1.1</b> Setup a GitHUB Account</a></li>
+<li class="chapter" data-level="2.1.2" data-path="reference-guide-for-the-new-r-analyst.html"><a href="reference-guide-for-the-new-r-analyst.html#issues"><i class="fa fa-check"></i><b>2.1.2</b> ‘Issues’</a></li>
+<li class="chapter" data-level="2.1.3" data-path="reference-guide-for-the-new-r-analyst.html"><a href="reference-guide-for-the-new-r-analyst.html#fork-this-repo"><i class="fa fa-check"></i><b>2.1.3</b> Fork This Repo</a></li>
+<li class="chapter" data-level="2.1.4" data-path="reference-guide-for-the-new-r-analyst.html"><a href="reference-guide-for-the-new-r-analyst.html#markdown-syntax"><i class="fa fa-check"></i><b>2.1.4</b> Markdown Syntax</a></li>
+<li class="chapter" data-level="2.1.5" data-path="reference-guide-for-the-new-r-analyst.html"><a href="reference-guide-for-the-new-r-analyst.html#github-checklist"><i class="fa fa-check"></i><b>2.1.5</b> GitHUB Checklist</a></li>
+</ul></li>
 <li class="chapter" data-level="2.2" data-path="reference-guide-for-the-new-r-analyst.html"><a href="reference-guide-for-the-new-r-analyst.html#install-and-set-up-r-and-r-studio"><i class="fa fa-check"></i><b>2.2</b> Install and Set up R and R Studio</a></li>
 <li class="chapter" data-level="2.3" data-path="reference-guide-for-the-new-r-analyst.html"><a href="reference-guide-for-the-new-r-analyst.html#install-and-set-up-git"><i class="fa fa-check"></i><b>2.3</b> Install and set-up Git</a></li>
 <li class="chapter" data-level="2.4" data-path="reference-guide-for-the-new-r-analyst.html"><a href="reference-guide-for-the-new-r-analyst.html#familiarize-yourself-with-r-and-r-studio"><i class="fa fa-check"></i><b>2.4</b> Familiarize yourself with R and R-Studio</a></li>
 <li class="chapter" data-level="2.5" data-path="reference-guide-for-the-new-r-analyst.html"><a href="reference-guide-for-the-new-r-analyst.html#learning-objectives"><i class="fa fa-check"></i><b>2.5</b> Learning Objectives:</a></li>
 <li class="chapter" data-level="2.6" data-path="reference-guide-for-the-new-r-analyst.html"><a href="reference-guide-for-the-new-r-analyst.html#the-process-of-data-analysis"><i class="fa fa-check"></i><b>2.6</b> The Process of Data Analysis</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="guidelines-for-hakai-data-analysts.html"><a href="guidelines-for-hakai-data-analysts.html"><i class="fa fa-check"></i><b>3</b> Guidelines for Hakai Data Analysts</a><ul>
-<li class="chapter" data-level="3.1" data-path="guidelines-for-hakai-data-analysts.html"><a href="guidelines-for-hakai-data-analysts.html#programming-style-guide"><i class="fa fa-check"></i><b>3.1</b> Programming Style Guide</a></li>
-<li class="chapter" data-level="3.2" data-path="guidelines-for-hakai-data-analysts.html"><a href="guidelines-for-hakai-data-analysts.html#organization-of-a-data-analysis-workflow"><i class="fa fa-check"></i><b>3.2</b> Organization of a Data Analysis Workflow</a></li>
-<li class="chapter" data-level="3.3" data-path="guidelines-for-hakai-data-analysts.html"><a href="guidelines-for-hakai-data-analysts.html#reproducible-research-literate-programming-and-the-open-notebook"><i class="fa fa-check"></i><b>3.3</b> Reproducible Research, Literate Programming, and the Open Notebook</a></li>
-<li class="chapter" data-level="3.4" data-path="guidelines-for-hakai-data-analysts.html"><a href="guidelines-for-hakai-data-analysts.html#reproducible-research-using-markdown-notebooks-or-other-need-significant-additions-editing-and-contributions-beyond-here"><i class="fa fa-check"></i><b>3.4</b> Reproducible research using markdown, notebooks, or other (Need significant additions, editing, and contributions beyond here)</a></li>
-</ul></li>
+<li class="chapter" data-level="3" data-path="guidelines-for-hakai-data-analysts.html"><a href="guidelines-for-hakai-data-analysts.html"><i class="fa fa-check"></i><b>3</b> Guidelines for Hakai Data Analysts</a></li>
 <li class="chapter" data-level="4" data-path="collaborate.html"><a href="collaborate.html"><i class="fa fa-check"></i><b>4</b> Collaborate</a></li>
 <li class="chapter" data-level="5" data-path="additional-references-and-resources.html"><a href="additional-references-and-resources.html"><i class="fa fa-check"></i><b>5</b> Additional References and Resources</a></li>
-<li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-
 </ul>
 
       </nav>
@@ -135,7 +90,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Hakai Data Analyst Guide</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Hakai Institute R Data-Analyst Guide</a>
           </h1>
         </div>
 
@@ -147,13 +102,36 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1><span class="header-section-number">2</span> Reference Guide for the New R Analyst</h1>
 <div id="set-up-github" class="section level2">
 <h2><span class="header-section-number">2.1</span> Set-up GitHUB</h2>
-<p>The reason this document is hosted on GitHUB is that we’ll be working with GitHUB throughout this guide and throughout your own analyses. If you’re interested in learning why you should use git, read <a href="http://happygitwithr.com/big-picture.html#why-git">Chapter 1; ‘Why Git? Why GitHUB’ from Jenny Bryans Book</a>. Otherwise take my word for it and we can get this part out of the way before we move onto learning R.</p>
+<p>The reason this document is hosted on GitHUB is that we’ll be working with GitHUB throughout this guide and throughout your own analyses. GitHUB is integral for tracking the evolution of a set of files. Basically GitHUB and R is analagous to ‘track changes’ and Microsoft Word. If you’re interested in learning more, read <a href="http://happygitwithr.com/big-picture.html#why-git">Chapter 1; ‘Why Git? Why GitHUB’ from Jenny Bryans Book</a>. Otherwise take my word for it and we can get this part out of the way before we move on to learning R.</p>
+<div id="setup-a-github-account" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Setup a GitHUB Account</h3>
 <p>First, you’re going to want to <a href="https://github.com">sign up for a GitHUB account</a></p>
-<p>Now that you have a GitHUB account, you should fork this repository (repo) so that you can access this document from your GitHUB profile, edit it, and make a ‘pull request’ to suggest edits to me.</p>
-<p>This serves two purposes: 1) the quality of this guide will be improved if you take time to edit chapters and contribute your insights on what didn’t work for you; and 2) forking repos and making pull-requests is training you for the workflow you will use when contributing to colleagues’ analyses in the very near future.</p>
-<p>To successfully fork this repo and suggest edits simply go to <a href="https://github.com/Br-Johnson/Hakai-Data-Analyst">my repo here</a> and click on the name of this chapter: ‘new_analysts.Rmd’, once it’s open click on the pencil icon to suggest edits. Editing automcatically forks the repo and makes a copy in your own list of repos. Now you can make all the edits you’d like and when your happy you can click on ‘pull request’ to send the updates back to me for my review.</p>
-<p>If you aren’ successfull forking my repo, read <a href="http://happygitwithr.com/fork.html">Chapter 24 of Jenny Brians Book; ‘Fork a Repo’</a>.</p>
-<p>You’ll notice that this file is a ‘.Rmd’ file which stands for R Markdown. This is a plain text file that uses a minimal number of symbols to render the output text into something elegant and simple. Using plain text files for your analyses and for story on gitHUB is recommended because almost any operating system can read them and they are most likely to be readable in the distant future, rather than using a proprietary file formats like word. <a href="https://guides.github.com/features/mastering-markdown/">Read this</a> if you’re interested in markdown syntax, otherwise come back to it later.</p>
+</div>
+<div id="issues" class="section level3">
+<h3><span class="header-section-number">2.1.2</span> ‘Issues’</h3>
+<p>Now that you have a GitHUB account, you should introduce yourself and let me know you’re going to work through this material. To do that go to the issues tab in this repository (repo) and ‘create a new issue’ and type a message to introduce yourself. Using issues is also a great way to ask questions about course material.</p>
+</div>
+<div id="fork-this-repo" class="section level3">
+<h3><span class="header-section-number">2.1.3</span> Fork This Repo</h3>
+<p>Next, you should fork this repo so that you can access this document from your GitHUB profile, edit it, and make a ‘pull request’ to suggest edits to me. This serves two purposes: 1) the quality of this guide will be improved if you take time to edit chapters and contribute your insights on what didn’t work for you; and 2) forking repos and making pull-requests is training you for the workflow you will use when contributing to colleagues’ analyses in the very near future.</p>
+<p>To successfully fork this repo and suggest edits simply go to <a href="https://github.com/Br-Johnson/Hakai-Data-Analyst">my repo here</a> and click on the name of this chapter: ‘new_analysts.Rmd’, once it’s open click on the pencil icon to suggest edits. Editing automcatically forks the repo and makes a copy in your own list of repos. Now you can make all the edits you’d like and when your happy you can click on ‘pull request’ to send the updates back to me so I can review them and decide if I should accept your edits and merge them.</p>
+<p>If you aren’t successfull forking my repo, read <a href="http://happygitwithr.com/fork.html">Chapter 24 of Jenny Brians Book; ‘Fork a Repo’</a>.</p>
+</div>
+<div id="markdown-syntax" class="section level3">
+<h3><span class="header-section-number">2.1.4</span> Markdown Syntax</h3>
+<p>You’ll notice that this file is a ‘.Rmd’ file which stands for R Markdown. <a href="https://guides.github.com/features/mastering-markdown/">Read this</a> if you’re interested in markdown syntax, otherwise come back to it later.</p>
+<p>Also, try this <a href="http://commonmark.org/help/tutorial/">tutorial</a> on how to write using markdown</p>
+</div>
+<div id="github-checklist" class="section level3">
+<h3><span class="header-section-number">2.1.5</span> GitHUB Checklist</h3>
+<p>Complete these items before moving on to the next section.</p>
+<ol style="list-style-type: decimal">
+<li>Create a GitHUB account</li>
+<li>Create a new ‘issue’ to introduce yourself or ask a question</li>
+<li>Fork this repository</li>
+<li>Make a pull request to suggest an edit or update to this guide</li>
+</ol>
+</div>
 </div>
 <div id="install-and-set-up-r-and-r-studio" class="section level2">
 <h2><span class="header-section-number">2.2</span> Install and Set up R and R Studio</h2>
@@ -177,23 +155,24 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="familiarize-yourself-with-r-and-r-studio" class="section level2">
 <h2><span class="header-section-number">2.4</span> Familiarize yourself with R and R-Studio</h2>
 <p>Now that you have the tools you need, lets get familiar with R-Studio and the R programming language.</p>
-<p>Lets install you’re first package in R-Studio. You can think of packages as extensions to R. Because R is open-source, people often write packages to make different functions, features, or analyses possible.</p>
+<p>Lets install your first package in R-Studio. You can think of packages as extensions to R. Because R is open-source, people often write packages to make different functions, features, or analyses possible.</p>
 <p>Your first package will be swirl(). swirl() is a package for learning (and teaching) statistics and R simultaneously and interactively.</p>
 <p>Watch <a href="https://youtu.be/0eiOi5i34rs">this youtube video</a> to install your first package and start learning R with the swirl() package.</p>
 </div>
 <div id="learning-objectives" class="section level2">
 <h2><span class="header-section-number">2.5</span> Learning Objectives:</h2>
 <p>There are a plethora of resources to help you learn R. After a year and a half of sifting through this material and learning R myself I’ve found these resources to be the best, and I present them to you in an order I wish I had learned them in. Together these objectives direct you through an efficient way to learn R, and combined with a graduate level understanding of statistics you should gain an intermediate skill level in R using a very high-level, and modern approach.</p>
-<ul>
+<ol style="list-style-type: decimal">
 <li><p>Complete chapter 1 in swirl()</p></li>
 <li><p>Next, watch <a href="https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/">this R-Studio Tutorial</a>. Skip over the sections related to the Server Pro version of R-Studio.</p></li>
-<li><p>Complete chapters 2 – 7 in swirl() inside of RStudio.</p></li>
+<li><p>Start making some awesome graphs by working through <a href="http://r4ds.had.co.nz/data-visualisation.html">section 3.1 to 3.5 in Hadley Wickham’s R for Data Science Book</a></p></li>
+<li><p>Complete chapters 2 – 7 in swirl() inside of RStudio. If you have questions about the topics covered in these swirl chapters, consult Roger Peng’s Book <a href="https://bookdown.org/rdpeng/rprogdatascience/">R Programming</a></p></li>
 <li><p>Watch R-Studio tutorial: <a href="https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-managing-change-part-1/">Projects and R Studio</a></p></li>
 <li><p>Commplete the remaining chapters in the swirl() R Programming course, and try some of the other swirl courses that interest you.</p></li>
 <li><p>Read <a href="http://happygitwithr.com/new-github-first.html">Chapter 7 of Jenny Bryans Book</a> to get your own project set up on GitHUB first and then in R-Studio so you can start experimenting with your own data set and your own analysis.</p></li>
 <li><p>Read from front to back Hadley Wickam and Garrett Grolemund’s Book: <a href="http://r4ds.had.co.nz/">R For Data Science</a> to master the ‘tidyverse’; a deadly combination of packages and a well thought out and systematic approach to “import, tidy, transform, visualize, and model data.” Using the tidyverse as a foundation for your coding replaces the ‘million and 1 ways’ of doing things in R into a concise, grammar of data analysis programming.</p></li>
-</ul>
-<p>All these learning objectives will take some time to complete, and you will be very frustrated at points but know that we all have suffered through this initial learning curve and eventually it gets easier.</p>
+</ol>
+<p>All these learning objectives will take some time to complete, and you will be very frustrated at points but know that we all have suffered through this initial learning curve and eventually it gets easier. If you manage to complete all of these requirements you are well on your way to becoming an intermediate R programmer</p>
 </div>
 <div id="the-process-of-data-analysis" class="section level2">
 <h2><span class="header-section-number">2.6</span> The Process of Data Analysis</h2>
@@ -236,10 +215,10 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-new_analysts.Rmd",
-"text": "Edit"
+"link": null,
+"text": null
 },
-"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"download": null,
 "toc": {
 "collapse": "subsection"
 }
