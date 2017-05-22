@@ -25,14 +25,14 @@
 <meta name="author" content="Brett Johnson">
 
 
-<meta name="date" content="2017-05-03">
+<meta name="date" content="2017-05-22">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="reference-guide-for-the-new-r-analyst.html">
+<link rel="prev" href="guide-for-the-new-r-analysis-developer.html">
 <link rel="next" href="collaborate.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -49,6 +49,43 @@
 
 
 
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
 
 </head>
 
@@ -63,17 +100,44 @@
 
 <ul class="summary">
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="reference-guide-for-the-new-r-analyst.html"><a href="reference-guide-for-the-new-r-analyst.html"><i class="fa fa-check"></i><b>2</b> Reference Guide for the New R Analyst</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#background"><i class="fa fa-check"></i><b>1.1</b> Background</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#defining-a-good-data-analysis"><i class="fa fa-check"></i><b>1.2</b> Defining a Good Data Analysis</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="introduction.html"><a href="introduction.html#reproducibility"><i class="fa fa-check"></i><b>1.2.1</b> Reproducibility</a></li>
+<li class="chapter" data-level="1.2.2" data-path="introduction.html"><a href="introduction.html#version-control"><i class="fa fa-check"></i><b>1.2.2</b> Version Control</a></li>
+<li class="chapter" data-level="1.2.3" data-path="introduction.html"><a href="introduction.html#communication-and-distribution"><i class="fa fa-check"></i><b>1.2.3</b> Communication and Distribution</a></li>
+<li class="chapter" data-level="1.2.4" data-path="introduction.html"><a href="introduction.html#open-source-and-open-science"><i class="fa fa-check"></i><b>1.2.4</b> Open Source and Open Science</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#resources"><i class="fa fa-check"></i><b>1.3</b> Resources</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#acknowledgements"><i class="fa fa-check"></i><b>1.4</b> Acknowledgements</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="guide-for-the-new-r-analysis-developer.html"><a href="guide-for-the-new-r-analysis-developer.html"><i class="fa fa-check"></i><b>2</b> Guide for the New R Analysis Developer</a><ul>
+<li class="chapter" data-level="2.1" data-path="guide-for-the-new-r-analysis-developer.html"><a href="guide-for-the-new-r-analysis-developer.html#install-and-set-up-r-and-r-studio"><i class="fa fa-check"></i><b>2.1</b> Install and Set up R and R Studio</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="guide-for-the-new-r-analysis-developer.html"><a href="guide-for-the-new-r-analysis-developer.html#familiarize-yourself-with-r-and-r-studio"><i class="fa fa-check"></i><b>2.1.1</b> Familiarize yourself with R and R-Studio</a></li>
+<li class="chapter" data-level="2.1.2" data-path="guide-for-the-new-r-analysis-developer.html"><a href="guide-for-the-new-r-analysis-developer.html#r-studio"><i class="fa fa-check"></i><b>2.1.2</b> R Studio</a></li>
+<li class="chapter" data-level="2.1.3" data-path="guide-for-the-new-r-analysis-developer.html"><a href="guide-for-the-new-r-analysis-developer.html#r-programming-language"><i class="fa fa-check"></i><b>2.1.3</b> R Programming Language</a></li>
+<li class="chapter" data-level="2.1.4" data-path="guide-for-the-new-r-analysis-developer.html"><a href="guide-for-the-new-r-analysis-developer.html#r-studio-projects-workflow"><i class="fa fa-check"></i><b>2.1.4</b> R Studio Projects Workflow</a></li>
+<li class="chapter" data-level="2.1.5" data-path="guide-for-the-new-r-analysis-developer.html"><a href="guide-for-the-new-r-analysis-developer.html#making-plots"><i class="fa fa-check"></i><b>2.1.5</b> Making Plots</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="guide-for-the-new-r-analysis-developer.html"><a href="guide-for-the-new-r-analysis-developer.html#version-control-with-git-and-github"><i class="fa fa-check"></i><b>2.2</b> Version Control with Git and GitHUB</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="guide-for-the-new-r-analysis-developer.html"><a href="guide-for-the-new-r-analysis-developer.html#setup-a-github-account"><i class="fa fa-check"></i><b>2.2.1</b> Setup a GitHUB Account</a></li>
+<li class="chapter" data-level="2.2.2" data-path="guide-for-the-new-r-analysis-developer.html"><a href="guide-for-the-new-r-analysis-developer.html#issues"><i class="fa fa-check"></i><b>2.2.2</b> ‘Issues’</a></li>
+<li class="chapter" data-level="2.2.3" data-path="guide-for-the-new-r-analysis-developer.html"><a href="guide-for-the-new-r-analysis-developer.html#fork-this-repo"><i class="fa fa-check"></i><b>2.2.3</b> Fork This Repo</a></li>
+<li class="chapter" data-level="2.2.4" data-path="guide-for-the-new-r-analysis-developer.html"><a href="guide-for-the-new-r-analysis-developer.html#markdown-syntax"><i class="fa fa-check"></i><b>2.2.4</b> Markdown Syntax</a></li>
+<li class="chapter" data-level="2.2.5" data-path="guide-for-the-new-r-analysis-developer.html"><a href="guide-for-the-new-r-analysis-developer.html#github-checklist"><i class="fa fa-check"></i><b>2.2.5</b> GitHUB Checklist</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="guide-for-the-new-r-analysis-developer.html"><a href="guide-for-the-new-r-analysis-developer.html#install-and-set-up-git"><i class="fa fa-check"></i><b>2.3</b> Install and set-up Git</a></li>
+</ul></li>
 <li class="chapter" data-level="3" data-path="guidelines-for-hakai-data-analysts.html"><a href="guidelines-for-hakai-data-analysts.html"><i class="fa fa-check"></i><b>3</b> Guidelines for Hakai Data Analysts</a><ul>
 <li class="chapter" data-level="3.1" data-path="guidelines-for-hakai-data-analysts.html"><a href="guidelines-for-hakai-data-analysts.html#reproducible-research-literate-programming-and-the-open-notebook"><i class="fa fa-check"></i><b>3.1</b> Reproducible Research, Literate Programming, and the Open Notebook</a></li>
 <li class="chapter" data-level="3.2" data-path="guidelines-for-hakai-data-analysts.html"><a href="guidelines-for-hakai-data-analysts.html#programming-style-guide"><i class="fa fa-check"></i><b>3.2</b> Programming Style Guide</a></li>
-<li class="chapter" data-level="3.3" data-path="guidelines-for-hakai-data-analysts.html"><a href="guidelines-for-hakai-data-analysts.html#organization-of-a-data-analysis-workflow"><i class="fa fa-check"></i><b>3.3</b> Organization of a Data Analysis Workflow</a></li>
-<li class="chapter" data-level="3.4" data-path="guidelines-for-hakai-data-analysts.html"><a href="guidelines-for-hakai-data-analysts.html#github-best-practices"><i class="fa fa-check"></i><b>3.4</b> GitHUB Best Practices</a><ul>
-<li class="chapter" data-level="3.4.1" data-path="guidelines-for-hakai-data-analysts.html"><a href="guidelines-for-hakai-data-analysts.html#github-flow"><i class="fa fa-check"></i><b>3.4.1</b> GitHUB Flow</a></li>
+<li class="chapter" data-level="3.3" data-path="guidelines-for-hakai-data-analysts.html"><a href="guidelines-for-hakai-data-analysts.html#example-project"><i class="fa fa-check"></i><b>3.3</b> Example Project</a></li>
+<li class="chapter" data-level="3.4" data-path="guidelines-for-hakai-data-analysts.html"><a href="guidelines-for-hakai-data-analysts.html#organization-of-a-data-analysis-workflow"><i class="fa fa-check"></i><b>3.4</b> Organization of a Data Analysis Workflow</a></li>
+<li class="chapter" data-level="3.5" data-path="guidelines-for-hakai-data-analysts.html"><a href="guidelines-for-hakai-data-analysts.html#github-best-practices"><i class="fa fa-check"></i><b>3.5</b> GitHUB Best Practices</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="guidelines-for-hakai-data-analysts.html"><a href="guidelines-for-hakai-data-analysts.html#github-flow"><i class="fa fa-check"></i><b>3.5.1</b> GitHUB Flow</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="guidelines-for-hakai-data-analysts.html"><a href="guidelines-for-hakai-data-analysts.html#reproducible-research-using-markdown-notebooks-or-other-need-significant-additions-editing-and-contributions-beyond-here"><i class="fa fa-check"></i><b>3.5</b> Reproducible research using markdown, notebooks, or other (Need significant additions, editing, and contributions beyond here)</a></li>
-<li class="chapter" data-level="3.6" data-path="guidelines-for-hakai-data-analysts.html"><a href="guidelines-for-hakai-data-analysts.html#collaboration-with-phyton-users"><i class="fa fa-check"></i><b>3.6</b> Collaboration with Phyton users</a></li>
+<li class="chapter" data-level="3.6" data-path="guidelines-for-hakai-data-analysts.html"><a href="guidelines-for-hakai-data-analysts.html#reproducible-research-using-markdown-notebooks-or-other-need-significant-additions-editing-and-contributions-beyond-here"><i class="fa fa-check"></i><b>3.6</b> Reproducible research using markdown, notebooks, or other (Need significant additions, editing, and contributions beyond here)</a></li>
+<li class="chapter" data-level="3.7" data-path="guidelines-for-hakai-data-analysts.html"><a href="guidelines-for-hakai-data-analysts.html#collaboration-with-phyton-users"><i class="fa fa-check"></i><b>3.7</b> Collaboration with Phyton users</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="collaborate.html"><a href="collaborate.html"><i class="fa fa-check"></i><b>4</b> Collaborate</a></li>
 <li class="chapter" data-level="5" data-path="additional-references-and-resources.html"><a href="additional-references-and-resources.html"><i class="fa fa-check"></i><b>5</b> Additional References and Resources</a></li>
@@ -106,19 +170,18 @@
 <li>show your peers that you have nothing to hide in your analytical methods</li>
 <li>that you are willing to share your analyses in hopes that others will improve the quality of your analysis by offering their insight.</li>
 </ul>
-<p>Watch:</p>
-<ul>
-<li><p><a href="https://www.youtube.com/watch?v=DfBSiOupI1I">Dr. RD Peng’s youtube video</a> on reproducible research.</p></li>
-<li><p>As well as his video on <a href="https://www.youtube.com/watch?v=YcJb1HBc-1Q">Literate Programming</a></p></li>
-<li><p><a href="https://en.wikipedia.org/wiki/Open_notebook_science">Open notebook science</a> involves providing all of your research thoughts and ideas from within your notebook for maximum transparacey.</p></li>
-</ul>
 </div>
 <div id="programming-style-guide" class="section level2">
 <h2><span class="header-section-number">3.2</span> Programming Style Guide</h2>
 <p><a href="https://google.github.io/styleguide/Rguide.xml">Google’s R Style Guide</a> is an excellent place to start. Googles guide recommendeds two space indents for new lines of code within the same function, but I prefer 8. See <a href="https://www.youtube.com/watch?v=MSPKE1y3cyQ">Roger Pengs Coding Standards Video</a> for some excellent suggestions that I mostly adhere to.</p>
 </div>
+<div id="example-project" class="section level2">
+<h2><span class="header-section-number">3.3</span> Example Project</h2>
+<p>Set up a repo make an R studio Project Make an R markdown file Import data Commit, etc… use GitHUB flow Make plots Talk to rest of guyys to talk about what should be done beyond this</p>
+<p>eg. Make R Markdown report?</p>
+</div>
 <div id="organization-of-a-data-analysis-workflow" class="section level2">
-<h2><span class="header-section-number">3.3</span> Organization of a Data Analysis Workflow</h2>
+<h2><span class="header-section-number">3.4</span> Organization of a Data Analysis Workflow</h2>
 <p>BJ TODO: Insert section on r projects template</p>
 <p>I keep all files associated with an analysis in a google drive folder, so that I can give collaborators access to RAW data so they can work with it directly.</p>
 <p>I use a default folder structure for every analysis based on the files that are typically produced from every analysis. First I create a folder for the name of the project and create these sub-folders within the project folder.</p>
@@ -126,15 +189,15 @@
 <p>I typically have my notebook folder set as my working directory and navigate from there to save figures, processed data etc. using the “../processed data/yourfilename.csv”. The .. before the forward slash tells R to navigate up one level from your working directory, and then down one level into, in this case, your processed data folder.</p>
 </div>
 <div id="github-best-practices" class="section level2">
-<h2><span class="header-section-number">3.4</span> GitHUB Best Practices</h2>
+<h2><span class="header-section-number">3.5</span> GitHUB Best Practices</h2>
 <div id="github-flow" class="section level3">
-<h3><span class="header-section-number">3.4.1</span> GitHUB Flow</h3>
+<h3><span class="header-section-number">3.5.1</span> GitHUB Flow</h3>
 <p>GitHUB Flow is a workflow that should generally be adhered to whether working individually or collaboratively. Some will argue that there’s no such thing as working individually, especially when you consider that you’re constantly collaborating with past you, and future you.</p>
 <p>The main concepts of GitHUB Flow are:</p>
 <ul>
 <li><p><strong>Branching</strong> - This is a core concept in GitHUB and version cntrol in general – The master branch must always remain stable and working. When you create a new branch, you are creating an environment where you can try out new ideas without directly manipulating the stable ‘master’ version of your analysis.</p></li>
 <li><p><strong>Commits</strong> - Commits represent significant changes to your branch. I think of them as mini-milestones that add up to your complete analysis. Perhaps you’re mini-milestone is to create a linear model of something. You can work locally and make save files on your computer while working on the linear model like you normally would. When you finish your linear model, this is a good time to make a commit to your branch. You must name each commit, and this should be descriptive. In this case ‘fitted linear model’ would be ideal.</p></li>
-<li><p><strong>Pull Requests</strong> - I like to think of pull requests as an opportunity to review and discuss the sum of several commits before they are merged back into the main branch. Something that helped clarify what a pull request is for me, was thinking about the difference between a push (write) request, and a pull (read) request. In the context of a shared repository, a pull request gives everyone that the repo is shared with a change to <em>read</em> your request to consider the sum of your mini-milestones. Pull requests should amount to the completion of a component of your project.</p></li>
+<li><p><strong>Pull Requests</strong> - I like to think of pull requests as an opportunity to review and discuss the sum of several commits before they are merged back into the main branch. Something that helped clarify what a pull request is for me, was thinking about the difference between a push (write) request, and a pull (read) request. In the context of a shared repository, a pull request gives everyone that the repo is shared with a change to <em>read</em> your request to consider the sum of your mini-milestones. Pull requests should amount to the completion of a component of your project. See <a href="https://help.github.com/articles/about-pull-requests/">here</a> for more info.</p></li>
 <li><p><strong>Issues</strong> - When working ‘individually’, an excellent way to create a TODO list for yourself is to create new ‘Issues’. Again this could be something routine, like ‘filter data to include only sampling events in the morning.’ You can then leave yourself, and potential collaborators, a little note about why you’re doing this which will be preserved in a timeline for future you, or collaborators, to inspect. Each issue in your repo is given a number, and future commits can be labelled ‘fixes issue #45’ and when that commit is wrapped up in a pull-request which is eventually merged to the master branch, the issue will be marked as resolved. When working collaboratively, issues can be created by whomever is reviewing your code, and the issue can be assigned to you to fix.</p></li>
 <li><p><strong>Merge</strong> - Once a Pull Request has been sufficiently reviewed, discussed, and tested (deployed), the new code can be merged with the master branch, typically by the team owner, or maintainer.</p></li>
 </ul>
@@ -142,11 +205,11 @@
 </div>
 </div>
 <div id="reproducible-research-using-markdown-notebooks-or-other-need-significant-additions-editing-and-contributions-beyond-here" class="section level2">
-<h2><span class="header-section-number">3.5</span> Reproducible research using markdown, notebooks, or other (Need significant additions, editing, and contributions beyond here)</h2>
+<h2><span class="header-section-number">3.6</span> Reproducible research using markdown, notebooks, or other (Need significant additions, editing, and contributions beyond here)</h2>
 <p>R Notebooks is a good way to collaborate with other analysts. When using R Notebooks it’s best to set defualts to: You want your YAML header to look something like this: <code>output:   html_notebook: default,    keep_md: TRUE   github_document: default</code></p>
 </div>
 <div id="collaboration-with-phyton-users" class="section level2">
-<h2><span class="header-section-number">3.6</span> Collaboration with Phyton users</h2>
+<h2><span class="header-section-number">3.7</span> Collaboration with Phyton users</h2>
 <p>The data analysis files you commit to your repo should include a ‘feather’ table. <a href="https://blog.rstudio.org/2016/03/29/feather/">Feather</a> is data frame format that is readable by both Python and R, and therefore every analysis should produce this type of dataframe to ensure reproducibility for Python users</p>
 
 </div>
@@ -156,7 +219,7 @@
           </div>
         </div>
       </div>
-<a href="reference-guide-for-the-new-r-analyst.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="guide-for-the-new-r-analysis-developer.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="collaborate.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

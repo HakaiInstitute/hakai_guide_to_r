@@ -7,24 +7,16 @@ These three concepts bring together a very modern way of conducting science. The
 * They save you work in the long run by being able to reproduce your own analyses after you've long forgotten the details of how they were conducted
 * If you weave a narrative text into your computer code you'll be able to understand what you were thinking at a later time when you revisit it.
 * You can easily collaborate 
-* show your peers that you have nothing to hide in your analytical methods
-* that you are willing to share your analyses in hopes that others will improve the quality of your analysis by offering their insight.
+* You can show your peers that you have nothing to hide in your analytical methods
+* You can share your analyses in hopes that others will improve the quality of your analysis by offering their insight.
 
-
-Watch:
-
-* [Dr. RD Peng's youtube video](https://www.youtube.com/watch?v=DfBSiOupI1I) on reproducible research.
-
-* As well as his video on [Literate Programming](https://www.youtube.com/watch?v=YcJb1HBc-1Q)
-
-* [Open notebook science](https://en.wikipedia.org/wiki/Open_notebook_science) involves providing all of your research thoughts and ideas from within your notebook for maximum transparacey.
- 
 ## Programming Style Guide
-[Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml) is an excellent place to start. Googles guide recommendeds two space indents for new lines of code within the same function, but I prefer 8. See [Roger Pengs Coding Standards Video](https://www.youtube.com/watch?v=MSPKE1y3cyQ) for some excellent suggestions that I mostly adhere to.
+Using consisten formatting for writing your code, makes it easier for everyone to interpret. We loosely follow [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml). This is an excellent place to start. But you can make slight modifications at your discretion, for example; Googles guide recommendeds two space indents for new lines of code within the same function, but I prefer 8. See [Roger Pengs Coding Standards Video](https://www.youtube.com/watch?v=MSPKE1y3cyQ) for some excellent suggestions that I mostly adhere to.
 
-## Organization of a Data Analysis Workflow
-BJ TODO: Insert section on r projects template
+## Example Project
+In this section I will walk you through an example of a project that brings together all the different concepts we've been talking about up to this point. This project should serve as an example of how to develop analyses for the Hakai Institute.
 
+### Set up a local directory
 
 I keep all files associated with an analysis in a google drive folder, so that I can give collaborators access to RAW data so they can work with it directly.
 
@@ -37,9 +29,28 @@ The sub folders I use are:
 * final scripts
 * exploratory figures
 * final figures
-* notebook
 
-I typically have my notebook folder set as my working directory and navigate from there to save figures, processed data etc. using the "../processed data/yourfilename.csv". The .. before the forward slash tells R to navigate up one level from your working directory, and then down one level into, in this case, your processed data folder.
+I typically have my project folder set as my working directory and navigate down into the appropriate directory from there to save figures, processed data etc. using the "./processed data/yourfilename.csv" as an example. 
+
+
+### Set up a repo
+### Make an R studio Project
+### Make an R markdown file
+### Import data
+### Commit, etc... use GitHUB flow
+### Make plots
+
+
+eg. Make R Markdown report?
+
+
+
+
+## Organization of a Data Analysis Workflow
+BJ TODO: Insert section on r projects template
+
+
+
 
 ## GitHUB Best Practices
 
@@ -53,7 +64,7 @@ The main concepts of GitHUB Flow are:
 
 * **Commits** - Commits represent significant changes to your branch. I think of them as mini-milestones that add up to your complete analysis. Perhaps you're mini-milestone is to create a linear model of something. You can work locally and make save files on your computer while working on the linear model like you normally would. When you finish your linear model, this is a good time to make a commit to your branch. You must name each commit, and this should be descriptive. In this case 'fitted linear model' would be ideal.
 
-* **Pull Requests** - I like to think of pull requests as an opportunity to review and discuss the sum of several commits before they are merged back into the main branch. Something that helped clarify what a pull request is for me, was thinking about the difference between a push (write) request, and a pull (read) request. In the context of a shared repository, a pull request gives everyone that the repo is shared with a change to *read* your request to consider the sum of your mini-milestones. Pull requests should amount to the completion of a component of your project.
+* **Pull Requests** - I like to think of pull requests as an opportunity to review and discuss the sum of several commits before they are merged back into the main branch. Something that helped clarify what a pull request is for me, was thinking about the difference between a push (write) request, and a pull (read) request. In the context of a shared repository, a pull request gives everyone that the repo is shared with a change to *read* your request to consider the sum of your mini-milestones. Pull requests should amount to the completion of a component of your project. See [here](https://help.github.com/articles/about-pull-requests/) for more info.
 
 * **Issues** - When working 'individually', an excellent way to create a TODO list for yourself is to create new 'Issues'. Again this could be something routine, like 'filter data to include only sampling events in the morning.' You can then leave yourself, and potential collaborators, a little note about why you're doing this which will be preserved in a timeline for future you, or collaborators, to inspect. Each issue in your repo is given a number, and future commits can be labelled 'fixes issue #45' and when that commit is wrapped up in a pull-request which is eventually merged to the master branch, the issue will be marked as resolved. When working collaboratively, issues can be created by whomever is reviewing your code, and the issue can be assigned to you to fix.
 
