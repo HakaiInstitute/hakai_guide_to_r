@@ -7,8 +7,8 @@ output: bookdown::gitbook
 documentclass: book
 biblio-style: apalike
 link-citations: yes
-github-repo: br-johnson/Hakai-Data-Analyst
-description: "A guideline for R analysts; getting started, best practices, and collaboration"
+github-repo: HakaiInstitute/hakai_guide_to_r
+description: "A guideline for developing analyses in R; getting started, and best-practices"
 ---
 ---
 ```{r serve the book}

@@ -1,4 +1,4 @@
-# Guidelines for Hakai Data Analysts
+# Guidelines for Developing Analyses with Hakai Institute
 
 ## Reproducible Research, Literate Programming, and the Open Notebook
 
@@ -11,18 +11,53 @@ These three concepts bring together a very modern way of conducting science. The
 * You can share your analyses in hopes that others will improve the quality of your analysis by offering their insight.
 
 ## Programming Style Guide
-Using consisten formatting for writing your code, makes it easier for everyone to interpret. We loosely follow [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml). This is an excellent place to start. But you can make slight modifications at your discretion, for example; Googles guide recommendeds two space indents for new lines of code within the same function, but I prefer 8. See [Roger Pengs Coding Standards Video](https://www.youtube.com/watch?v=MSPKE1y3cyQ) for some excellent suggestions that I mostly adhere to.
+Using consistent formatting for writing your code, makes it easier for everyone to interpret. I loosely follow [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml). This is an excellent place to start. But you can make slight modifications at your discretion, for example; Googles guide recommendeds two space indents for new lines of code within the same function, but I prefer 8. See [Roger Pengs Coding Standards Video](https://www.youtube.com/watch?v=MSPKE1y3cyQ) for some excellent suggestions that I mostly adhere to.
 
 ## Example Project
 In this section I will walk you through an example of a project that brings together all the different concepts we've been talking about up to this point. This project should serve as an example of how to develop analyses for the Hakai Institute.
 
-### Set up a local directory
+I start every new project in the following manner. I first create a GitHUB repo, start a new R-Studio project and link it to my GitHUB repo, and then I populate my working directory with a template folder structure that stores the different categories of files I produce from every analysis.
 
-I keep all files associated with an analysis in a google drive folder, so that I can give collaborators access to RAW data so they can work with it directly.
+### Set up a repo on GitHUB
+From [Jenny Bryan's Book](http://happygitwithr.com/new-github-first.html):
 
-I use a default folder structure for every analysis based on the files that are typically produced from every analysis. First I create a folder for the name of the project and create these sub-folders within the project folder.
+"Do this once per new project.
 
-The sub folders I use are: 
+Go to https://github.com and make sure you are logged in.
+
+Click green “New repository” button. Or, if you are on your own profile page, click on “Repositories”, then click the green “New” button.
+
+Repository name: myrepo (or whatever you wish)
+Public
+YES Initialize this repository with a README
+
+Click the big green button “Create repository.”
+
+Copy the HTTPS clone URL to your clipboard via the green “Clone or Download” button. Or copy the SSH URL if you chose to set up SSH keys."
+
+### Start a new R-Studio Project
+From [Jenny Bryan's Book](http://happygitwithr.com/new-github-first.html):
+
+"In RStudio, start a new Project:
+
+File > New Project > Version Control > Git. In the “repository URL” paste the URL of your new GitHub repository. It will be something like this https://github.com/jennybc/myrepo.git.
+Be intentional about where you create this Project.
+Suggest you “Open in new session”.
+Click “Create Project” to create a new directory, which will be all of these things:
+a directory or “folder” on your computer
+a Git repository, linked to a remote GitHub repository
+an RStudio Project
+
+In the absence of other constraints, I suggest that all of your R projects have exactly this set-up.
+
+This should download the README.md file that we created on GitHub in the previous step. Look in RStudio’s file browser pane for the README.md file."
+
+### Template Folder Structure
+
+I keep all files associated with an analysis in a Google Drive folder, so that I can give collaborators access to raw data so they can work with it directly. Doing this has advantages, but you must be careful not to edit files directly in Google Drive without committing changes using Git. Doing that risks putting your repo out of sync with your local version. So only ever make changes file stored in your Google Drive via R, and commit changes to them using Git.
+
+I use a default folder structure for every analysis based on the files that are typically produced from every analysis. Using the directory that you created your new R-Studio project, which will also be your working directory, create these sub-folders within the project folder:
+
 * raw data
 * processed data 
 * raw scripts
@@ -30,24 +65,100 @@ The sub folders I use are:
 * exploratory figures
 * final figures
 
-I typically have my project folder set as my working directory and navigate down into the appropriate directory from there to save figures, processed data etc. using the "./processed data/yourfilename.csv" as an example. 
+I typically have my project folder set as my working directory and navigate down into the appropriate directory from there to save figures, processed data etc. using this syntax: `write_csv(yourfilename, "./processed data/yourfilename.csv")` as an example. 
+
+### Modularize your Analysis
+I usually create a series of scripts in any anlaysis, which helps me to modularize the different components of an analysis.
+
+There are several discrete steps you go through when conducting an analysis. Dr. Roger Peng suggests these steps are common to all analyses, and highlighted in bold are the steps that can be modularized in your analysis, by creating seperate scripts:
+
+* Define the question
+* Define the ideal data set
+* Determine what data you can access
+* Obtain the data
+* **Pre-process and Clean the data**
+* **Exploratory data analysis**
+* **Statistical prediction/modeling**
+* Interpret results
+* Challenge results
+* Synthesize/write-up results
+* **Create reproducible code**
+
+### Clean and Pre-process Data
+This module of your analysis includes importing, tidying, and processing your data to get it into the stage you'd like to analyze it in.
+
+#### Import your Data
+Most often you're going to want to read in files that are .csv files. These are comma seperated value files and can be produced from excel or google sheets by saving your excel or google sheet file as a .csv file.
+
+The first module of an analysis I produce is a plain .R script that loads in my .csv data file and save it in my R environment as a tibble, a type of data frame, using the `new_tbl <- read_csv("filepath")` format. Before you read in a file, you should load the packages that we will be required for every analysis you conduct using the `library(tidyverse)` function. Note that you should not use the base R function `read.csv` but rather use the tidyverse function `read_csv`. The base version will inevitably cause frustration due to incorrect variable class assignement.
+
+Once I have my dataset in my work environment, I'll make sure that all the variable classes are what I want them to be. Luckily, when `read_csv` reads in your file, it prints a summary of the name and type of each variable in your dataframe. 
+
+I always check: 
+
+* that my Date column has the class 'date'
+* that categorical variables are stored as factors
+* anything that is not a categorical variable is not stored as a factor but rather is numeric, character, or integer for example.
+
+One of the most common problems of why you get errors in R is from R assigning incorrect variable classes. Often you want your variable to be of class numeric, or character, but it is assigned as a factor. This is extremely common and can be remedied by coercing your variable class. 
+
+#### Tidy your Data
+
+Tidy data is best explained by a quote from [Hadley Wickham's paper](http://www.jstatsoft.org/v59/i10/paper) in the Journal of Statistical Software: "Tidy datasets are easy to manipulate, model and visualize, and have a specific structure: each variable is a column, each observation is a row, and each type of observational unit is a table." The 'tidyverse' model of working in R that I have previously referred to relies on this system of data preparation.
+
+The basic tenets that make a dataset tidy are:
+
+1. Each variable must have its own column
+2. Each observation must have its own row
+3. Each value must have its own cell
+
+Beyond that each type of observational unit should be its own table. That is to say, I wouldn't mix weather metadata from field collection of a fish sample in the same table as the results of a laboratory analysis. Instead I would keep these two types of information, in different tables, but provide a common column in each that allows the tables to be later joined. This last part related to joining tables is an important concept that I will come back to. If you are invloved in producing the data set, I recommend setting up your data collection to follow the tidy data format, to make your life, or the life of your anlaysts, much easier!
+
+If your data is not tidy, there are a variety of functions you can use from the `tidyr` package that you can learn about in [Chapter 9: Tidy Data with tidyr](http://r4ds.had.co.nz/tidy-data.html#introduction-6). But hopefully your data has arrived to you tidy, in which case you can move on to processing the data for your analysis. 
 
 
-### Set up a repo
-### Make an R studio Project
-### Make an R markdown file
-### Import data
+#### Process your data
+
+There is usually some number of things that you will want to do to your data before you start exploring it. You may want to create new variables based on others, you may want to seclect only certain variables, or you may want to filter out certain observations.
+
+This would be to the time to get your data to where you want it before you start to analyze it.
+
+Select certain observations using `select()`, filter observations using `filter()`
+
+
+### Exercises
+1) Set up a new GitHUB repo called 'developing-anaylses-w-hakai
+2) Start a new R-Studio project
+3) Re-create the suggested template folder structure in the working directory you established your R project file in.
+4) Download [this example dataset]() into the raw data folder of your project directory
+5) Make sure the data is tidy
+6) Process your data for how you want to analyze it and export it using the `write_csv` function to your processed data foler.
+
+
+### Exploratory Data Analysis
+
+This is where you start playing with the data. You will likely try many different summaries and visualizations while you seek a deeper understanding of your data. 
+
+I typically create an exploraoty data analysis (EDA) script specifically for this. I use R Markdown files (.Rmd) for my EDA. This allows me to weave narrative explanations of what exploration I am doing in each seperate code chunk. Writing this narrative about why you chose to explore a certain analysis or summary, and why it did or didn't work is key in documenting your analysis so you can come back to it, make sense of what you've done, and pick up where you left off. 
+
+EDA allows me to try many different summaries or visualizations without having to worry about making the output perfect or pretty. This process will give you insight to your data as well as generate new questions and provoke new analyses. One excellent tool that can help you explore your data interactively is using [shiny apps](https://shiny.rstudio.com/). There's too much detail to focus on how to produce shiny apps here but suffice to say that creating interactivity with your data set is an excellent way to explore many different relationships between your data.
+
+Exploratory analysis can probably go on forever depending on the complexity of your data. You will probably think of 1000 different ways to look at your data, but after some time you need to refocus on your original question and think carefully about what analyses and visualisations are best to communicate. Because you've been storing all of your EDA in and EDA script you've got a record of every path you went down while exploring your data. You can then cherry pick the analyses, plots, and summaries you want to include in your final scripts and simply copy and past them into a new .Rmd script.  
+
+#### Exercises
+
+1) Create a to do list using issues in GitHub
+2) Produce summary plots and commits along with milestones
+3) Make a pull request 
+4) Make a branch to produce a shiny app
+5) Make a pull request to merge shinny app
+6) Produce a shiny app
+7) 
+
+
 ### Commit, etc... use GitHUB flow
 ### Make plots
 
-
-eg. Make R Markdown report?
-
-
-
-
-## Organization of a Data Analysis Workflow
-BJ TODO: Insert section on r projects template
 
 
 
@@ -71,6 +182,10 @@ The main concepts of GitHUB Flow are:
 * **Merge** - Once a Pull Request has been sufficiently reviewed, discussed, and tested (deployed), the new code can be merged with the master branch, typically by the team owner, or maintainer.
 
 See this [GitHUB Flow](https://guides.github.com/introduction/flow/) help article for a nice walkthrough with good diagrams.
+
+### Final Data Product
+
+What your final data product is going to be (summary report, figures for your manuscript, an interactive dashboard for a website), will dictate what your final scripts will be. As a baseline I recommend .Rmd as the final format because this gives you a lot of flexibility in terms of polished data products.
 
 ## Reproducible research using markdown, notebooks, or other (Need significant additions, editing, and contributions beyond here)
 
