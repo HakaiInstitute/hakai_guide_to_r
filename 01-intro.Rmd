@@ -5,8 +5,6 @@ The objective of this guide is to serve as a:
 1) Reference guide for the new R Analysis Developer; 
 2) guidelines for Hakai staff to develop reproducible, accurate, and collaborative analyses in R-Studio.
 
-## Background
-
 There is a vibrant 'open-source' community of people developing methods, packages, and workflows in the R programming world. Consequently, we have some of the most modern, flexible, and high-level methods to develop and communicate statistical analyses. However, as the community iterates ideas of how the programming language works at a very base level, we are left with a littany of methods and programming syntaxes. There are typically atleast half a dozen ways to write a chunk of code to reach the same desired result in R. This, in part, has given R the reputation as being difficult to learn. 
 
 This guide aims to address the 'thousand and one way of doing things' problem in R by focussing on the recent development of packages that form a simple, elegant, and coherent grammar of data analysis. This collection of packages and methods is known as the 'tidyverse', developed in large part by the Chief Scientist of R-Studio, Hadley Wickham. 
@@ -24,7 +22,7 @@ Most Univeristy courses that use R are focussed on teaching statistical techniqu
 
 This guide points to solutions that adress these questions by providing an example of a well-developed analysis. As a new analyst you will be directed through an efficient way to learn R, and progress to modern methods of communicating resluts. Combined with a graduate level understanding of statistics, this guide should get you to an intermediate skill level in R-Studio using a very high-level, and modern approach.
 
-## Defining a Good Data Analysis
+# Defining a Good Data Analysis
 
 New ideas about what makes a good data analysis are emerging. With data being so readily available in vast quantities now — analyzing data using out-of-date methods such as microsoft excel, quickly becomes overwhelming, not reproducible, error-prone, and difficult to assess for reliability. 
 
@@ -32,7 +30,7 @@ Much of the progress in terms of 'developing analyses' has been made in the fiel
 
 Some important concepts emerging in defining a good data analysis are:
 
-### Reproducibility
+## Reproducibility
 
 If your study finds something very interesting, people are going to want to know how you came to your conclusion. A simple example of the reproducibiity concept is cleaning your data in excel. By simply deleting some cells that looked to be outliers, without recording anywhere that you did that, or why you did that, you have effectively broken the reproducibility chain. Another person could not come to the same conclusions as you did, if you provided me the raw data set you started with. 
 
@@ -40,11 +38,11 @@ In order for your analysis to be trustworthy, you need to be able to provide the
 
 The reality is, the peer-reviewer or collaborator that you will most often want to work with is 'future-you'. Scripting reproducible anlayses with embedded narrative allows future you to understand what past-you was thinking. This, in turn, saves you a lot of time in the long run. The idea of embedding your own narrative, or adding comments to your code, introduces the idea of literate programming. By weaving together human-readbale narrative that explains what your computer code is doing and why you decided to do it, greatly increase the quality of your work.
 
-### Version Control
+## Version Control
 
-### Communication and Distribution
+## Communication and Distribution
 
-### Open Source and Open Science
+## Open Source and Open Science
 
 ## Resources
 
