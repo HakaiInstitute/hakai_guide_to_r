@@ -22,32 +22,6 @@ Most Univeristy courses that use R are focussed on teaching statistical techniqu
 
 This guide points to solutions that adress these questions by providing an example of a well-developed analysis. As a new analyst you will be directed through an efficient way to learn R, and progress to modern methods of communicating resluts. Combined with a graduate level understanding of statistics, this guide should get you to an intermediate skill level in R-Studio using a very high-level, and modern approach.
 
-# Defining a Good Data Analysis
-
-New ideas about what makes a good data analysis are emerging. With data being so readily available in vast quantities now — analyzing data using out-of-date methods such as microsoft excel, quickly becomes overwhelming, not reproducible, error-prone, and difficult to assess for reliability. 
-
-Much of the progress in terms of 'developing analyses' has been made in the field of bio-statistics due to the high volume of genomic data that researchers deal with. One of the most concerning examples of what can go wrong with an analysis, is from the field of genomics and cancer treatments. In the ['Duke Scandal'](http://www.cbsnews.com/news/deception-at-duke-fraud-in-cancer-care/), researchers made mistakes in their data analysis, that were extremely difficult to track, and resulted in patients receiving the wrong cancer treatment. This is an extreme example that affected peoples lives directly. I would argue, that the work that we do at Hakai, analyzing ecological data, has much broader implications and should be treated with an even higher degree of discretion. 
-
-Some important concepts emerging in defining a good data analysis are:
-
-## Reproducibility
-
-If your study finds something very interesting, people are going to want to know how you came to your conclusion. A simple example of the reproducibiity concept is cleaning your data in excel. By simply deleting some cells that looked to be outliers, without recording anywhere that you did that, or why you did that, you have effectively broken the reproducibility chain. Another person could not come to the same conclusions as you did, if you provided me the raw data set you started with. 
-
-In order for your analysis to be trustworthy, you need to be able to provide the data, the scripted code you used to clean, summarize, analyze, and plot that data, and then a reviewer has to be able to run that same code and see the same results. This level of transparency allows a reviewer to look very closely at how you conducted your analysis. This adds an additional step in the peer review process which has not previosuly been possible with un-scripted analyses. The Journal of Biostatistics has adressed many of these important issues by develping a policy around reproducibility and released an article called ['Reproducible research and Biostatistics'](https://academic.oup.com/biostatistics/article-lookup/doi/10.1093/biostatistics/kxp014)
-
-The reality is, the peer-reviewer or collaborator that you will most often want to work with is 'future-you'. Scripting reproducible anlayses with embedded narrative allows future you to understand what past-you was thinking. This, in turn, saves you a lot of time in the long run. The idea of embedding your own narrative, or adding comments to your code, introduces the idea of literate programming. By weaving together human-readbale narrative that explains what your computer code is doing and why you decided to do it, greatly increase the quality of your work.
-
-## Version Control
-
-## Communication and Distribution
-
-## Open Source and Open Science
-
-## Resources
-
-The 'bible for a new generation of Data Scientists' is Hadley Wickham and Garrett Grolemund's Book: [R For Data Science](http://r4ds.had.co.nz/). This book presents a modern approach to data analysis and leads you to master the 'tidyverse'; a combination of R packages and a well thought out and systematic approach to "import, tidy, transform, visualize, and model data." Using the tidyverse as a foundation for your coding replaces the 'thousand and one ways' of doing things in R into a modern and concise grammar of data analysis development
-
 
 ## Acknowledgements
 Much of this document refers you to material that others have worked very hard to make. I simply point to these resources in an order that makes sense and seems systematic to me. Many thanks to the following people for making this possible:
