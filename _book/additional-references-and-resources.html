@@ -12,7 +12,7 @@
   <meta property="og:title" content="Hakai Institute R Data-Analyst Guide" />
   <meta property="og:type" content="book" />
   
-  
+  <meta property="og:image" content="~/Google Drive/SEMSP/SEMSP Presentations and Posters/Materials for Future Presentations/Collaborator Logo_Images/Hakai/Hakai Institute Logo on Red.png" />
   <meta property="og:description" content="A guideline for developing analyses in R; getting started, and best-practices" />
   <meta name="github-repo" content="HakaiInstitute/hakai_guide_to_r" />
 
@@ -20,19 +20,18 @@
   <meta name="twitter:title" content="Hakai Institute R Data-Analyst Guide" />
   
   <meta name="twitter:description" content="A guideline for developing analyses in R; getting started, and best-practices" />
-  
+  <meta name="twitter:image" content="~/Google Drive/SEMSP/SEMSP Presentations and Posters/Materials for Future Presentations/Collaborator Logo_Images/Hakai/Hakai Institute Logo on Red.png" />
 
 <meta name="author" content="Brett Johnson">
 
 
-<meta name="date" content="2017-05-29">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="guidelines-for-developing-analyses-with-hakai-institute.html">
+<link rel="prev" href="developing-analyses-with-hakai-institute.html">
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -105,50 +104,51 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
-<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#acknowledgements"><i class="fa fa-check"></i><b>1.1</b> Acknowledgements</a></li>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#university-gaps"><i class="fa fa-check"></i><b>1.1</b> University Gaps</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#reproducibility-problem"><i class="fa fa-check"></i><b>1.2</b> Reproducibility Problem</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#modern-approach-to-data-analysis"><i class="fa fa-check"></i><b>1.3</b> Modern Approach to Data Analysis</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#acknowledgements"><i class="fa fa-check"></i><b>1.4</b> Acknowledgements</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="defining-a-good-data-analysis.html"><a href="defining-a-good-data-analysis.html"><i class="fa fa-check"></i><b>2</b> Defining a Good Data Analysis</a><ul>
-<li class="chapter" data-level="2.1" data-path="defining-a-good-data-analysis.html"><a href="defining-a-good-data-analysis.html#reproducibility"><i class="fa fa-check"></i><b>2.1</b> Reproducibility</a></li>
-<li class="chapter" data-level="2.2" data-path="defining-a-good-data-analysis.html"><a href="defining-a-good-data-analysis.html#version-control"><i class="fa fa-check"></i><b>2.2</b> Version Control</a></li>
-<li class="chapter" data-level="2.3" data-path="defining-a-good-data-analysis.html"><a href="defining-a-good-data-analysis.html#communication-and-distribution"><i class="fa fa-check"></i><b>2.3</b> Communication and Distribution</a></li>
-<li class="chapter" data-level="2.4" data-path="defining-a-good-data-analysis.html"><a href="defining-a-good-data-analysis.html#open-source-and-open-science"><i class="fa fa-check"></i><b>2.4</b> Open Source and Open Science</a></li>
-<li class="chapter" data-level="2.5" data-path="defining-a-good-data-analysis.html"><a href="defining-a-good-data-analysis.html#resources"><i class="fa fa-check"></i><b>2.5</b> Resources</a></li>
+<li class="chapter" data-level="2" data-path="a-good-data-analysis.html"><a href="a-good-data-analysis.html"><i class="fa fa-check"></i><b>2</b> A Good Data Analysis</a><ul>
+<li class="chapter" data-level="2.1" data-path="a-good-data-analysis.html"><a href="a-good-data-analysis.html#reproducible-research"><i class="fa fa-check"></i><b>2.1</b> Reproducible Research</a></li>
+<li class="chapter" data-level="2.2" data-path="a-good-data-analysis.html"><a href="a-good-data-analysis.html#literate-programming"><i class="fa fa-check"></i><b>2.2</b> Literate Programming</a></li>
+<li class="chapter" data-level="2.3" data-path="a-good-data-analysis.html"><a href="a-good-data-analysis.html#open-science-collaboration-and-peer-review"><i class="fa fa-check"></i><b>2.3</b> Open Science Collaboration and Peer Review</a></li>
+<li class="chapter" data-level="2.4" data-path="a-good-data-analysis.html"><a href="a-good-data-analysis.html#resources"><i class="fa fa-check"></i><b>2.4</b> Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="guide-for-the-new-r-analysis-developer.html"><a href="guide-for-the-new-r-analysis-developer.html"><i class="fa fa-check"></i><b>3</b> Guide for the New R Analysis Developer</a><ul>
-<li class="chapter" data-level="3.1" data-path="guide-for-the-new-r-analysis-developer.html"><a href="guide-for-the-new-r-analysis-developer.html#install-and-set-up-r-and-r-studio"><i class="fa fa-check"></i><b>3.1</b> Install and Set up R and R Studio</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="guide-for-the-new-r-analysis-developer.html"><a href="guide-for-the-new-r-analysis-developer.html#familiarize-yourself-with-r-and-r-studio"><i class="fa fa-check"></i><b>3.1.1</b> Familiarize yourself with R and R-Studio</a></li>
-<li class="chapter" data-level="3.1.2" data-path="guide-for-the-new-r-analysis-developer.html"><a href="guide-for-the-new-r-analysis-developer.html#r-studio"><i class="fa fa-check"></i><b>3.1.2</b> R Studio</a></li>
-<li class="chapter" data-level="3.1.3" data-path="guide-for-the-new-r-analysis-developer.html"><a href="guide-for-the-new-r-analysis-developer.html#making-plots"><i class="fa fa-check"></i><b>3.1.3</b> Making Plots</a></li>
-<li class="chapter" data-level="3.1.4" data-path="guide-for-the-new-r-analysis-developer.html"><a href="guide-for-the-new-r-analysis-developer.html#r-studio-projects-workflow"><i class="fa fa-check"></i><b>3.1.4</b> R Studio Projects Workflow</a></li>
+<li class="chapter" data-level="3" data-path="data-analysts-toolbox.html"><a href="data-analysts-toolbox.html"><i class="fa fa-check"></i><b>3</b> Data Analysts Toolbox</a><ul>
+<li class="chapter" data-level="3.1" data-path="data-analysts-toolbox.html"><a href="data-analysts-toolbox.html#install-and-set-up-r-and-r-studio"><i class="fa fa-check"></i><b>3.1</b> Install and Set up R and R Studio</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="data-analysts-toolbox.html"><a href="data-analysts-toolbox.html#familiarize-yourself-with-r-and-r-studio"><i class="fa fa-check"></i><b>3.1.1</b> Familiarize yourself with R and R-Studio</a></li>
+<li class="chapter" data-level="3.1.2" data-path="data-analysts-toolbox.html"><a href="data-analysts-toolbox.html#r-studio"><i class="fa fa-check"></i><b>3.1.2</b> R Studio</a></li>
+<li class="chapter" data-level="3.1.3" data-path="data-analysts-toolbox.html"><a href="data-analysts-toolbox.html#making-plots"><i class="fa fa-check"></i><b>3.1.3</b> Making Plots</a></li>
+<li class="chapter" data-level="3.1.4" data-path="data-analysts-toolbox.html"><a href="data-analysts-toolbox.html#r-studio-projects-workflow"><i class="fa fa-check"></i><b>3.1.4</b> R Studio Projects Workflow</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="guide-for-the-new-r-analysis-developer.html"><a href="guide-for-the-new-r-analysis-developer.html#version-control-with-git-and-github"><i class="fa fa-check"></i><b>3.2</b> Version Control with Git and GitHUB</a><ul>
-<li class="chapter" data-level="3.2.1" data-path="guide-for-the-new-r-analysis-developer.html"><a href="guide-for-the-new-r-analysis-developer.html#setup-a-github-account"><i class="fa fa-check"></i><b>3.2.1</b> Setup a GitHUB Account</a></li>
-<li class="chapter" data-level="3.2.2" data-path="guide-for-the-new-r-analysis-developer.html"><a href="guide-for-the-new-r-analysis-developer.html#issues"><i class="fa fa-check"></i><b>3.2.2</b> ‘Issues’</a></li>
-<li class="chapter" data-level="3.2.3" data-path="guide-for-the-new-r-analysis-developer.html"><a href="guide-for-the-new-r-analysis-developer.html#fork-this-repo"><i class="fa fa-check"></i><b>3.2.3</b> Fork This Repo</a></li>
-<li class="chapter" data-level="3.2.4" data-path="guide-for-the-new-r-analysis-developer.html"><a href="guide-for-the-new-r-analysis-developer.html#markdown-syntax"><i class="fa fa-check"></i><b>3.2.4</b> Markdown Syntax</a></li>
-<li class="chapter" data-level="3.2.5" data-path="guide-for-the-new-r-analysis-developer.html"><a href="guide-for-the-new-r-analysis-developer.html#install-and-set-up-git"><i class="fa fa-check"></i><b>3.2.5</b> Install and set-up Git</a></li>
+<li class="chapter" data-level="3.2" data-path="data-analysts-toolbox.html"><a href="data-analysts-toolbox.html#version-control-with-git-and-github"><i class="fa fa-check"></i><b>3.2</b> Version Control with Git and GitHUB</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="data-analysts-toolbox.html"><a href="data-analysts-toolbox.html#setup-a-github-account"><i class="fa fa-check"></i><b>3.2.1</b> Setup a GitHUB Account</a></li>
+<li class="chapter" data-level="3.2.2" data-path="data-analysts-toolbox.html"><a href="data-analysts-toolbox.html#issues"><i class="fa fa-check"></i><b>3.2.2</b> ‘Issues’</a></li>
+<li class="chapter" data-level="3.2.3" data-path="data-analysts-toolbox.html"><a href="data-analysts-toolbox.html#fork-this-repo"><i class="fa fa-check"></i><b>3.2.3</b> Fork This Repo</a></li>
+<li class="chapter" data-level="3.2.4" data-path="data-analysts-toolbox.html"><a href="data-analysts-toolbox.html#markdown-syntax"><i class="fa fa-check"></i><b>3.2.4</b> Markdown Syntax</a></li>
+<li class="chapter" data-level="3.2.5" data-path="data-analysts-toolbox.html"><a href="data-analysts-toolbox.html#install-and-set-up-git"><i class="fa fa-check"></i><b>3.2.5</b> Install and set-up Git</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="guidelines-for-developing-analyses-with-hakai-institute.html"><a href="guidelines-for-developing-analyses-with-hakai-institute.html"><i class="fa fa-check"></i><b>4</b> Guidelines for Developing Analyses with Hakai Institute</a><ul>
-<li class="chapter" data-level="4.1" data-path="guidelines-for-developing-analyses-with-hakai-institute.html"><a href="guidelines-for-developing-analyses-with-hakai-institute.html#reproducible-research-literate-programming-and-the-open-notebook"><i class="fa fa-check"></i><b>4.1</b> Reproducible Research, Literate Programming, and the Open Notebook</a></li>
-<li class="chapter" data-level="4.2" data-path="guidelines-for-developing-analyses-with-hakai-institute.html"><a href="guidelines-for-developing-analyses-with-hakai-institute.html#programming-style-guide"><i class="fa fa-check"></i><b>4.2</b> Programming Style Guide</a></li>
-<li class="chapter" data-level="4.3" data-path="guidelines-for-developing-analyses-with-hakai-institute.html"><a href="guidelines-for-developing-analyses-with-hakai-institute.html#example-project"><i class="fa fa-check"></i><b>4.3</b> Example Project</a><ul>
-<li class="chapter" data-level="4.3.1" data-path="guidelines-for-developing-analyses-with-hakai-institute.html"><a href="guidelines-for-developing-analyses-with-hakai-institute.html#set-up-a-repo-on-github"><i class="fa fa-check"></i><b>4.3.1</b> Set up a repo on GitHUB</a></li>
-<li class="chapter" data-level="4.3.2" data-path="guidelines-for-developing-analyses-with-hakai-institute.html"><a href="guidelines-for-developing-analyses-with-hakai-institute.html#start-a-new-r-studio-project"><i class="fa fa-check"></i><b>4.3.2</b> Start a new R-Studio Project</a></li>
-<li class="chapter" data-level="4.3.3" data-path="guidelines-for-developing-analyses-with-hakai-institute.html"><a href="guidelines-for-developing-analyses-with-hakai-institute.html#template-folder-structure"><i class="fa fa-check"></i><b>4.3.3</b> Template Folder Structure</a></li>
-<li class="chapter" data-level="4.3.4" data-path="guidelines-for-developing-analyses-with-hakai-institute.html"><a href="guidelines-for-developing-analyses-with-hakai-institute.html#modularize-your-analysis"><i class="fa fa-check"></i><b>4.3.4</b> Modularize your Analysis</a></li>
-<li class="chapter" data-level="4.3.5" data-path="guidelines-for-developing-analyses-with-hakai-institute.html"><a href="guidelines-for-developing-analyses-with-hakai-institute.html#clean-and-pre-process-data"><i class="fa fa-check"></i><b>4.3.5</b> Clean and Pre-process Data</a></li>
-<li class="chapter" data-level="4.3.6" data-path="guidelines-for-developing-analyses-with-hakai-institute.html"><a href="guidelines-for-developing-analyses-with-hakai-institute.html#exercises"><i class="fa fa-check"></i><b>4.3.6</b> Exercises</a></li>
-<li class="chapter" data-level="4.3.7" data-path="guidelines-for-developing-analyses-with-hakai-institute.html"><a href="guidelines-for-developing-analyses-with-hakai-institute.html#exploratory-data-analysis"><i class="fa fa-check"></i><b>4.3.7</b> Exploratory Data Analysis</a></li>
-<li class="chapter" data-level="4.3.8" data-path="guidelines-for-developing-analyses-with-hakai-institute.html"><a href="guidelines-for-developing-analyses-with-hakai-institute.html#commit-etc-use-github-flow"><i class="fa fa-check"></i><b>4.3.8</b> Commit, etc… use GitHUB flow</a></li>
-<li class="chapter" data-level="4.3.9" data-path="guidelines-for-developing-analyses-with-hakai-institute.html"><a href="guidelines-for-developing-analyses-with-hakai-institute.html#make-plots"><i class="fa fa-check"></i><b>4.3.9</b> Make plots</a></li>
+<li class="chapter" data-level="4" data-path="developing-analyses-with-hakai-institute.html"><a href="developing-analyses-with-hakai-institute.html"><i class="fa fa-check"></i><b>4</b> Developing Analyses with Hakai Institute</a><ul>
+<li class="chapter" data-level="4.1" data-path="developing-analyses-with-hakai-institute.html"><a href="developing-analyses-with-hakai-institute.html#programming-style-guide"><i class="fa fa-check"></i><b>4.1</b> Programming Style Guide</a></li>
+<li class="chapter" data-level="4.2" data-path="developing-analyses-with-hakai-institute.html"><a href="developing-analyses-with-hakai-institute.html#example-project"><i class="fa fa-check"></i><b>4.2</b> Example Project</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="developing-analyses-with-hakai-institute.html"><a href="developing-analyses-with-hakai-institute.html#set-up-a-repo-on-github"><i class="fa fa-check"></i><b>4.2.1</b> Set up a repo on GitHUB</a></li>
+<li class="chapter" data-level="4.2.2" data-path="developing-analyses-with-hakai-institute.html"><a href="developing-analyses-with-hakai-institute.html#start-a-new-r-studio-project"><i class="fa fa-check"></i><b>4.2.2</b> Start a new R-Studio Project</a></li>
+<li class="chapter" data-level="4.2.3" data-path="developing-analyses-with-hakai-institute.html"><a href="developing-analyses-with-hakai-institute.html#template-folder-structure"><i class="fa fa-check"></i><b>4.2.3</b> Template Folder Structure</a></li>
+<li class="chapter" data-level="4.2.4" data-path="developing-analyses-with-hakai-institute.html"><a href="developing-analyses-with-hakai-institute.html#modularize-your-analysis"><i class="fa fa-check"></i><b>4.2.4</b> Modularize your Analysis</a></li>
+<li class="chapter" data-level="4.2.5" data-path="developing-analyses-with-hakai-institute.html"><a href="developing-analyses-with-hakai-institute.html#import-tidy-and-pre-process-data"><i class="fa fa-check"></i><b>4.2.5</b> Import, Tidy, and Pre-process Data</a></li>
+<li class="chapter" data-level="4.2.6" data-path="developing-analyses-with-hakai-institute.html"><a href="developing-analyses-with-hakai-institute.html#exercises"><i class="fa fa-check"></i><b>4.2.6</b> Exercises</a></li>
+<li class="chapter" data-level="4.2.7" data-path="developing-analyses-with-hakai-institute.html"><a href="developing-analyses-with-hakai-institute.html#exploratory-data-analysis"><i class="fa fa-check"></i><b>4.2.7</b> Exploratory Data Analysis</a></li>
+<li class="chapter" data-level="4.2.8" data-path="developing-analyses-with-hakai-institute.html"><a href="developing-analyses-with-hakai-institute.html#commit-etc-use-github-flow"><i class="fa fa-check"></i><b>4.2.8</b> Commit, etc… use GitHUB flow</a></li>
+<li class="chapter" data-level="4.2.9" data-path="developing-analyses-with-hakai-institute.html"><a href="developing-analyses-with-hakai-institute.html#make-plots"><i class="fa fa-check"></i><b>4.2.9</b> Make plots</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="guidelines-for-developing-analyses-with-hakai-institute.html"><a href="guidelines-for-developing-analyses-with-hakai-institute.html#github-best-practices"><i class="fa fa-check"></i><b>4.4</b> GitHUB Best Practices</a><ul>
-<li class="chapter" data-level="4.4.1" data-path="guidelines-for-developing-analyses-with-hakai-institute.html"><a href="guidelines-for-developing-analyses-with-hakai-institute.html#github-flow"><i class="fa fa-check"></i><b>4.4.1</b> GitHUB Flow</a></li>
-<li class="chapter" data-level="4.4.2" data-path="guidelines-for-developing-analyses-with-hakai-institute.html"><a href="guidelines-for-developing-analyses-with-hakai-institute.html#final-data-product"><i class="fa fa-check"></i><b>4.4.2</b> Final Data Product</a></li>
+<li class="chapter" data-level="4.3" data-path="developing-analyses-with-hakai-institute.html"><a href="developing-analyses-with-hakai-institute.html#github-best-practices"><i class="fa fa-check"></i><b>4.3</b> GitHUB Best Practices</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="developing-analyses-with-hakai-institute.html"><a href="developing-analyses-with-hakai-institute.html#github-flow"><i class="fa fa-check"></i><b>4.3.1</b> GitHUB Flow</a></li>
+<li class="chapter" data-level="4.3.2" data-path="developing-analyses-with-hakai-institute.html"><a href="developing-analyses-with-hakai-institute.html#final-data-product"><i class="fa fa-check"></i><b>4.3.2</b> Final Data Product</a></li>
 </ul></li>
-<li class="chapter" data-level="4.5" data-path="guidelines-for-developing-analyses-with-hakai-institute.html"><a href="guidelines-for-developing-analyses-with-hakai-institute.html#reproducible-research-using-markdown-notebooks-or-other-need-significant-additions-editing-and-contributions-beyond-here"><i class="fa fa-check"></i><b>4.5</b> Reproducible research using markdown, notebooks, or other (Need significant additions, editing, and contributions beyond here)</a></li>
-<li class="chapter" data-level="4.6" data-path="guidelines-for-developing-analyses-with-hakai-institute.html"><a href="guidelines-for-developing-analyses-with-hakai-institute.html#collaboration-with-phyton-users"><i class="fa fa-check"></i><b>4.6</b> Collaboration with Phyton users</a></li>
+<li class="chapter" data-level="4.4" data-path="developing-analyses-with-hakai-institute.html"><a href="developing-analyses-with-hakai-institute.html#reproducible-research-using-markdown-notebooks-or-other-need-significant-additions-editing-and-contributions-beyond-here"><i class="fa fa-check"></i><b>4.4</b> Reproducible research using markdown, notebooks, or other (Need significant additions, editing, and contributions beyond here)</a></li>
+<li class="chapter" data-level="4.5" data-path="developing-analyses-with-hakai-institute.html"><a href="developing-analyses-with-hakai-institute.html#collaboration-with-phyton-users"><i class="fa fa-check"></i><b>4.5</b> Collaboration with Phyton users</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="additional-references-and-resources.html"><a href="additional-references-and-resources.html"><i class="fa fa-check"></i><b>5</b> Additional References and Resources</a></li>
 <li class="divider"></li>
@@ -182,7 +182,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           </div>
         </div>
       </div>
-<a href="guidelines-for-developing-analyses-with-hakai-institute.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="developing-analyses-with-hakai-institute.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>
@@ -215,9 +215,9 @@ gitbook.start({
 "link": "https://github.com/yihui/bookdown-crc/edit/master/05-Resources.Rmd",
 "text": "Edit"
 },
-"download": ["Hakai R Guide.pdf", "Hakai R Guide.epub"],
+"download": ["Hakai_R_Guide.pdf", "Hakai_R_Guide.epub"],
 "toc": {
-"collapse": "none"
+"collapse": "all"
 }
 });
 });

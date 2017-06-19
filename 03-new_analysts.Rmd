@@ -1,4 +1,4 @@
-# Guide for the New R Analysis Developer
+# Data Analysts Toolbox
 
 
 ## Install and Set up R and R Studio

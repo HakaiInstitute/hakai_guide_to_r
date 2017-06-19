@@ -1,15 +1,8 @@
 # Introduction
 
-The objective of this guide is to serve as a:
+## University Gaps
 
-1) Reference guide for the new R Analysis Developer; 
-2) guidelines for Hakai staff to develop reproducible, accurate, and collaborative analyses in R-Studio.
-
-There is a vibrant 'open-source' community of people developing methods, packages, and workflows in the R programming world. Consequently, we have some of the most modern, flexible, and high-level methods to develop and communicate statistical analyses. However, as the community iterates ideas of how the programming language works at a very base level, we are left with a littany of methods and programming syntaxes. There are typically atleast half a dozen ways to write a chunk of code to reach the same desired result in R. This, in part, has given R the reputation as being difficult to learn. 
-
-This guide aims to address the 'thousand and one way of doing things' problem in R by focussing on the recent development of packages that form a simple, elegant, and coherent grammar of data analysis. This collection of packages and methods is known as the 'tidyverse', developed in large part by the Chief Scientist of R-Studio, Hadley Wickham. 
-
-Most Univeristy courses that use R are focussed on teaching statistical techniques such as Generalized Linear Models, or Logistic Regression, but pay no attention to educating students on how to actually conduct an analysis from start to finish. Questions that often remain un-aswered are:
+Most Univeristy courses that use R are focussed on teaching statistical techniques such as generalized linear models, or logistic regression, but pay no attention to educating students on how to actually conduct an analysis from start to finish. Questions that often remain un-aswered are:
 
 * What is an efficient workflow? 
 * How do I get data? 
@@ -18,10 +11,32 @@ Most Univeristy courses that use R are focussed on teaching statistical techniqu
 * How can I collaborate on this analysis? 
 * How can I get my analysis into a format for someone to meaningfully conduct peer-review? 
 * How do I maintain version-control of my analysis? 
-* How do I efficinetly produce a professional artifact of my analysis to distribute?
+* How do I efficinetly produce a professional report or other artifact of my analysis to distribute?
 
-This guide points to solutions that adress these questions by providing an example of a well-developed analysis. As a new analyst you will be directed through an efficient way to learn R, and progress to modern methods of communicating resluts. Combined with a graduate level understanding of statistics, this guide should get you to an intermediate skill level in R-Studio using a very high-level, and modern approach.
+This guide points to solutions that adress these questions by taking you through an example of a well-developed analysis that will form a template for conducting your own analyses while working with Hakai. As a new analyst you will be directed through an efficient way to learn R, and progress to modern methods of communicating results. Learning to develop analyses in R can be a very frustrating and difficult experience. Know that we have all suffered severly in this way, but that this guide will hasten you through the drudgery and frustration.
+Combined with a graduate level understanding of statistics, this guide should get you to an intermediate skill level in R-Studio using a very high-level, and modern approach. 
 
+## Reproducibility Problem
+
+An emerging concern with modern scientific studies is the inability to reproduce study findings. As experimental and analytical methods become increasingly complex, publishing methods in peer reviewed articles often lacks the detail required to be able to reproduce the study. As data analysts, it is our responsibility to include in our analyses sufficient notation of the anlaysis to facilitate deep understanding of what was done to import, tidy, transform, visualize, and model your data. 
+
+Some academic journals, such as the Journal of Biostatistics, are taking proactive steps by adopting a [reproducibility policy](https://academic.oup.com/biostatistics/article/10/3/405/293660/Reproducible-research-and-Biostatistics#3746779) for article submissions. The journal of Nature has taken a stance on reproducibility and has published several articles in a special called [Challenges in Irreproducible Research](https://www.nature.com/news/reproducibility-1.17552).
+
+For some comic relief on the folleys of working with someone who doesn't use reproducible research methods watch [this youtube video](https://www.youtube.com/watch?v=N2zK3sAtr-4&feature=youtu.be)
+
+## Modern Approach to Data Analysis
+
+There is a vibrant 'open-source' community of people developing methods, packages, and workflows in the R programming world. Consequently, we have some of the most modern, flexible, and high-level methods to develop and communicate statistical analyses. 
+
+However, as the R community iterates ideas of how the programming language works at a very base level over the last couple of decades, we are left with a littany of methods and programming syntaxes. There are typically atleast half a dozen ways to write a chunk of code to reach the same desired result in R. This, in part, has given R the reputation as being difficult to learn.
+
+This guide aims to address the 'thousand and one way of doing things' problem in R by focussing on the recent development of packages that form a simple, elegant, and coherent grammar of data analysis. This collection of packages and methods is known as the 'tidyverse', developed in large part by the Chief Scientist of R-Studio, Hadley Wickham.
+
+The objectives of this book are to serve as a:
+
+1) Guide to install, set-up, and become familar with the data analysts tools; R, R-Studio, Git and GitHUB.
+
+2) Best-practice guidelines to develop reproducible, accurate, and collaborative analyses in R-Studio.
 
 ## Acknowledgements
 Much of this document refers you to material that others have worked very hard to make. I simply point to these resources in an order that makes sense and seems systematic to me. Many thanks to the following people for making this possible:

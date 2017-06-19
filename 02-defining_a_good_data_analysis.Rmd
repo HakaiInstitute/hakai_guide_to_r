@@ -1,12 +1,24 @@
-# Defining a Good Data Analysis
+# A Good Data Analysis
 
-Defininig a good data analysis is nearly impossible. However, new ideas about what makes a good data analysis are emerging. With data being so readily available in vast quantities now — analyzing data using out-of-date methods such as microsoft excel, quickly becomes overwhelming, not reproducible, error-prone, and difficult to assess for reliability. 
+Defininig a good data analysis is nearly impossible. However, new ideas about what makes a good data analysis are emerging. With data being so readily available in vast quantities now — analyzing data using out-of-date methods such as microsoft excel, quickly becomes overwhelming, irreproducible, error-prone, and difficult to assess for reliability. 
 
 Much of the progress in terms of 'developing analyses' has been made in the field of bio-statistics due to the high volume of genomic data that researchers deal with. One of the most concerning examples of what can go wrong with an analysis, is from the field of genomics and cancer treatments. In the ['Duke Scandal'](http://www.cbsnews.com/news/deception-at-duke-fraud-in-cancer-care/), researchers made mistakes in their data analysis, that were extremely difficult to track, and resulted in patients receiving the wrong cancer treatment. This is an extreme example that affected peoples lives directly. I would argue, that the work that we do at Hakai, analyzing ecological data, has much broader implications and should be treated with an even higher degree of discretion. 
 
-Some important concepts emerging in defining a good data analysis are:
+Some important concepts in defining a good data analysis are:
 
-## Reproducibility
+1) Reproducible Research, 
+2) Literate Programming, and 
+3) The Open Notebook
+
+These three concepts bring together a very modern way of conducting science. These are the benefits of using these methods:
+
+* They save you work in the long run by being able to reproduce your own analyses after you've long forgotten the details of how they were conducted
+* If you weave a narrative text into your computer code you'll be able to understand what you were thinking at a later time when you revisit it.
+* You can easily collaborate 
+* You can show your peers that you have nothing to hide in your analytical methods
+* You can share your analyses in hopes that others will improve the quality of your analysis by offering their insight.
+
+## Reproducible Research
 
 If your study finds something very interesting, people are going to want to know how you came to your conclusion. A simple example of the reproducibiity concept is cleaning your data in excel. By simply deleting some cells that looked to be outliers, without recording anywhere that you did that, or why you did that, you have effectively broken the reproducibility chain. Another person could not come to the same conclusions as you did, if you provided me the raw data set you started with. 
 
@@ -14,12 +26,23 @@ In order for your analysis to be trustworthy, you need to be able to provide the
 
 The reality is, the peer-reviewer or collaborator that you will most often want to work with is 'future-you'. Scripting reproducible anlayses with embedded narrative allows future you to understand what past-you was thinking. This, in turn, saves you a lot of time in the long run. The idea of embedding your own narrative, or adding comments to your code, introduces the idea of literate programming. By weaving together human-readbale narrative that explains what your computer code is doing and why you decided to do it, greatly increase the quality of your work.
 
-## Version Control
 
-## Communication and Distribution
+## Literate Programming
 
-## Open Source and Open Science
+* R Markdown visual example. (code to html report)
+
+
+## Open Science Collaboration and Peer Review
+
+Open science collaboration establishes an additional peer-review step in the scientific process. By making your analysis public using a [distributed version control system](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control) you open up the possibility for on-going peer-review of your analysis, as well as the the opportunity for not only your immediate colleaugues, but also experts in your field to contribute in a formal way.
+
+ * Additional peer review step possible
+                * Code review
+                * Quick Git example (Key words like repo etc.)
+                * Better than alternatives; digging through emails, zip files,
+                which version is master?, is this the most recent data?, what is the final version
+                *GitHUB Diff, Issues (Bug tracker and ToDo lists)
 
 ## Resources
 
-The 'bible for a new generation of Data Scientists' is Hadley Wickham and Garrett Grolemund's Book: [R For Data Science](http://r4ds.had.co.nz/). This book presents a modern approach to data analysis and leads you to master the 'tidyverse'; a combination of R packages and a well thought out and systematic approach to "import, tidy, transform, visualize, and model data." Using the tidyverse as a foundation for your coding replaces the 'thousand and one ways' of doing things in R into a modern and concise grammar of data analysis development
+The 'bible for a new generation of Data Scientists' is Hadley Wickham and Garrett Grolemund's Book: [R For Data Science](http://r4ds.had.co.nz/). This book presents a modern approach to data analysis and leads you to master the 'tidyverse'; a combination of R packages and a well thought out and systematic approach to "import, tidy, transform, visualize, and model data." Using the tidyverse as a foundation for your coding replaces the 'thousand and one ways' of doing things in R into a modern and concise grammar of data analysis development.
