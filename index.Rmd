@@ -23,9 +23,9 @@ description: "A guideline for developing analyses in R; getting started, and bes
 
 # Preface {-}
 
-This is the Hakai Institute's Data Analyst Guide. One of Hakai's core themes that cross-cuts every research axis is 'Big-Data and Modelling'. Our ability to gain insight from our long-term ecological data sets is limited only by our capacity to integrate, and digest information. To that end, this guide was developed to serve as a foundation from which to build the internal technical capacity — using a coherent and systematic approach — to turn data into insight, understanding, and ultimately knowledge about the ecosystems we study.
+This is the Hakai Institute's Data Analyst Guide. One of Hakai's core themes that cross-cuts every research axis is 'Big-Data and Modelling'. Our ability to gain insight from our long-term ecological data sets is limited only by our capacity to integrate, and digest data. To that end, this guide was developed to serve as a foundation from which to build the internal technical capacity — using a coherent and systematic approach — to turn data into insight, understanding, and ultimately knowledge about the ecosystems we study.
 
-This book will teach you how to develop analyses in the R programming language: You'll learn project workflows and organization, literate programming style, reproducible research techniques, and collaborative analysis development in an open-science context that adds an additional peer-review step.
+This book will teach you how to develop analyses in the R programming language. You'll learn project workflow and organization, literate programming style, reproducible research techniques, and collaborative analysis development in an open-science context. 
 
 The Hakai Institute is a research organization based on the coast of
 British Columbia, Canada. See the [Hakai Institute Website](http://www.hakai.org) for more information.

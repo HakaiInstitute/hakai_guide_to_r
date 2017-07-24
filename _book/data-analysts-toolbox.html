@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-
-<link rel="next" href="introduction.html">
+<link rel="prev" href="a-good-data-analysis.html">
+<link rel="next" href="developing-analyses-with-the-hakai-institute.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -169,25 +169,55 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Hakai Institute R Data-Analyst Guide</h1>
-<h4 class="author"><em>Brett Johnson</em></h4>
-<h4 class="date"><em>Latest update: 2017-07-22</em></h4>
+<div id="data-analysts-toolbox" class="section level1">
+<h1><span class="header-section-number">3</span> Data Analyst’s Toolbox</h1>
+<div id="r-and-r-studio" class="section level2">
+<h2><span class="header-section-number">3.1</span> R and R Studio</h2>
+<p>R is the statistical programming language that R Studio uses to communicate. I think of R Studio as being the front-end user interface to the coding language R which works in the background. For this all to work you you need to download two things to start; R and R Studio.</p>
+<ol style="list-style-type: decimal">
+<li><strong>Install R</strong>: Go to <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a> and follow the link to the download for your operating system.</li>
+<li><strong>Install R Studio</strong>: Go to <a href="https://www.rstudio.com/products/rstudio/download/" class="uri">https://www.rstudio.com/products/rstudio/download/</a> to download R studio</li>
+</ol>
+<p>Now that you have downloaded the tools you need, lets get familiar first with R-Studio and then the R programming language.</p>
+<div id="step-by-step-rrstudio" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> Step-by-step R/RStudio</h3>
+<ol style="list-style-type: decimal">
+<li><p><strong>R Studio Familiarization</strong>: Watch <a href="https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/">this R-Studio Tutorial</a> for a nice introduction to the software.</p></li>
+<li><p><strong>Start Plotting</strong>: Now that you’re familiar with the software, lets get your feet wet in R and R-Studio. I recommend you start making some plots by working through the following exercises: <a href="http://r4ds.had.co.nz/data-visualisation.html">Section 3.1 to 3.4</a> in Hadley Wickham’s R for Data Science Book.</p></li>
+<li><p><strong>Projects Workflow</strong>: Watch R-Studio tutorial: <a href="https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-managing-change-part-1/">Projects and R Studio</a></p></li>
+</ol>
 </div>
-<div id="preface" class="section level1 unnumbered">
-<h1>Preface</h1>
-<p>This is the Hakai Institute’s Data Analyst Guide. One of Hakai’s core themes that cross-cuts every research axis is ‘Big-Data and Modelling’. Our ability to gain insight from our long-term ecological data sets is limited only by our capacity to integrate, and digest data. To that end, this guide was developed to serve as a foundation from which to build the internal technical capacity — using a coherent and systematic approach — to turn data into insight, understanding, and ultimately knowledge about the ecosystems we study.</p>
-<p>This book will teach you how to develop analyses in the R programming language. You’ll learn project workflow and organization, literate programming style, reproducible research techniques, and collaborative analysis development in an open-science context.</p>
-<p>The Hakai Institute is a research organization based on the coast of British Columbia, Canada. See the <a href="http://www.hakai.org">Hakai Institute Website</a> for more information.</p>
+</div>
+<div id="version-control-with-git-and-github" class="section level2">
+<h2><span class="header-section-number">3.2</span> Version control with Git and GitHUB</h2>
+<p><em>Version control</em> is an additional level of saving your files. While writing your R scripts in R Studio you should save your files to your desktop like you normally would in a word file for example, by clicking save or the floppy disk button. Use the same filename, so that each time you save the previous verison is over-written. No need to have multiple versions of the same file on your computer with different dates or initials to identify the version you want to work on (eg. fishy_analysis_V9_2017_05_11_BJ_Bad_Scoobies.R, etc…). We’ve all done that. But it’s annoying to keep track of and remember what version is the one you want, and it’s difficult to create meaningful versions of the file that you want that represent some sort of miletstone, especially when everything is floating around in email land.</p>
+<p>The additional ‘save’ that comes from version control is known as a <em>commit</em>. You save your files like you normally would in word, but every once in a while you commit your files as a version to be remembered. A commit can be thought of as a bullet point in the to do list of your analysis, and each commit you make must be accompanied by a message. For example; ‘read in data and tidy it up’, or ‘remove observations from non-standard sampling event, and re-fit GLM’. Git tracks the commits you make in R-Studio locally on your own computer. When you are ready for a series of commits to be made public, you <em>push</em> your commits to your remote repository at Git Hub.</p>
+<p>Similar to the relationship between R and R-Studio, Git is the <em>local</em> version control system running in the background on your computer while Git Hub is the <em>remote</em> user interface for saving, tracking, and sharing updated versions of your analyses that are hosted on a remote server. Git and Git HUB are integral for tracking the evolution of a set of files, and ultimately the development of your analysis.</p>
+<p>If you’re interested in learning why version control is important, I encourage you to skim <a href="http://happygitwithr.com/big-picture.html#why-git">Chapter 1; ‘Why Git? Why GitHUB’ from Jenny Bryan’s Book</a>. I recommend referring back to this book whenever you have a question about using git and Git Hub with R-Studio. You can also watch <a href="https://www.youtube.com/watch?v=FyfwLX4HAxM">this video</a> for an introduction to Git and Git Hub.</p>
+<div id="step-by-step-gitgit-hub" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> Step-by-step Git/Git HUB</h3>
+<ol style="list-style-type: decimal">
+<li><p><strong>Setup a Git HUB Account</strong>: First, you’re going to want to <a href="https://github.com">sign up for a GitHUB account</a></p></li>
+<li><p><strong>Issues</strong>: (Need to make this repo public for this to be possible) Now that you have a Git Hub account, you should introduce yourself and let us know you’re going to work through this material. To do that go to the issues tab in this repo and ‘create a new issue’ and type a message to introduce yourself. Tell us what project you are working on, and what your first data analysis project will likely be. Using issues is also a great way to ask questions about course material, or suggest improvements to the guide. Remember, during a normal data analysis, the issues function on Git HUB can be used as a way for reviewers to identify issuyes with your analysis or code, or simply as a to-do list for yourself or your team.</p></li>
+<li><p><strong>Fork this repo</strong>: Next, you should fork this repo. Think of forking a repo as creating a divergent copy of a set of files — like a fork in the road, two developing versions of the same original set of files can develop. You can edit your fork without comprimising the master version. Normally when you are happy with your changes and you want to suggest your edits to the owner you make A <em>pull request</em>. A pull request is simply your request to the owner of the master copy to pull your edits into the master version. This is a simple explanation of how collaborative editing works with Git HUB. <strong>To successfully fork this repo and suggest edits simply go to <a href="https://github.com/Br-Johnson/Hakai-Data-Analyst">my repo here</a> and click on the name of this chapter: ‘new_analysts.Rmd’</strong>, once it’s open click on the pencil icon to suggest edits. Editing in this manner automatically forks the repo and makes a copy in your own list of repos where you will be able to see all the files that are available for others to view and edit. If you find an error anywher in this guide, edit it, and make a ‘pull request’ to suggest edits to me. This serves two purposes: i) the quality of this guide will be improved if you take time to edit chapters and contribute your insights on what didn’t work for you; and ii) forking repos and making pull-requests is training you for the workflow you will use when contributing to colleagues’ analyses in the very near future. Now you can make all the edits you’d like and when your happy you can click on ‘pull request’ to send the updates back to me so I can review them and decide if I should accept your edits and merge them into the master version.</p></li>
+</ol>
+<p>If you aren’t successful forking my repo, read <a href="http://happygitwithr.com/fork.html">Chapter 24 of Jenny Bryan’s Book; ‘Fork a Repo’</a>.</p>
+<ol start="4" style="list-style-type: decimal">
+<li><p><strong>Install and set-up Git</strong>: Installing Git locally and getting Git to communicate to your remote Git Hub website account, and then getting them to talk with R Studio takes a number of steps to complete…This next part can be painful to work through, but it is 100 % necessary and well worth it in the long-run. Install Git and Git Hub and get them talking to R-Studio using <a href="http://happygitwithr.com/install-git.html">Jenny Bryan’s Guide</a>, start at chapter 7 and work to the end of chapter 13.</p></li>
+<li><p><strong>Put this all in context</strong>: To learn how to use Git, Git Hub and R-Studio I recommend watching the <a href="https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-managing-part-2/">R-Studio Essentials tutorial; GitHUB and R-Studio</a>.</p></li>
+</ol>
+<p>Congratulations you now have setup the three main tools in the R Analyst toolbox: R, R Studio and Git Hub and learned the basics of each component. Now that you’ve seen almost all the components of a good workflow, in the next chapter you can put all these things together and work through an example of a data analysis using a prescribed, modern approach.</p>
 
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="introduction.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="a-good-data-analysis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="developing-analyses-with-the-hakai-institute.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -216,7 +246,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/yihui/bookdown-crc/edit/master/index.Rmd",
+"link": "https://github.com/yihui/bookdown-crc/edit/master/03-new_analysts.Rmd",
 "text": "Edit"
 },
 "download": ["Hakai_R_Guide.pdf", "Hakai_R_Guide.epub"],
