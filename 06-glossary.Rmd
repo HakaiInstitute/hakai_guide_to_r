@@ -1,0 +1,26 @@
+# Glossary of Terms
+
+__Branching__:
+
+__Commit__:
+
+__Developing Analyses__:
+
+__Distributed Version Control__:
+
+__Issues__:
+
+__Local__:
+
+__Merge__:
+
+__Remote__:
+
+__Pull Request__:
+
+__Push__: 
+
+__Version Control__:
+
+__Working Directory__:
+

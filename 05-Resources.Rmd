@@ -1,5 +1,9 @@
-# Additional References and Resources
+# Additional References and Learning Resources
 
-[Journal of Biostatistics Guide for Reproducible Research](https://academic.oup.com/biostatistics/article/10/3/405/293660/Reproducible-research-and-Biostatistics)
+R Markdown
 
-[Compiled Ideas on Managing a Statistical Analysis Project](https://www.r-statistics.com/2010/09/managing-a-statistical-analysis-project-guidelines-and-best-practices/)
+Shiny
+
+Advanced R
+
+UCLA Fisheries and R
