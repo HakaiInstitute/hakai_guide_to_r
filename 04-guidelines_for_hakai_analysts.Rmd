@@ -44,7 +44,7 @@ Using Google Drive to store files has advantages, but you must be careful not to
 ### Pre-process data: import & tidy
 
 I usually create a few different scripts in any analysis, which helps me to compartmentalize the different steps of the analysis. I start with a pre-processing script that will read in and format all the different data sets I want to combine and analyze. This is where I make changes to data format that I want to apply to all subsequent uses of that data (so that I don't have to keep doing it in subsequent scripts).
-<<<<<<< HEAD
+
 
 1) __Create pre_process.R script__ In your newly created R Studio project, go to File > New File > R Script. Save it in the raw scripts sub-directory of your project directory.
 
@@ -60,7 +60,7 @@ Most often you're going to want to read in files that are .csv files. These are 
 
 The first module of an analysis I produce is a plain .R script that loads in my .csv data file and save it in my R environment as a tibble, a type of data frame, using the `new_tbl <- read_csv("filepath")` format. Before you read in a file, you should load the packages that we will be required for every analysis you conduct using the `library(tidyverse)` function. Note that you should not use the base R function `read.csv` but rather use the tidy-verse function `read_csv`. The base version will inevitably cause frustration due to incorrect variable class assignment.
 
-=======
+
 
 1) __Create pre_process.R script__ In your newly created R Studio project, go to File > New File > R Script. Save it in the raw scripts sub-directory of your project directory.
 
@@ -76,9 +76,8 @@ Most often you're going to want to read in files that are .csv files. These are 
 
 The first module of an analysis I produce is a plain .R script that loads in my .csv data file and save it in my R environment as a tibble, a type of data frame, using the `new_tbl <- read_csv("filepath")` format. Before you read in a file, you should load the packages that we will be required for every analysis you conduct using the `library(tidyverse)` function. Note that you should not use the base R function `read.csv` but rather use the tidy-verse function `read_csv`. The base version will inevitably cause frustration due to incorrect variable class assignment.
 
->>>>>>> e7aa0a4819a6d780421a47207683e323c81004b2
 
-__Mehtod 2__:From Hakai database
+__Method 2__:From Hakai database
 
 Once I have my data set in my work environment, I'll make sure that all the variable classes are what I want them to be. Luckily, when `read_csv` reads in your file, it prints a summary of the name and type of each variable in your data frame. 
 
@@ -146,7 +145,6 @@ __Exercises__
 
 ### Predict and Model
 
-<<<<<<< HEAD
 ### Communicate
 
 What your final data product is going to be (summary report, figures for your manuscript, an interactive dashboard for a website), will dictate what your final scripts will be. As a baseline I recommend .Rmd as the final format because this gives you a lot of flexibility in terms of polished data products.
@@ -154,38 +152,13 @@ What your final data product is going to be (summary report, figures for your ma
 
 ## Programming style guide
 You'll notice that throughout the example, there was consistent formatting of the code. Using consistent formatting for writing your code, makes it easier for everyone to interpret. I recommended the style guideline developed by Hadley Wickham called [The tidyverse style guide](http://style.tidyverse.org).
-=======
-## Programming style guide
-You'll notice that throughout the example, there was consistent formatting of the code. Using consistent formatting for writing your code, makes it easier for everyone to interpret. I recommended the style guideline developed by Hadley Wickham called [The tidyverse style guide](http://style.tidyverse.org).
 
-### Commit, etc... use GitHUB flow
-### Make plots
->>>>>>> e7aa0a4819a6d780421a47207683e323c81004b2
-
-
-
-
-
-<<<<<<< HEAD
-
-## GitHUB best practices
-
-### GitHUB flow
+## GitHUB flow
 
 Git Hub Flow is a workflow that should generally be adhered to whether working individually or collaboratively. Some will argue that there's no such thing as working individually, especially when you consider that you're constantly collaborating with past-you, and future-you.
 
 The main concepts of Git Hub Flow are:
 
-=======
-## GitHUB best practices
-
-### GitHUB flow
-
-Git Hub Flow is a workflow that should generally be adhered to whether working individually or collaboratively. Some will argue that there's no such thing as working individually, especially when you consider that you're constantly collaborating with past-you, and future-you.
-
-The main concepts of Git Hub Flow are:
-
->>>>>>> e7aa0a4819a6d780421a47207683e323c81004b2
 * **Branching** - This is a core concept in Git Hub and version control in general -- The master branch must always remain stable and working. When you create a new branch, you are creating an environment where you can try out new ideas without directly manipulating the stable 'master' version of your analysis. 
 
 * **Commits** - Commits represent significant changes to your branch. I think of them as mini-milestones that add up to your complete analysis. Perhaps you're mini-milestone is to create a linear model of something. You can work locally and make save files on your computer while working on the linear model like you normally would. When you finish your linear model, this is a good time to make a commit to your branch. You must name each commit, and this should be descriptive. In this case 'fitted linear model' would be ideal.
@@ -197,16 +170,10 @@ The main concepts of Git Hub Flow are:
 * **Merge** - Once a Pull Request has been sufficiently reviewed, discussed, and tested (deployed), the new code can be merged with the master branch, typically by the team owner, or maintainer.
 
 See this [GitHUB Flow](https://guides.github.com/introduction/flow/) help article for a nice walk through with good diagrams.
-<<<<<<< HEAD
-
-
-=======
 
 ### Final data product
 
 What your final data product is going to be (summary report, figures for your manuscript, an interactive dashboard for a website), will dictate what your final scripts will be. As a baseline I recommend .Rmd as the final format because this gives you a lot of flexibility in terms of polished data products.
-
->>>>>>> e7aa0a4819a6d780421a47207683e323c81004b2
 
 ## Collaboration with phyton users
 The data analysis files you commit to your repo should include a 'feather' table. [Feather](https://blog.rstudio.org/2016/03/29/feather/) is data frame format that is readable by both Python and R, and therefore every analysis should produce this type of data frame to ensure reproducibility for Python users

@@ -13,7 +13,7 @@ Most University courses that use R are focused on teaching statistical technique
 * How do I maintain version-control of my analysis? 
 * How do I efficiently produce a professional report or other artifact of my analysis to distribute?
 
-This guide aims to build this gap by taking you through an example of a well-developed analysis that will form a template for conducting your own analyses while working with Hakai. You will be directed through an efficient way to learn R, and progress to modern methods of communicating results. Learning to develop analyses in R can be a very frustrating and difficult experience. Know that we have all suffered severely in this way, but that this guide will hasten you through the drudgery and frustration.
+This guide aims to bridge this gap by taking you through an example of a well-developed analysis that will form a template for conducting your own analyses while working with Hakai. You will be directed through an efficient way to learn R, and progress to modern methods of communicating results. Learning to develop analyses in R can be a very frustrating and difficult experience. Know that we have all suffered severely in this way, but that this guide will hasten you through the drudgery and frustration.
 Combined with a graduate level understanding of statistics, this guide should get you to an intermediate skill level in R-Studio using a very high-level, and modern approach. 
 
 ## Reproducibility Problem
