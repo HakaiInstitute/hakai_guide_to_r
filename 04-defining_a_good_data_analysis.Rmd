@@ -39,7 +39,7 @@ For some comic relief on the follies of working with someone who doesn't use rep
 
 By weaving together human-readable narrative that explains what your computer code is doing and why you decided to do it, greatly increase the quality of your work.
 
-* R Markdown visual example. (code to html report)
+* R Markdown visual example to come... (code to html report)
 
 
 ## Open Science Collaboration
@@ -59,7 +59,3 @@ While peer-review permits the scientific merit of your analyses to be assesed, c
 Software developers have been using this type of development platform for some time, and by using these tools data analysis can progress towards the concept of _developing analyses_. Ultimately, this approach makes your life easier. If you've experienced the pain of digging through your emails or zip files to find the analysis you or your colleague conducted years ago, only to be left perplexed by which version is the 'master' or 'final' then Git HUB will be a welcome addition to your toolbox. 
 
 Git Hub can also be used as a project management tool for example by creating to-do lists for yourself and your team. By creating _issues_ you can leave yourself a to-do list, or collaborators can identify issues with your analysis. We will cover Git HUB fundamentals in the next chapter.
-
-## Resources
-
-The 'bible for a new generation of Data Scientists' is Hadley Wickham and Garrett Grolemund's Book: [R For Data Science](http://r4ds.had.co.nz/). This book presents a modern approach to data analysis and leads you to master the 'tidy-verse'; a combination of R packages and a well thought out and systematic approach to "import, tidy, transform, visualize, and model data." Using the tidy-verse as a foundation for your coding replaces the 'thousand and one ways' of doing things in R into a modern and concise grammar of data analysis development.
