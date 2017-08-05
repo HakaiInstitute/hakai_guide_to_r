@@ -41,7 +41,7 @@ I use a default folder structure for every analysis based on the files that are 
 
 Using Google Drive to store files has advantages, but you must be careful not to edit files directly in Google Drive without committing changes using Git. Doing that risks putting your repo out of sync with your local version. So only ever make changes file stored in your Google Drive via R, and commit changes to them using Git.
 
-### Pre-process data: import & tidy
+### Import, pre-process & tidy data
 
 I usually create a few different scripts in any analysis, which helps me to compartmentalize the different steps of the analysis. I start with a pre-processing script that will read in and format all the different data sets I want to combine and analyze. This is where I make changes to data format that I want to apply to all subsequent uses of that data (so that I don't have to keep doing it in subsequent scripts).
 
@@ -54,23 +54,7 @@ I usually create a few different scripts in any analysis, which helps me to comp
 
 4) Import data
 
-__Method 1__:From spreadsheets  
-
-Most often you're going to want to read in files that are .csv files. These are comma separated value files and can be produced from excel or Google sheets by saving your excel or Google sheet file as a .csv file.
-
-The first module of an analysis I produce is a plain .R script that loads in my .csv data file and save it in my R environment as a tibble, a type of data frame, using the `new_tbl <- read_csv("filepath")` format. Before you read in a file, you should load the packages that we will be required for every analysis you conduct using the `library(tidyverse)` function. Note that you should not use the base R function `read.csv` but rather use the tidy-verse function `read_csv`. The base version will inevitably cause frustration due to incorrect variable class assignment.
-
-
-
-1) __Create pre_process.R script__ In your newly created R Studio project, go to File > New File > R Script. Save it in the raw scripts sub-directory of your project directory.
-
-2) Set your working directory
-
-3) Load packages
-
-4) Import data
-
-__Method 1__:From spreadsheets  
+__Method 1__:From spreadsheet you already have  
 
 Most often you're going to want to read in files that are .csv files. These are comma separated value files and can be produced from excel or Google sheets by saving your excel or Google sheet file as a .csv file.
 
@@ -78,6 +62,38 @@ The first module of an analysis I produce is a plain .R script that loads in my 
 
 
 __Method 2__:From Hakai database
+
+It is possible to get data from the Hakai database directly into R without having to leave R Studio. This is accomplished by interacting with an application programming interface (API) we wrote specifically for downloading data from Hakai's data portal. Earlier in the Data Analysts Toolbox section we installed Hakai's API. Now we will use it to get Hakai data from the database.
+
+Below is a quickstart example of how you can download some chlorophyll data. To be able to access Hakai data you must sign in with a Hakai email address that has the appropriate permissions to access the database. This authentication is done using a token. When you run the code below, a web URL will be displayed in the console. Copy and paste that URL into your browser. This should take to you a webpage that displays another web URL, this is your authentication token. Copy and paste the URL into the console in R Studio where it tells you to do so.
+```
+library('hakaiApi')
+
+# Get the api request client, run this line independently before the rest of the code
+client <- hakaiApi::Client$new() # Follow stdout prompts to get an API token
+
+# Make a data request for chlorophyll data
+endpoint <- sprintf("%s/%s", client$api_root, "eims/views/output/chlorophyll?limit=50")
+data <- client$get(endpoint)
+
+# Print out the data
+print(data)
+```
+By running this code you should see chlorophyll data in your environment. 
+The above code can be modified to select different datasets other than chlorophyll and filter based on different logical parameters you set. This is accomplished by editing the text after the ? in `"eims/views/output/chlorophyll?limit=50"`.
+
+The formula you set after the question mark is known as query string filtering. To learn how to filter your data [read this](https://github.com/HakaiInstitute/hakai-api/blob/master/docs/querying-data.md)
+
+To read generally about the API and how to use it for your first time [go here](https://github.com/HakaiInstitute/hakai-api/blob/master/docs/simplified-api-documentation.md#what-is-the-hakai-api).
+
+The list of endpoints for different data sets can be found [here](https://github.com/HakaiInstitute/hakai-api/blob/master/docs/simplified-api-documentation.md#endpoints).
+
+
+In practice, I set the endpoint to the data table I'd like to retrieve and leave the default so I am returned the 20 most recent entries. I then look at the data file and remind myself what the exact names of the columns are so that I can construct the querystring filter so I can download the exact data I'd like.
+
+
+
+
 
 Once I have my data set in my work environment, I'll make sure that all the variable classes are what I want them to be. Luckily, when `read_csv` reads in your file, it prints a summary of the name and type of each variable in your data frame. 
 
@@ -153,9 +169,9 @@ What your final data product is going to be (summary report, figures for your ma
 ## Programming style guide
 You'll notice that throughout the example, there was consistent formatting of the code. Using consistent formatting for writing your code, makes it easier for everyone to interpret. I recommended the style guideline developed by Hadley Wickham called [The tidyverse style guide](http://style.tidyverse.org).
 
-## GitHUB flow
+## Git flow
 
-Git Hub Flow is a workflow that should generally be adhered to whether working individually or collaboratively. Some will argue that there's no such thing as working individually, especially when you consider that you're constantly collaborating with past-you, and future-you.
+Git Flow is a workflow that should generally be adhered to whether working individually or collaboratively. Some will argue that there's no such thing as working individually, especially when you consider that you're constantly collaborating with past-you, and future-you.
 
 The main concepts of Git Hub Flow are:
 

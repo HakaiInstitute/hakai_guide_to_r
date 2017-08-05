@@ -139,7 +139,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="4.2.7" data-path="developing-analyses-with-the-hakai-institute.html"><a href="developing-analyses-with-the-hakai-institute.html#communicate"><i class="fa fa-check"></i><b>4.2.7</b> Communicate</a></li>
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="developing-analyses-with-the-hakai-institute.html"><a href="developing-analyses-with-the-hakai-institute.html#programming-style-guide"><i class="fa fa-check"></i><b>4.3</b> Programming style guide</a></li>
-<li class="chapter" data-level="4.4" data-path="developing-analyses-with-the-hakai-institute.html"><a href="developing-analyses-with-the-hakai-institute.html#github-flow"><i class="fa fa-check"></i><b>4.4</b> GitHUB flow</a><ul>
+<li class="chapter" data-level="4.4" data-path="developing-analyses-with-the-hakai-institute.html"><a href="developing-analyses-with-the-hakai-institute.html#git-flow"><i class="fa fa-check"></i><b>4.4</b> Git flow</a><ul>
 <li class="chapter" data-level="4.4.1" data-path="developing-analyses-with-the-hakai-institute.html"><a href="developing-analyses-with-the-hakai-institute.html#final-data-product"><i class="fa fa-check"></i><b>4.4.1</b> Final data product</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="developing-analyses-with-the-hakai-institute.html"><a href="developing-analyses-with-the-hakai-institute.html#collaboration-with-phyton-users"><i class="fa fa-check"></i><b>4.5</b> Collaboration with phyton users</a></li>
@@ -182,7 +182,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><p><strong>R Studio Familiarization</strong>: Watch <a href="https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/">this R-Studio Tutorial</a> for a nice introduction to the software.</p></li>
 <li><p><strong>Start Plotting</strong>: Now that you’re familiar with the software, lets get your feet wet in R and R-Studio. I recommend you start making some plots by working through the following exercises: <a href="http://r4ds.had.co.nz/data-visualisation.html">Section 3.1 to 3.4</a> in Hadley Wickham’s R for Data Science Book.</p></li>
 <li><p><strong>Projects Workflow</strong>: Watch R-Studio tutorial: <a href="https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-managing-change-part-1/">Projects and R Studio</a></p></li>
+<li><p><strong>Install Hakai’s Application Programming Interface</strong> This API is installed directly in R-Studio and allows you to download data from the Hakai Database. Open up R Studio and in the console window copy and paste the following code:</p></li>
 </ol>
+<pre><code>install.packages(&#39;devtools&#39;)
+install.packages(&#39;tidyverse&#39;)
+library(&#39;devtools&#39;)
+library(&#39;tidyverse&#39;)
+
+devtools::install_github(&quot;HakaiInstitute/hakai-api-client-r&quot;, subdir=&#39;hakaiApi&#39;)</code></pre>
 </div>
 </div>
 <div id="version-control-with-git-and-github" class="section level2">

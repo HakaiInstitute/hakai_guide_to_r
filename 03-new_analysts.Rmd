@@ -17,6 +17,18 @@ Now that you have downloaded the tools you need, lets get familiar first with R-
 
 3) __Projects Workflow__: Watch R-Studio tutorial: [Projects and R Studio](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-managing-change-part-1/)
 
+4) __Install Hakai's Application Programming Interface__
+This API is installed directly in R-Studio and allows you to download data from the Hakai Database. Open up R Studio and in the console window copy and paste the following code: 
+
+```
+install.packages('devtools')
+install.packages('tidyverse')
+library('devtools')
+library('tidyverse')
+
+devtools::install_github("HakaiInstitute/hakai-api-client-r", subdir='hakaiApi')
+```
+
 ## Version control with Git and GitHUB
 
 _Version control_ is an additional level of saving your files. While writing your R scripts in R Studio you should save your files to your desktop like you normally would in a word file for example, by clicking save or the floppy disk button. Use the same filename, so that each time you save the previous verison is over-written. No need to have multiple versions of the same file on your computer with different dates or initials to identify the version you want to work on (eg. fishy_analysis_V9_2017_05_11_BJ_Bad_Scoobies.R, etc...). We've all done that. But it's annoying to keep track of and remember what version is the one you want, and it's difficult to create meaningful versions of the file that you want that represent some sort of miletstone, especially when everything is floating around in email land. 
@@ -42,4 +54,6 @@ If you  aren't successful forking my repo, read [Chapter 24 of Jenny Bryan's Boo
 5) __Put this all in context__: To learn how to use Git, Git Hub and R-Studio I recommend watching the [R-Studio Essentials tutorial; GitHUB and R-Studio](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-managing-part-2/).
 
 Congratulations you now have setup the three main tools in the R Analyst toolbox: R, R Studio and Git Hub and learned the basics of each component. Now that you've seen almost all the components of a good workflow, in the next chapter you can put all these things together and work through an example of a data analysis using a prescribed, modern approach.
+
+
 
