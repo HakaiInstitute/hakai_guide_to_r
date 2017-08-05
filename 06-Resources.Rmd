@@ -1,0 +1,8 @@
+# Additional References and Learning Resources
+
+[Advanced R]("http://adv-r.had.co.nz/")
+
+[Institute for Digital Research and Education]("https://stats.idre.ucla.edu/")
+
+## Plots
+[Cookbook for R]("http://www.cookbook-r.com/Graphs/")

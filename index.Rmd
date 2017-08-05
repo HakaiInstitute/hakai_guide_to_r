@@ -1,16 +1,15 @@
 --- 
 title: "Hakai Institute R Data-Analyst Guide"
 author: "Brett Johnson"
+description: "This is the Hakai Institutes data analysts guide for developing analyses in R"
 date: "Latest update: `r Sys.Date()`"
-cover-image: "~/Google Drive/SEMSP/SEMSP Presentations and Posters/Materials for
-Future Presentations/Collaborator Logo_Images/Hakai/Hakai Institute Logo on Red.png"
-site: bookdown::bookdown_site
+cover-image: "images/red_hakai.png"
 output: bookdown::gitbook
+site: bookdown::bookdown_site
 documentclass: book
 biblio-style: apalike
 link-citations: yes
 github-repo: HakaiInstitute/hakai_guide_to_r
-description: "A guideline for developing analyses in R; getting started, and best-practices"
 ---
 ---
 ```{r serve the book}
@@ -19,13 +18,19 @@ description: "A guideline for developing analyses in R; getting started, and bes
 #bookdown::serve_book(dir = ".", output_dir = "_book", preview = TRUE, in_session = TRUE)
 
 ```
-
-
 # Preface {-}
 
+___
+
+```{r, echo = FALSE}
+knitr::include_graphics("images/red_hakai.png")
+```
+
+___
 This is the Hakai Institute's Data Analyst Guide. One of Hakai's core themes that cross-cuts every research axis is 'Big-Data and Modelling'. Our ability to gain insight from our long-term ecological data sets is limited only by our capacity to integrate, and digest data. To that end, this guide was developed to serve as a foundation from which to build the internal technical capacity — using a coherent and systematic approach — to turn data into insight, understanding, and ultimately knowledge about the ecosystems we study.
 
 This book will teach you how to develop analyses in the R programming language. You'll learn project workflow and organization, literate programming style, reproducible research techniques, and collaborative analysis development in an open-science context. 
 
 The Hakai Institute is a research organization based on the coast of
 British Columbia, Canada. See the [Hakai Institute Website](http://www.hakai.org) for more information.
+

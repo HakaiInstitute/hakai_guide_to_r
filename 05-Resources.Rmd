@@ -1,9 +1,0 @@
-# Additional References and Learning Resources
-
-R Markdown
-
-Shiny
-
-Advanced R
-
-UCLA Fisheries and R

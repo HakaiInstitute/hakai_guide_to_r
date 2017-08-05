@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Hakai Institute R Data-Analyst Guide</title>
+  <meta name="description" content="A guideline for developing analyses in R; getting started, and best-practices">
+  <meta name="generator" content="bookdown 0.3.18 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Hakai Institute R Data-Analyst Guide" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="~/Google Drive/SEMSP/SEMSP Presentations and Posters/Materials for Future Presentations/Collaborator Logo_Images/Hakai/Hakai Institute Logo on Red.png" />
+  <meta property="og:description" content="A guideline for developing analyses in R; getting started, and best-practices" />
+  <meta name="github-repo" content="HakaiInstitute/hakai_guide_to_r" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Hakai Institute R Data-Analyst Guide" />
+  
+  <meta name="twitter:description" content="A guideline for developing analyses in R; getting started, and best-practices" />
+  <meta name="twitter:image" content="~/Google Drive/SEMSP/SEMSP Presentations and Posters/Materials for Future Presentations/Collaborator Logo_Images/Hakai/Hakai Institute Logo on Red.png" />
+
+<meta name="author" content="Brett Johnson">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="data-analysts-toolbox.html">
+<link rel="next" href="developing-analyses-with-the-hakai-institute.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Hakai Institute R Data Analyst Guide</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="a-good-data-analysis.html"><a href="a-good-data-analysis.html"><i class="fa fa-check"></i><b>2</b> A Good Data Analysis</a></li>
+<li class="chapter" data-level="3" data-path="data-analysts-toolbox.html"><a href="data-analysts-toolbox.html"><i class="fa fa-check"></i><b>3</b> Data Analyst’s Toolbox</a></li>
+<li class="chapter" data-level="4" data-path="intro-to-r-data-wrangling.html"><a href="intro-to-r-data-wrangling.html"><i class="fa fa-check"></i><b>4</b> Intro to R: Data Wrangling</a><ul>
+<li class="chapter" data-level="4.1" data-path="intro-to-r-data-wrangling.html"><a href="intro-to-r-data-wrangling.html#data-transformation"><i class="fa fa-check"></i><b>4.1</b> Data Transformation</a></li>
+<li class="chapter" data-level="4.2" data-path="intro-to-r-data-wrangling.html"><a href="intro-to-r-data-wrangling.html#tidying-your-data"><i class="fa fa-check"></i><b>4.2</b> Tidying Your Data</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="developing-analyses-with-the-hakai-institute.html"><a href="developing-analyses-with-the-hakai-institute.html"><i class="fa fa-check"></i><b>5</b> Developing Analyses with the Hakai Institute</a></li>
+<li class="chapter" data-level="6" data-path="additional-references-and-learning-resources.html"><a href="additional-references-and-learning-resources.html"><i class="fa fa-check"></i><b>6</b> Additional References and Learning Resources</a></li>
+<li class="chapter" data-level="7" data-path="glossary-of-terms.html"><a href="glossary-of-terms.html"><i class="fa fa-check"></i><b>7</b> Glossary of Terms</a></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Hakai Institute R Data-Analyst Guide</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="intro-to-r-data-wrangling" class="section level1">
+<h1><span class="header-section-number">4</span> Intro to R: Data Wrangling</h1>
+<p>In this section you will learn the basics of data wrangling in R. Data wrangling is the process of importing, tidying, and transforming your data into a format that you can visualize and model it. <a href="%22http://vita.had.co.nz/papers/tidy-data.pdf%22">Tidy data</a> is a consistent data format that, when followed closely, dramatically reduces the mundane data formatting that is necessary otherwise. The basic concept is that every row is one observation and every column is a variable. For how simple it sounds, creating tidy data sets takes some time to get the hang of initially, but is essential for data wrangling in the tidyverse — the modern set of tools and packages developed in R around the concept of tidy data.</p>
+<div id="data-transformation" class="section level2">
+<h2><span class="header-section-number">4.1</span> Data Transformation</h2>
+<p>The most important set of tools for data wrangling that you will use constantly are from the package dplyr. They allow you to solve the most of the data manipulation problems you will encounter. Those who are able to efficiently get their data into a format they can visualize and model, will explore and therefore learn the most about their data. I’d recommend learning these six data wrangling functions off-by-heart:</p>
+<ol style="list-style-type: decimal">
+<li><code>filter()</code> to pick oberservations (rows) based on their values</li>
+<li><code>select()</code> to pick variables (columns) based on the names</li>
+<li><code>arrange()</code> to reorder the rows of your data set</li>
+<li><code>mutate()</code> to create new variables (columns) as a function of existing variables</li>
+<li><code>summarize()</code> to collapse many values down to a summary</li>
+<li><code>group_by()</code> to summarize based on the various groups of a variable</li>
+</ol>
+<p>To learn how to put this in to practice I recommend reading through <a href="%22http://r4ds.had.co.nz/transform.html%22">this</a> chapter called Data Transformation in R for Data Science and working through all the exercises. This will be a bit of a learning curve but it’s time to dive in.</p>
+<p>Starting at the <a href="%22http://r4ds.had.co.nz/transform.html%22">Data Transformation chapter</a> assumes you have some very basic knowledge of R already. If that’s not the case then I recommend starting at the <a href="%22http://r4ds.had.co.nz/workflow-basics.html%22">Workflow: Basics</a> chapter.</p>
+</div>
+<div id="tidying-your-data" class="section level2">
+<h2><span class="header-section-number">4.2</span> Tidying Your Data</h2>
+<p>Sometimes you receive data that is not in a tidy format and you will have to manipulate your data to tidy it. The most common problem I run into is that not every row is one observation, it is often many more than one. To get your data into a tidy format you have to spread out the observations into different rows and create new variables that were once simply listed in rows. Luckily, the package <code>tidyr</code> has several functions that make this possible.</p>
+<p>To get a really strong handle on what tidy data is, and to start practicing getting data in to a tidy format I recommend working through <a href="%22http://r4ds.had.co.nz/tidy-data.html%22">this</a> chapter on tidying data in the R for Data Science book. By the end of this you should</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="data-analysts-toolbox.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="developing-analyses-with-the-hakai-institute.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/yihui/bookdown-crc/edit/master/04-Intro_to_R.Rmd",
+"text": "Edit"
+},
+"download": ["Hakai_R_Guide.pdf", "Hakai_R_Guide.epub"],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
