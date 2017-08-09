@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="introduction.html">
-<link rel="next" href="intro-to-r.html">
+<link rel="prev" href="intro-to-r.html">
+<link rel="next" href="developing-analyses-with-the-hakai-institute.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -172,51 +172,52 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="data-analysts-toolbox" class="section level1">
-<h1><span class="header-section-number">2</span> Data Analyst’s Toolbox</h1>
-<div id="r-and-r-studio" class="section level2">
-<h2><span class="header-section-number">2.1</span> R and R Studio</h2>
-<p>R is the statistical programming language that R Studio provides and interface to. I think of R Studio as being the front-end user interface to the coding language R which works in the background. For this all to work you you need to download two things to start; R and R Studio.</p>
+<div id="best-practices" class="section level1">
+<h1><span class="header-section-number">4</span> Best Practices</h1>
+<div id="general-principles" class="section level2">
+<h2><span class="header-section-number">4.1</span> General Principles</h2>
+<p>Using consistent formatting for writing your code, makes it easier for everyone to interpret. I recommended the <a href="http://style.tidyverse.org">The tidyverse style guide</a>.</p>
+<p>Defining a perfect data analysis is nearly impossible. However, new ideas about what makes a good data analysis are emerging. With data being so readily available in vast quantities, analyzing data using out of date methods — such as Microsoft excel — can quickly become overwhelming, not reproducible, error-prone, and difficult to assess for reliability.</p>
+<p>Much of the progress in terms of ‘developing analyses’ has been made in the field of bio-statistics due to the high volume of genomic data that researchers deal with. One of the most concerning examples of what can go wrong with an analysis, is from the field of genomics and cancer treatments. In the <a href="http://www.cbsnews.com/news/deception-at-duke-fraud-in-cancer-care/">‘Duke Scandal’</a>, researchers made mistakes in their data analysis, that were extremely difficult to track, and resulted in patients receiving the wrong cancer treatment. This is an extreme example that affected peoples lives directly. I would argue, that the work that we do at Hakai, analyzing ecological data, has much broader implications and should be treated with an equal degree of discretion.</p>
+<p>Some important concepts in defining a good data analysis are:</p>
 <ol style="list-style-type: decimal">
-<li><strong>Install R</strong>: Go to <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a> and follow the link to the download for your operating system.</li>
-<li><strong>Install R Studio</strong>: Go to <a href="https://www.rstudio.com/products/rstudio/download/" class="uri">https://www.rstudio.com/products/rstudio/download/</a> to download R studio</li>
+<li>Reproducible Research,</li>
+<li>Open Science Collaboration</li>
 </ol>
-<p>Now that you have downloaded the tools you need, lets get familiar first with R-Studio and then the R programming language.</p>
-<div id="step-by-step-rrstudio" class="section level3">
-<h3><span class="header-section-number">2.1.1</span> Step-by-step R/RStudio</h3>
-<ol style="list-style-type: decimal">
-<li><p><strong>R Studio Familiarization</strong>: Watch <a href="https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/">this R-Studio Tutorial</a> for a nice introduction to the software.</p></li>
-<li><p><strong>Start Plotting</strong>: Now that you’re familiar with the software, lets get your feet wet in R and R-Studio. I recommend you start making some plots by working through the following exercises: <a href="http://r4ds.had.co.nz/data-visualisation.html">Section 3.1 to 3.4</a> in Hadley Wickham’s R for Data Science Book.</p></li>
-<li><p><strong>Projects Workflow</strong>: Watch R-Studio tutorial: <a href="https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-managing-change-part-1/">Projects and R Studio</a></p></li>
-<li><p><strong>Install Hakai’s Application Programming Interface</strong> This API is installed directly in R-Studio and allows you to download data from the Hakai Database. Open up R Studio and in the console window copy and paste the following code and hit enter:</p></li>
-</ol>
-<pre><code>install.packages(&#39;devtools&#39;)
-install.packages(&#39;tidyverse&#39;)
-library(&#39;devtools&#39;)
-library(&#39;tidyverse&#39;)
-
-devtools::install_github(&quot;HakaiInstitute/hakai-api-client-r&quot;, subdir=&#39;hakaiApi&#39;)</code></pre>
+<p>These two concepts bring together a very modern way of conducting science that are beneficial in the following ways:</p>
+<ul>
+<li>They save you work in the long run by allowing you to reproduce your own analyses after you’ve long forgotten the details of how they were conducted</li>
+<li>If you weave a narrative text into your computer code you’ll be able to understand what you were thinking at a later time when you revisit it</li>
+<li>You can easily collaborate</li>
+<li>You can show your peers that you have nothing to hide in your analytic methods</li>
+<li>You can share your analyses in hopes that others will improve the quality of your analysis by offering their insight</li>
+</ul>
 </div>
+<div id="reproducible-research" class="section level2">
+<h2><span class="header-section-number">4.2</span> Reproducible Research</h2>
+<p>A big concern with modern scientific studies is the inability to reproduce study findings. As experimental and analytic methods become increasingly complex, published methods often lack the detail required to be able to reproduce the study. As data analysts, it is our responsibility to include in our analyses sufficient notation to facilitate deep understanding of what was done.</p>
+<p>If your study finds something very interesting, people are going to want to know how you came to your conclusion. The gold standard for verifying a study is to independently replicate it. However, before investing the huge amount of resources required to replicate a study independently, a better place to start is to reproduce the study findings using their data and analysis.</p>
+<p>In order for your study and your analysis to be reproducible and to be viewed as trustworthy, you need to be able to provide the data, the scripted code you used to clean, summarize, model, and visualize that data, and then a reviewer has to be able to run that same code and see the same results. This level of transparency allows a reviewer to look very closely at how you conducted your analysis. This adds an additional step in the peer review process which has not previously been possible with un-scripted analyses.</p>
+<p>A simple example of how easy it is to break the reproducibility chain comes from working with your data in excel. By simply deleting some values that looked to be outliers, without recording anywhere that you did that, or why you did that, you have effectively broken the reproducibility chain. Another person could not receive the raw data and come to the same conclusions as you did — their results would be different because of the missing data.</p>
+<p>Some academic journals, such as the Journal of Bio-statistics, are taking proactive steps by adopting a <a href="https://academic.oup.com/biostatistics/article/10/3/405/293660/Reproducible-research-and-Biostatistics#3746779">reproducibility policy</a> for article submissions. The journal of Nature has taken a stance on reproduce-ability and has published several articles in a special called <a href="https://www.nature.com/news/reproducibility-1.17552">Challenges in Irreproducible Research</a>.</p>
+<p>The reality is, the peer-reviewer or collaborator that you will most often want to work with is ‘future-you’. Scripting reproducible analyses with embedded narrative allows future-you to understand what past-you was thinking. This, in turn, saves you a lot of time, and allows you to build upon your previous work. The idea of embedding your own narrative, or adding comments to your code, introduces the idea of literate programming. By weaving together human-readable narrative that explains what your computer code is doing and why you decided to do it, greatly increase the quality of your work.</p>
+<p>For some comic relief on the follies of working with someone who doesn’t use reproducible research methods watch <a href="https://www.youtube.com/watch?v=N2zK3sAtr-4&amp;feature=youtu.be">this youtube video</a></p>
 </div>
-<div id="version-control-with-git-and-github" class="section level2">
-<h2><span class="header-section-number">2.2</span> Version control with Git and GitHUB</h2>
-<p><em>Version control</em> is an additional level of saving your files. While writing your R scripts in R Studio you should save your files to your hard drive like you normally would in a word file for example, by clicking save or the floppy disk button. Use the same filename, so that each time you save the previous verison is over-written. No need to have multiple versions of the same file on your computer with different dates or initials to identify the version you want to work on (eg. fishy_analysis_V9_2017_05_11_BJ_Bad_Scoobies.R, etc…) — this is what version control is for.</p>
-<p>The additional ‘save’ that comes from version control is known as a <em>commit</em>. You save your files like you normally would in word, but every once in a while you commit your files as an official version to be remembered. A commit can be thought of as a bullet point in the to do list of your analysis, and each commit you make must be accompanied by a message. For example; ‘read in data and tidy it up’, or ‘remove observations from non-standard sampling event, and re-fit GLM’. Git tracks the commits you make in R-Studio locally on your own computer. When you are ready for a series of commits to be made public, you <em>push</em> your commits to your <em>remote</em> repository at Git Hub.</p>
-<p>Similar to the relationship between R and R-Studio, Git is the <em>local</em> version control system running in the background on your computer while Git Hub is the remote user interface for saving, tracking, and sharing updated versions of your analyses that are hosted on a remote server. Git and Git HUB are integral for tracking the evolution of a set of files, and ultimately the development of your analysis.</p>
-<p>If you’re interested in learning why version control is important, I encourage you to skim <a href="http://happygitwithr.com/big-picture.html#why-git">Chapter 1; ‘Why Git? Why GitHUB’ from Jenny Bryan’s Book</a>. I recommend referring back to this book whenever you have a question about using git and Git Hub with R-Studio. You can also watch <a href="https://www.youtube.com/watch?v=FyfwLX4HAxM">this video</a> for an introduction to Git and Git Hub.</p>
-<div id="step-by-step-gitgit-hub" class="section level3">
-<h3><span class="header-section-number">2.2.1</span> Step-by-step Git/Git HUB</h3>
-<ol style="list-style-type: decimal">
-<li><p><strong>Setup a Git HUB Account</strong>: First, you’re going to want to <a href="https://github.com">sign up for a GitHUB account</a></p></li>
-<li><p><strong>Issues</strong>: (Need to make this repo public for this to be possible) Now that you have a Git Hub account, you should introduce yourself and let us know you’re going to work through this material. To do that go to the issues tab in this repo and ‘create a new issue’ and type a message to introduce yourself. Tell us what program you are working on, and what your first data analysis project will likely be. Using issues is also a great way to ask questions about course material, or suggest improvements to the guide. During a normal data analysis, the issues function on Git HUB can be used as a way for reviewers to identify issues with your analysis or code, or simply as a to-do list for yourself or your team.</p></li>
-<li><p><strong>Fork this repo</strong>: Next, you should fork this repo. Think of forking a repo as creating a divergent copy of a set of files — like a fork in the road, two versions of the same original set of files can develop. You can edit your fork without comprimising the master version. Normally when you are happy with your changes and you want to suggest your edits to the owner you make A <em>pull request</em>. A pull request is simply your request to the owner of the master copy to pull your edits into the master version. This is a simple explanation of how collaborative editing works with Git HUB. To successfully fork this repo and suggest edits simply go to <a href="https://github.com/Br-Johnson/Hakai-Data-Analyst">my repo here</a> and click on the name of this chapter: ‘new_analysts.Rmd’, once it’s open click on the pencil icon to suggest edits. Editing in this manner automatically forks the repo and makes a copy in your own list of repos where you will be able to see all the files that are available for others to view and edit. If you find an error anywher in this guide, edit it, and make a ‘pull request’ to suggest edits to me. This serves two purposes: i) the quality of this guide will be improved if you take time to edit chapters and contribute your insights on what didn’t work for you; and ii) forking repos and making pull-requests is training you for the workflow you will use when contributing to colleagues’ analyses in the very near future. Now you can make all the edits you’d like and when your happy you can click on ‘pull request’ to send the updates back to me so I can review them and decide if I should accept your edits and merge them into the master version.</p></li>
-</ol>
-<p>If you aren’t successful forking my repo, read <a href="http://happygitwithr.com/fork.html">Chapter 24 of Jenny Bryan’s Book; ‘Fork a Repo’</a>.</p>
-<ol start="4" style="list-style-type: decimal">
-<li><p><strong>Install and set-up Git</strong>: Installing Git locally and getting Git to communicate to your remote Git Hub website account, and then getting them to talk with R Studio takes a number of steps to complete…This next part can be painful to work through, but it is 100 % necessary and well worth it in the long-run. Install Git and Git Hub and get them talking to R-Studio using <a href="http://happygitwithr.com/install-git.html">Jenny Bryan’s Guide</a>, start at chapter 7 and work to the end of chapter 13.</p></li>
-<li><p><strong>Put this all in context</strong>: To learn how to use Git, Git Hub and R-Studio I recommend watching the <a href="https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-managing-part-2/">R-Studio Essentials tutorial; GitHUB and R-Studio</a>.</p></li>
-</ol>
-<p>Congratulations you now have setup the main tools in the R Analyst toolbox: R, R Studio, git and Git Hub and learned the basics of each component. In the next chapter you will get an introduction working in R.</p>
+<div id="open-science-collaboration" class="section level2">
+<h2><span class="header-section-number">4.3</span> Open Science Collaboration</h2>
+<div id="peer-review" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> Peer Review</h3>
+<p>Open science collaboration establishes an additional peer-review step in the scientific process. By making your analysis public using a <a href="https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control">distributed version control system</a> you open up the possibility for on-going peer-review of your analysis, as well as the the opportunity for not only your immediate colleagues, but also experts in your field to contribute in a meaningful and formalized way.</p>
+</div>
+<div id="code-review" class="section level3">
+<h3><span class="header-section-number">4.3.2</span> Code Review</h3>
+<p>Before you publish or distribute your analysis, you must have a colleague reveiw your code. You would never publish a written article without sending it to a trusted co-worker or superviser first. Code review is the same thing.</p>
+<p>While peer-review permits the scientific merit of your analyses to be assesed, code-review permits a colleague to assess your analyses for coding errors. Developing analyses is difficult and error prone. Using the <em>distributed version control</em> system <a href="https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control">GitHUB</a>, you are able to track changes to your code over time and enable others to suggest edits for your review, leaving you with a history of exactly what was added when and by whom — this is version control. The distributed aspect of ‘distributed version control’ means that multiple people can access the version control through your <em>repository</em> of all the files of your analysis (and their previous versions). You can make your repository (repo) private or public. By acessing your repo, which is hosted on Git HUB, others can meaningfully collaborate, conduct peer-review, and code-review.</p>
+</div>
+<div id="collaboration" class="section level3">
+<h3><span class="header-section-number">4.3.3</span> Collaboration</h3>
+<p>Software developers have been using this type of development platform for some time. By using these tools, data analysis can progress towards the concept of <em>developing analyses</em>, as opposed to an ad-hoc analysis. Ultimately, this approach makes your life easier. If you’ve experienced the pain of digging through your emails or zip files to find the analysis you or your colleague conducted years ago, only to be left perplexed by which version is the ‘master’ or ‘final’ then Git HUB will be a welcome addition to your toolbox.</p>
+<p>Git Hub can also be used as a project management tool for example by creating to-do lists for yourself and your team. By creating <em>issues</em> you can leave yourself a to-do list, or collaborators can identify issues with your analysis. We will cover Git HUB fundamentals in the next chapter.</p>
 
 </div>
 </div>
@@ -226,8 +227,8 @@ devtools::install_github(&quot;HakaiInstitute/hakai-api-client-r&quot;, subdir=&
           </div>
         </div>
       </div>
-<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="intro-to-r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="intro-to-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="developing-analyses-with-the-hakai-institute.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
