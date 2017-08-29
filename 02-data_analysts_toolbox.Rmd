@@ -5,7 +5,7 @@
 R is the statistical programming language that R Studio provides and interface to. I think of R Studio as being the front-end user interface to the coding language R which works in the background. For this all to work you you need to download two things to start; R and R Studio.
 
 1) __Install R__: Go to https://cran.r-project.org/ and follow the link to the download for your operating system.
-2) __Install R Studio__: Go to https://www.rstudio.com/products/rstudio/download/ to download R studio
+2) __Install R Studio__: Go to https://www.rstudio.com/products/rstudio/download/ to download R studio.
 
 Now that you have downloaded the tools you need, lets get familiar first with R-Studio and then the R programming language.
 
@@ -28,22 +28,24 @@ library('tidyverse')
 devtools::install_github("HakaiInstitute/hakai-api-client-r", subdir='hakaiApi')
 ```
 
-## Version control with Git and GitHUB
+## Version control with Git and GitHub
 
-_Version control_ is an additional level of saving your files. While writing your R scripts in R Studio you should save your files to your hard drive like you normally would in a word file for example, by clicking save or the floppy disk button. Use the same filename, so that each time you save the previous verison is over-written. No need to have multiple versions of the same file on your computer with different dates or initials to identify the version you want to work on (eg. fishy_analysis_V9_2017_05_11_BJ_Bad_Scoobies.R, etc...) — this is what version control is for.
+_Version control_ is an additional level of saving your files. There's no need to have multiple versions of the same file on your computer with different dates or initials to identify the version you want to work on (eg. fishy_analysis_V9_2017_05_11_BJ_Bad_Scoobies.R, etc...) — this is what version control using Git and GitHub is for.
 
-The additional 'save' that comes from version control is known as a _commit_. You save your files like you normally would in word, but every once in a while you commit your files as an official version to be remembered. A commit can be thought of as a bullet point in the to do list of your analysis, and each commit you make must be accompanied by a message. For example; 'read in data and tidy it up', or 'remove observations from non-standard sampling event, and re-fit GLM'. Git tracks the commits you make in R-Studio locally on your own computer. When you are ready for a series of commits to be made public, you _push_ your commits to your _remote_ repository at Git Hub. 
+The additional 'save' that comes from version control is known as a _commit_. You save your files like you normally would, but every once in a while you commit your files as an official version to be remembered. A commit can be thought of as a bullet point in the to do list of your analysis, and each commit you make must be accompanied by a message. For example; 'read in data and tidy it up', or 'remove observations from non-standard sampling event, and re-fit GLM'. Git tracks the commits you make in R-Studio locally on your own computer. When you are ready for a series of commits to be made public, you _push_ your commits to your _remote_ repository at GitHub. 
 
-Similar to the relationship between R and R-Studio, Git is the _local_ version control system running in the background on your computer while Git Hub is the remote user interface for saving, tracking, and sharing updated versions of your analyses that are hosted on a remote server. Git and Git HUB are integral for tracking the evolution of a set of files, and ultimately the development of your analysis.  
+Similar to the relationship between R and R-Studio, Git is the _local_ version control system running in the background on your computer while GitHub is the remote user interface for saving, tracking, and sharing updated versions of your analyses that are hosted on a remote server. Git and GitHub are integral for tracking the evolution of a set of files, and ultimately the development of your analysis.  
 
-If you're interested in learning why version control is important, I encourage you to skim [Chapter 1; 'Why Git? Why GitHUB' from Jenny Bryan's Book](http://happygitwithr.com/big-picture.html#why-git). I recommend referring back to this book whenever you have a question about using git and Git Hub with R-Studio. You can also watch [this video](https://www.youtube.com/watch?v=FyfwLX4HAxM) for an introduction to Git and Git Hub.
+If you're interested in learning why version control is important, I encourage you to skim [Chapter 1; 'Why Git? Why GitHub' from Jenny Bryan's Book](http://happygitwithr.com/big-picture.html#why-git). I recommend referring back to this book whenever you have a question about using git and GitHub with R-Studio. You can also watch [this video](https://www.youtube.com/watch?v=FyfwLX4HAxM) for an introduction to Git and GitHub.
 
-### Step-by-step Git/Git HUB
+### Step-by-step Git/GitHub
 
-1) __Setup a Git HUB Account__: First, you're going to want to [sign up for a GitHUB account](https://github.com)
+1) __Setup a GitHub Account__: First, you're going to want to [sign up for a GitHub account](https://github.com)
 
-2) __Install and set-up Git__: Installing Git locally and getting Git to communicate to your remote Git Hub website account, and then getting them to talk with R Studio takes a number of steps to complete...This next part can be painful to work through, but it is 100 % necessary and well worth it in the long-run. Install Git and Git Hub and get them talking to R-Studio using [Jenny Bryan's Guide](http://happygitwithr.com/install-git.html), start at chapter 7 and work to the end of chapter 13.
+2) __Install and set-up Git__: Installing Git locally and getting Git to communicate to your remote GitHub website account, and then getting them to talk with R Studio takes a number of steps to complete...This next part can be painful to work through, but it is 100 % necessary and well worth it in the long-run. Install Git and GitHub and get them talking to R-Studio using [Jenny Bryan's Guide](http://happygitwithr.com/install-git.html), start at chapter 7 and work to the end of chapter 13.
 
-3) __Put this all in context__: To learn how to use Git, Git Hub and R-Studio I recommend watching the [R-Studio Essentials tutorial; GitHUB and R-Studio](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-managing-part-2/).
+3) __Put this all in context__: To learn how to use Git, GitHub and R-Studio I recommend watching the [R-Studio Essentials tutorial; GitHub and R-Studio](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-managing-part-2/).
 
-Congratulations you now have setup the main tools in the R Analyst toolbox: R, R Studio, git and Git Hub and learned the basics of each component. In the next chapter you will get an introduction working in R.
+If you are working directly for Hakai, you should contact the IT department: eims@hakai.org, to request that you be brought on to the Hakai GitHub team so that your work is stored in the Hakai repositories rather than on your personal account.
+
+Congratulations you now have setup the main tools in the R Analyst toolbox: R, R Studio, Git and GitHub and learned the basics of each component. In the next chapter you will get an introduction working with R.

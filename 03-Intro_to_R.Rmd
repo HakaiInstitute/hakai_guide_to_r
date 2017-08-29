@@ -11,14 +11,14 @@ tidyverse — the modern set of tools and packages developed in R around the con
 
 ## Primary Resource
 
-The 'bible for a new generation of Data Scientists' is Hadley Wickham and Garrett Grolemund's Book: [R For Data Science](http://r4ds.had.co.nz/). This book presents a modern approach to data analysis and leads you to master the 'tidy-verse'; a combination of R packages and a well thought out and systematic approach to "import, tidy, transform, visualize, and model data." Using the tidy-verse as a foundation for your coding replaces the 'thousand and one ways' of doing things in R into a modern and concise grammar of data analysis development.
+The 'bible for a new generation of Data Scientists' is Hadley Wickham and Garrett Grolemund's Book: [R For Data Science](http://r4ds.had.co.nz/). This book presents a modern approach to data analysis and leads you to master the tidyverse; a combination of R packages and a well thought out and systematic approach to "import, tidy, transform, visualize, and model data." Using the tidyverse as a foundation for your coding replaces the 'thousand and one ways' of doing things in R into a modern and concise grammar of data analysis development.
 
 ## Data Transformation
 
 The most important set of tools for data wrangling that you will use constantly are
-from the package dplyr. They allow you to solve almost all of the data manipulation problems you 
-will encounter. Those who are able to efficiently get their data into a format
-they can visualize and model, will explore their data the most and therefore learn the most about their data.
+from the package `dplyr`. They allow you to solve almost all of the data manipulation problems you 
+will encounter. Those who are able to quickly manipulate their data into a format
+they can visualize and model, will explore their data the most and therefore learn the most.
 I'd recommend learning these six data wrangling functions off-by-heart:
 
 1) `filter()` to pick observations (rows) based on their values
@@ -46,7 +46,7 @@ The basic tenets that make a data set tidy are:
 2. Each observation must have its own row
 3. Each value must have its own cell
 
-All of the data stored in Hakai's database is designed to be tidy, but sometimes you will receive data that is not in a tidy format. The most common problem I run into is that not every row is one observation, it is often many more than one because values are stored as variables. To get your data into a tidy format you have to spread out the observations into different rows and create new variables that were once values. Luckily, the package `tidyr` has several functions that make this possible. 
+All of the data stored in Hakai's database is designed to be tidy, but sometimes you will receive data that is not in a tidy format. The most common problem I run into is that not every row is one observation, it is often many more than one because observations are stored as variables. To get your data into a tidy format you have to spread out the observations into different rows and create new variables that were once values. Luckily, the package `tidyr` has several functions that make this possible. 
 
 To get a really strong handle on what tidy data is, and to start practising getting data in to a tidy format I recommend working through the chapter on  [Tidying Data]("http://r4ds.had.co.nz/tidy-data.html") in the R for Data Science book. 
 
@@ -56,15 +56,15 @@ In the last chapter you had a teaser of what is possible in terms of making some
 looking plots when you worked through the first few sections in the Data Visualization chapter in R for Data Science.
 To see what else is possible and to learn the principles of the layered grammar of graphics, I recommend you work through the remaining sections in the Data Visualization Chapter picking up where you left of at the [sub-section on facets]("http://r4ds.had.co.nz/data-visualisation.html#facets")
 
-By the end of this you should have a really solid foundation from which to begin wrangling and visualizing your own data. In the next chapter I'll provide some gerenal principles for developing analyses and a step-by-step guide to follow a modern workflow.
+By the end of this you should have a really solid foundation from which to begin wrangling and visualizing your own data. In the next chapter I'll provide some gerenal principles for developing analyses.
 
 ## Learning Objectives
 
-Before moving on to the next chapter, work through these chapters and all the exercises in R for Data Science:
+Before moving on to the next chapter, work through these chapters mentioned above and complete their respective exercises:
 
 * [Workflow: Basics]("http://r4ds.had.co.nz/workflow-basics.html")
 * [Data Transformation]("http://r4ds.had.co.nz/transform.html")
 * [Tidying Data]("http://r4ds.had.co.nz/tidy-data.html")
 * [Data Visualization]("http://r4ds.had.co.nz/data-visualisation.html#facets")
 
-These chapters will give you a solid foundation from which to build, and should be considered a minimum. Feel free to work through the other chapters in the R for Data Science book as the need comes up.
+I highly reccommend working through all the chapters in this book at some point, but these first few chapters are a good start.

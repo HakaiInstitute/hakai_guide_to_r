@@ -1,8 +1,31 @@
-# Additional References and Learning Resources
+# Learning Resources and Reference Material
 
-[Advanced R]("http://adv-r.had.co.nz/")
+__The one and only introductory R book to read from front to back:__
 
-[Institute for Digital Research and Education]("https://stats.idre.ucla.edu/")
+* [R For Data Science](http://r4ds.had.co.nz/)
 
-## Plots
-[Cookbook for R]("http://www.cookbook-r.com/Graphs/")
+__Functional Programming__ (Loops and stuff)
+
+* [Purr Tutorial]("http://ctlente.com/en/purrr-magic/")
+* [Advanced R]("http://adv-r.had.co.nz/")
+
+__Git and GitHub__
+
+* [Happy Git with R]("http://happygitwithr.com/") by Jenny Bryan
+
+__Plots__
+
+* [Cookbook for R]("http://www.cookbook-r.com/Graphs/")
+
+__Statistical Modeling Examples__
+
+* [UCLA Institute for Digital Research and Education]("https://stats.idre.ucla.edu/")
+
+__Statistics__
+
+* [Undergraduate Biologist's Guide with R Examples]("https://sunsetridgemsbiology.wikispaces.com/file/view/Choosing+and+Using+Statistics.pdf")
+
+__Tidyverse__
+
+* [Tidyverse Website]("http://www.tidyverse.org/")
+* [Tidyverse style guide]("http://style.tidyverse.org/")
