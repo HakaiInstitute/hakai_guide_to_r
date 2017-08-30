@@ -1,23 +1,25 @@
-# Developing Analyses with the Hakai Institute
+# Guidelines for Developing Analyses with the Hakai Institute
 
 This chapter is currently under development.
 
+Worth talking about here, the difference methods to collaborate -> fork and pull
+public repos or direct editing capability of the repo
 ## Step-by-step Analysis Example
 
 In this section I will walk you through the steps that brings together all the different concepts we've been talking about up to this point. This step by step guide should serve as an example of how to develop analyses when working with the Hakai Institute.
 
 ### Set up a repo on GitHUB
 
-If you are working on a specific program, there's a good chance your program already has a central GitHUB repo set up for all your programs analyses. If you've been asked to conduct some data summaries or analyses you should talk to your PI about storing the code you write in your programs repo.
-If your program doesn't have a repo, you're going to want to set up a repository for your program. Make sure you talk to your PI and someone from Hakai IT about  this.
+If you are working on a specific program, there's a good chance your program already has a central GitHUB repo set up for all your programs analyses. If you've been asked to conduct some data summaries or analyses you should talk to your PI about storing the code you write in your program's repo.
+If your program doesn't have a repo, you're going to want to set one up. Make sure you talk to your PI and someone from Hakai IT about  this.
 
-If you're setting up a repo on your own GitHub account or the Hakai one, your going to want to first create the repo, and then create your R-Studio project by following these instructions.
+Whether you're setting up a repo on your own GitHub account or the Hakai one, your going to want to first create the repo, and then create your R-Studio project by following these instructions. If the repo you want to use already exists, then just go straight to the next section—Start a new R-Studio project.
 
 1) Go to https://github.com and login.
 
 2) Create a new repository on your own account, or on the Hakai account depending on the scenario.
 
-3) Call it something-descriptive-but-concise, for example. 
+3) Call it something-descriptive-but-concise. 
 
 4) Make it public and click yes to initialize with a README.
 
@@ -29,9 +31,9 @@ If you're setting up a repo on your own GitHub account or the Hakai one, your go
 
 If you have just created a general repo for your program, you should create sub-directory in your programs google drive directory called Analyses. This folder will be put under version control and you can decide which scripts are submitted to the repo and made public. For the salmon program, I put all of my analyses in the analyses directory in sub-directories that are specific to whatever little project, report, or paper I am working on for example I have a 'genetic stock id' and '2017 catch statistics' folder.
 
-To link the gitHUB repo to your google drive folder and a new project in R Studio:
+To link the gitHUB repo to your google drive folder and a new project in R-Studio:
 
-1) Open R Studio and go to File > New Project > Version Control > Git. In the “repository URL” paste the URL of the  Git Hub repository you just made. Under project directory name, type in the name of whatever this analysis is, for example "soft sediment spp diversity" — this will be the name of the analysis' directory. Under 'Create project as a sub-directory of' navigate to your programs Google Drive folder for analyses. Click “Create Project”.
+1) Open R-Studio and go to File > New Project > Version Control > Git. In the “repository URL” paste the URL of the  Git Hub repository you just made. Under project directory name, type in the name of whatever this analysis is, for example "soft sediment spp diversity" — this will be the name of the analysis' directory. Under 'Create project as a sub-directory of' navigate to your programs Google Drive folder for analyses. Click “Create Project”.
 
 2) Go to Tools in the menu bar, and navigate to Project Options. Click Packrat, and then check the box 'Use Packrat with this project'. This may take a few minutes to initialize, but is important to make your analyses reproducibile in the long term.
 
@@ -61,11 +63,11 @@ I usually create a few different scripts in any analysis, which helps me to comp
 
 3) Load packages
 
-4) Import data
+4) Import data:
 
 __Method 1__:From spreadsheet you already have  
 
-Most often you're going to want to read in files that are .csv files. These are comma separated value files and can be produced from excel or Google sheets by saving your excel or Google sheet file as a .csv file.
+Most often you're going to want to read in files that are .csv files. These are comma separated value files and can be produced from excel or Google Sheets by saving your excel or Google Sheet file as a .csv file.
 
 The first module of an analysis I produce is a plain .R script that loads in my .csv data file and save it in my R environment as a tibble, a tidy table, using the `new_tbl <- read_csv("filepath")` format. Before you read in a file, you should load the packages that we will be required for every analysis you conduct using the `library(tidyverse)` function. Note that you should not use the base R function `read.csv` but rather use the tidy-verse function `read_csv`. The base version will inevitably cause frustration due to incorrect variable class assignment.
 
@@ -103,11 +105,11 @@ Once I have my data set in my work environment, I'll make sure that all the vari
 
 I always check: 
 
-* that my Date column has the class 'date'
+* that my Date column has the class 'Date'
 * that categorical variables are stored as factors
 * anything that is not a categorical variable is not stored as a factor but rather is numeric, character, or integer for example.
 
-One of the most common problems of why you get errors in R is from R assigning incorrect variable classes. Often you want your variable to be of class numeric, or character, but it is assigned as a factor. This is extremely common and can be remedied by coercing your variable class. 
+One of the most common problems of why you get errors in R is from R assigning incorrect variable classes. Often you want your variable to be of class numeric, or character, but it is assigned as a factor. This is extremely common and can be remedied by coercing your variable class, or using tools that are part of the tidyverse 
 
 Once your data is imported into R and you are happy with the variable classes, it's time to start wrangling your data into a format you can visualize and model.
 
@@ -134,6 +136,7 @@ This is an area where R-Studio really shines. There are so many templates for co
 
 
 ## More on Version Control
+
 When you first start, using the git feature directly in R-Studio is more than adequate. If however, you'd like more features, then I recommend the following software and workflows.
 
 ### GitKraken
@@ -146,7 +149,7 @@ Git Flow is a workflow that can be implemented in GitKraken by going to GitKrake
 
 Some terms related to verison control and Git Flow:
 
-* **Branching** - This is a core concept in Git Hub and version control in general -- The master branch must always remain stable and working. When initialize git flow it creates a development branch. Essentially, you are creating an environment where you can try out new ideas without directly manipulating the stable 'master' version of your analysis. When you are happy with the changes you _push_ the development branch to the master branch. 
+* **Branching** - This is a core concept in Git Hub and version control in general -- The master branch must always remain stable and working. When you initialize git flow it creates a development branch. Essentially, you are creating an environment where you can try out new ideas without directly manipulating the stable 'master' version of your analysis. When you are happy with the changes you _push_ the development branch to the master branch. 
 
 * **Commits** - Commits represent significant changes to your branch. I think of them as mini-milestones that add up to your complete analysis. Perhaps you're mini-milestone is to create a linear model of something. You can work locally and make save files on your computer while working on the linear model like you normally would. When you finish your linear model, this is a good time to make a commit to your branch. You must name each commit, and this should be descriptive. In this case 'fitted linear model' would be ideal.
 
