@@ -12,7 +12,7 @@
   <meta property="og:title" content="Hakai Institute R Data-Analyst Guide" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:image" content="images/red_hakai.png" />
+  <meta property="og:image" content="images/analyst_red.png" />
   <meta property="og:description" content="This is the Hakai Institutes data analysts guide for developing analyses in R" />
   <meta name="github-repo" content="HakaiInstitute/hakai_guide_to_r" />
 
@@ -20,7 +20,7 @@
   <meta name="twitter:title" content="Hakai Institute R Data-Analyst Guide" />
   
   <meta name="twitter:description" content="This is the Hakai Institutes data analysts guide for developing analyses in R" />
-  <meta name="twitter:image" content="images/red_hakai.png" />
+  <meta name="twitter:image" content="images/analyst_red.png" />
 
 <meta name="author" content="Brett Johnson">
 
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="intro-to-r.html">
-<link rel="next" href="developing-analyses-with-the-hakai-institute.html">
+<link rel="next" href="guidelines-for-developing-analyses-with-the-hakai-institute.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -131,7 +131,20 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="4.2.3" data-path="general-principles.html"><a href="general-principles.html#collaboration"><i class="fa fa-check"></i><b>4.2.3</b> Collaboration</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="developing-analyses-with-the-hakai-institute.html"><a href="developing-analyses-with-the-hakai-institute.html"><i class="fa fa-check"></i><b>5</b> Developing Analyses with the Hakai Institute</a></li>
+<li class="chapter" data-level="5" data-path="guidelines-for-developing-analyses-with-the-hakai-institute.html"><a href="guidelines-for-developing-analyses-with-the-hakai-institute.html"><i class="fa fa-check"></i><b>5</b> Guidelines for Developing Analyses with the Hakai Institute</a><ul>
+<li class="chapter" data-level="5.0.1" data-path="guidelines-for-developing-analyses-with-the-hakai-institute.html"><a href="guidelines-for-developing-analyses-with-the-hakai-institute.html#set-up-a-repo-on-github"><i class="fa fa-check"></i><b>5.0.1</b> Set up a repo on GitHUB</a></li>
+<li class="chapter" data-level="5.0.2" data-path="guidelines-for-developing-analyses-with-the-hakai-institute.html"><a href="guidelines-for-developing-analyses-with-the-hakai-institute.html#start-a-new-r-studio-project"><i class="fa fa-check"></i><b>5.0.2</b> Start a new R-Studio project</a></li>
+<li class="chapter" data-level="5.0.3" data-path="guidelines-for-developing-analyses-with-the-hakai-institute.html"><a href="guidelines-for-developing-analyses-with-the-hakai-institute.html#create-folder-structure"><i class="fa fa-check"></i><b>5.0.3</b> Create folder structure</a></li>
+<li class="chapter" data-level="5.0.4" data-path="guidelines-for-developing-analyses-with-the-hakai-institute.html"><a href="guidelines-for-developing-analyses-with-the-hakai-institute.html#import-pre-process-tidy-data"><i class="fa fa-check"></i><b>5.0.4</b> Import, pre-process &amp; tidy data</a></li>
+<li class="chapter" data-level="5.0.5" data-path="guidelines-for-developing-analyses-with-the-hakai-institute.html"><a href="guidelines-for-developing-analyses-with-the-hakai-institute.html#exploratory-data-analysis"><i class="fa fa-check"></i><b>5.0.5</b> Exploratory data analysis</a></li>
+<li class="chapter" data-level="5.0.6" data-path="guidelines-for-developing-analyses-with-the-hakai-institute.html"><a href="guidelines-for-developing-analyses-with-the-hakai-institute.html#predict-and-model"><i class="fa fa-check"></i><b>5.0.6</b> Predict and Model</a></li>
+<li class="chapter" data-level="5.0.7" data-path="guidelines-for-developing-analyses-with-the-hakai-institute.html"><a href="guidelines-for-developing-analyses-with-the-hakai-institute.html#communicate"><i class="fa fa-check"></i><b>5.0.7</b> Communicate</a></li>
+<li class="chapter" data-level="5.1" data-path="guidelines-for-developing-analyses-with-the-hakai-institute.html"><a href="guidelines-for-developing-analyses-with-the-hakai-institute.html#more-on-version-control"><i class="fa fa-check"></i><b>5.1</b> More on Version Control</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="guidelines-for-developing-analyses-with-the-hakai-institute.html"><a href="guidelines-for-developing-analyses-with-the-hakai-institute.html#gitkraken"><i class="fa fa-check"></i><b>5.1.1</b> GitKraken</a></li>
+<li class="chapter" data-level="5.1.2" data-path="guidelines-for-developing-analyses-with-the-hakai-institute.html"><a href="guidelines-for-developing-analyses-with-the-hakai-institute.html#git-flow"><i class="fa fa-check"></i><b>5.1.2</b> Git Flow</a></li>
+<li class="chapter" data-level="5.1.3" data-path="guidelines-for-developing-analyses-with-the-hakai-institute.html"><a href="guidelines-for-developing-analyses-with-the-hakai-institute.html#fork-and-pull"><i class="fa fa-check"></i><b>5.1.3</b> Fork and Pull</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="6" data-path="learning-resources-and-reference-material.html"><a href="learning-resources-and-reference-material.html"><i class="fa fa-check"></i><b>6</b> Learning Resources and Reference Material</a></li>
 <li class="chapter" data-level="7" data-path="glossary-of-terms.html"><a href="glossary-of-terms.html"><i class="fa fa-check"></i><b>7</b> Glossary of Terms</a></li>
 <li class="divider"></li>
@@ -212,7 +225,7 @@ lint(&quot;/path_to_your_file.R&quot;)</code></pre>
         </div>
       </div>
 <a href="intro-to-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="developing-analyses-with-the-hakai-institute.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="guidelines-for-developing-analyses-with-the-hakai-institute.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
