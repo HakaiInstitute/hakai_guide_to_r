@@ -1,9 +1,9 @@
 --- 
-title: "Hakai Institute R Data-Analyst Guide"
+title: "Hakai Institute Data Analyst Guide"
 author: "Brett Johnson"
-description: "This is the Hakai Institutes data analysts guide for developing analyses in R"
+description: "This is the Hakai Institutes data analyst guide"
 date: "Latest update: `r Sys.Date()`"
-cover-image: "images/red_hakai.png"
+cover-image: "images/analyst_red.png"
 output: bookdown::gitbook
 site: bookdown::bookdown_site
 documentclass: book
@@ -23,7 +23,7 @@ github-repo: HakaiInstitute/hakai_guide_to_r
 ___
 
 ```{r, echo = FALSE}
-knitr::include_graphics("images/red_hakai.png")
+knitr::include_graphics("images/analyst_red.png")
 ```
 
 ___
