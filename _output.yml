@@ -4,9 +4,8 @@ bookdown::gitbook:
     toc:
       collapse: section
       before: |
-        <li><a href="./">Hakai Institute R Data Analyst Guide</a></li>
-      after: |
-        <li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
+        <li><a href="./">Hakai Institute Data Analyst Guide</a></li>
+      after:
     download:
     edit: 
     sharing: null
