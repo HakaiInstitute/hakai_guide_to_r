@@ -13,7 +13,7 @@ Most University courses that use R are focused on teaching statistical technique
 * How can I get my analysis into a format for someone to meaningfully conduct peer-review? 
 * How do I efficiently produce a professional report or other artifact of my analysis to communicate results?
 
-This guide aims to bridge this gap by taking you through the steps to produce a well-developed analysis that will form a template for conducting your own analyses while working with Hakai. You will be directed through an efficient way to learn teh basics of R, and progress to modern methods of communicating results. Learning to develop analyses in R can be a very frustrating and difficult experience. Know that we have all suffered severely in this way, but that this guide will hasten you through the drudgery and frustration. No computer programming experience is required to work through this guide, though an upper level undergraduate course in ecological statistics should be considered pre-requisite. Combined with a graduate level understanding of statistics, this guide will allow you to develop very modern analyses. 
+This guide aims to bridge this gap by taking you through the steps to produce a well-developed analysis that will form a template for conducting your own analyses while working with Hakai. You will be directed through an efficient way to learn the basics of R, and progress to modern methods of communicating results. Learning to develop analyses in R can be a very frustrating and difficult experience. Know that we have all suffered severely in this way, but that this guide will hasten you through the drudgery and frustration. No computer programming experience is required to work through this guide, though an undergraduate course in ecological statistics is recommended as pre-requisite.  
 
 ## Modern Approach to Data Analysis
 
@@ -21,7 +21,7 @@ There is a vibrant 'open-source' community of people developing methods, package
 
 However, as the R community iterated ideas of how the programming language works at a very base level over the last couple of decades, we are left with a litany of methods and programming syntax. There are typically at least half a dozen ways to write a chunk of code to reach the same desired result in R. This, in part, has given R the reputation as being difficult to learn.
 
-This guide aims to address the 'thousand and one way of doing things' problem in R by focusing on the recent development of packages that form a simple, elegant, and coherent grammar of data analysis. This collection of packages and methods is known as the 'tidyverse', developed in large part by the Chief Scientist of R-Studio, Hadley Wickham, and has recently been adopted as the best way forward for academic applications of the R language. 
+This guide aims to address the 'thousand and one way of doing things' problem in R by focusing on the recent development of packages that form a simple, elegant, and coherent grammar of data analysis. This collection of packages and methods is known as the 'tidyverse', developed in large part by the Chief Scientist of R-Studio, Hadley Wickham, and has been widely adopted as the way forward for academic applications of the R language. 
 
 The objectives of this book are to serve as a:
 
@@ -32,7 +32,7 @@ The objectives of this book are to serve as a:
 ## Acknowledgements
 Much of this document refers you to material that others have worked very hard to make. I simply point to these resources in an order that makes sense and seems systematic to me. Many thanks to the following people for making this possible:
 
-* Dr. Jenny Bryan, Data Science Professor at UBC, RStudio [Twitter](https://twitter.com/JennyBryan), [GitHUB](https://github.com/jennybc).
+* Dr. Jenny Bryan, Data Science Professor at UBC, RStudio Employee. [Twitter](https://twitter.com/JennyBryan), [GitHUB](https://github.com/jennybc).
 * Dr. Roger Peng, Professor of Bio-statistics at Johns Hopkins University. [Website](http://www.biostat.jhsph.edu/~rpeng/), [GitHUB](https://github.com/rdpeng).
 * Dr. Hadley Wickham, Chief Scientists at R-Studio. [Website](http://hadley.nz/), [Twitter](https://twitter.com/hadleywickham), [GitHUB](https://github.com/hadley).
-* Dr. Hillary Parker, Stitch-fix, [Twitter]('https://twitter.com/hspter')
+* Dr. Hillary Parker, Data Scientist at Stitch-fix. [Twitter]('https://twitter.com/hspter')
