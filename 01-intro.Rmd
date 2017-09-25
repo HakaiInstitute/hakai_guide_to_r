@@ -32,7 +32,7 @@ The objectives of this book are to serve as a:
 ## Acknowledgements
 Much of this document refers you to material that others have worked very hard to make. I simply point to these resources in an order that makes sense and seems systematic to me. Many thanks to the following people for making this possible:
 
-* Dr. Jenny Bryan, Data Science Professor at UBC, RStudio [Twitter](https://twitter.com/JennyBryan), [GitHUB](https://github.com/jennybc).
+* Dr. Jenny Bryan, Data Science Professor at UBC, RStudio Employee. [Twitter](https://twitter.com/JennyBryan), [GitHUB](https://github.com/jennybc).
 * Dr. Roger Peng, Professor of Bio-statistics at Johns Hopkins University. [Website](http://www.biostat.jhsph.edu/~rpeng/), [GitHUB](https://github.com/rdpeng).
 * Dr. Hadley Wickham, Chief Scientists at R-Studio. [Website](http://hadley.nz/), [Twitter](https://twitter.com/hadleywickham), [GitHUB](https://github.com/hadley).
-* Dr. Hillary Parker, Stitch-fix, [Twitter]('https://twitter.com/hspter')
+* Dr. Hillary Parker, Data Scientist at Stitch-fix. [Twitter]('https://twitter.com/hspter')
