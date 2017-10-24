@@ -13,7 +13,7 @@ In this section I will walk you through the steps that brings together all the d
 If you are working on a specific program, there's a good chance your program already has a central GitHUB repo set up for all your programs analyses. If you've been asked to conduct some data summaries or analyses you should talk to your PI about storing the code you write in your program's repo.
 If your program doesn't have a repo, you're going to want to set one up. Make sure you talk to your PI and someone from Hakai IT about  this.
 
-Whether you're setting up a repo on your own GitHub account or the Hakai one, your going to want to first create the repo, and then create your R-Studio project by following these instructions. If the repo you want to use already exists, then just go straight to the next section—Start a new R-Studio project.
+Whether you're setting up a repo on your own GitHub account or the Hakai one, your going to want to first create the repo, and then create your R-Studio project by following these instructions. If the repo you want to use already exists, then just go straight to the next section: 'Start a new R-Studio project.'
 
 1) Go to https://github.com and login.
 
@@ -21,7 +21,7 @@ Whether you're setting up a repo on your own GitHub account or the Hakai one, yo
 
 3) Call it something-descriptive-but-concise. 
 
-4) Make it public and click yes to initialize with a README.
+4) Make it private to start (talk to your PI or IT about making it Public) and click yes to initialize with a README.
 
 5) Click the big green button “Create repository.”
 
@@ -29,7 +29,7 @@ Whether you're setting up a repo on your own GitHub account or the Hakai one, yo
 
 ### Start a new R-Studio project
 
-If you have just created a general repo for your program, you should create sub-directory in your programs google drive directory called Analyses. This folder will be put under version control and you can decide which scripts are submitted to the repo and made public. For the salmon program, I put all of my analyses in the analyses directory in sub-directories that are specific to whatever little project, report, or paper I am working on for example I have a 'genetic stock id' and '2017 catch statistics' folder.
+If you have just created a general repo for your program, you should create a directory on your local drive called Analyses. This folder will be put under version control and you can decide which scripts are submitted to the repo and made public.
 
 To link the gitHUB repo to your google drive folder and a new project in R-Studio:
 
@@ -45,12 +45,13 @@ I use a default folder structure for every analysis based on the files that are 
 
 * raw data
 * processed data 
-* raw scripts
-* final scripts
-* exploratory figures
-* final figures
+* scripts
+* figures
 
-Using Google Drive to store files has advantages, but you must be careful not to edit files directly in Google Drive without committing changes using Git. Doing that risks putting your repo out of sync with your local version. So only ever make changes file stored in your Google Drive via R, and commit changes to them using Git.
+
+## Analysis Workflow
+
+Here is a general workflow I typically adhere to, and could be adopted as a starting point from which individual analysts could modify.
 
 ### Import, pre-process & tidy data
 
@@ -71,12 +72,14 @@ Most often you're going to want to read in files that are .csv files. These are 
 
 The first module of an analysis I produce is a plain .R script that loads in my .csv data file and save it in my R environment as a tibble, a tidy table, using the `new_tbl <- read_csv("filepath")` format. Before you read in a file, you should load the packages that we will be required for every analysis you conduct using the `library(tidyverse)` function. Note that you should not use the base R function `read.csv` but rather use the tidy-verse function `read_csv`. The base version will inevitably cause frustration due to incorrect variable class assignment.
 
+__Method 2__: From Google Drive
 
-__Method 2__:From Hakai database
+__Method 3__:From Hakai database
 
 It is possible to get data from the Hakai database directly into R without having to leave R Studio. This is accomplished by interacting with an application programming interface (API) was developed for downloading data from Hakai's data portal. Earlier in the Data Analysts Toolbox section we installed Hakai's API. Now we will use it to get Hakai data from the database.
 
 Below is a quickstart example of how you can download some chlorophyll data. To be able to access Hakai data you must sign in with a Hakai email address that has the appropriate permissions to access the database. This authentication is done using a token. When you run the code below, a web URL will be displayed in the console. Copy and paste that URL into your browser. This should take to you a webpage that displays another web URL, this is your authentication token. Copy and paste the URL into the console in R Studio where it tells you to do so.
+
 ```
 library('hakaiApi')
 
@@ -117,7 +120,7 @@ Once your data is imported into R and you are happy with the variable classes, i
 
 This is where you start playing with the data. You will likely try many different summaries and visualizations while you seek a deeper understanding of your data. Read the [Exploratory Data Analysis]("http://r4ds.had.co.nz/exploratory-data-analysis.html") chapter in R for Data Science. 
 
-I typically create an exploratory data analysis (EDA) script specifically for this, and save all my figures to my exploratory_figures directory using the function `ggsave(./exploratory_figures/figure_1.png`. I use R Markdown files (.Rmd) for my EDA. This allows me to weave narrative explanations of what exploration I am doing in each separate code chunk. Writing this narrative about why you chose to explore a certain analysis or summary, and why it did or didn't work is key in documenting your analysis so you can come back to it, make sense of what you've done, and pick up where you left off. 
+I typically create an exploratory data analysis (EDA) script specifically for this, and save all my figures to an exploratory_figures  sub-directory using the function `ggsave(./figures/exploratory_figures/figure_1.png`. I use R Markdown files (.Rmd) for my EDA. This allows me to weave narrative explanations of what exploration I am doing in each separate code chunk. Writing this narrative about why you chose to explore a certain analysis or summary, and why it did or didn't work is key in documenting your analysis so you can come back to it, make sense of what you've done, and pick up where you left off. 
 
 EDA allows me to try many different summaries or visualizations without having to worry about making the output perfect or pretty. This process will give you insight to your data as well as generate new questions and provoke new analyses. One excellent tool that can help you explore your data interactively is using [shiny apps](https://shiny.rstudio.com/). There's too much detail to focus on how to produce shiny apps here but suffice to say that creating interactivity with your data set is an excellent way to explore many different relationships between your data.
 
