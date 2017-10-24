@@ -2,13 +2,13 @@
 
 ## Filling in the Gaps
 
-Most University courses that use R are focused on teaching statistical techniques such as generalized linear models, or logistic regression — which is very necessary and important — but they pay no attention to educating students on how to actually conduct an analysis from start to finish. Questions that often remain un-answered include:
+Most University courses that teach statistics and data analysis are focused on teaching statistical techniques such as generalized linear models, or logistic regression — which is very necessary and important — but they pay no attention to educating students on how to actually conduct an analysis from start to finish. Questions that often remain un-answered include:
 
 * What is an efficient workflow? 
 * How do I access and import data? 
 * How do I clean and manipulate my data into a format to analyze?
 * How do I maintain version-control of my analysis? 
-* How do I make my analysis reproducible in case I get new data or someone else wants to run my code? 
+* How can I re-run my analysis in case I get new data or someone else wants to run my code? 
 * How can I collaborate on this analysis? 
 * How can I get my analysis into a format for someone to meaningfully conduct peer-review? 
 * How do I efficiently produce a professional report or other artifact of my analysis to communicate results?
