@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Hakai Institute R Stats Guide</title>
+  <meta name="description" content="This is the Hakai Institutes R Guide">
+  <meta name="generator" content="bookdown 0.4.1 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Hakai Institute R Stats Guide" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="images/analyst_red.png" />
+  <meta property="og:description" content="This is the Hakai Institutes R Guide" />
+  <meta name="github-repo" content="HakaiInstitute/hakai_guide_to_r" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Hakai Institute R Stats Guide" />
+  
+  <meta name="twitter:description" content="This is the Hakai Institutes R Guide" />
+  <meta name="twitter:image" content="images/analyst_red.png" />
+
+<meta name="author" content="Brett Johnson">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="workflow-guidelines-for-developing-analyses.html">
+<link rel="next" href="resources-and-references.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Hakai Institute R Stats Guide</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#filling-in-the-gaps"><i class="fa fa-check"></i><b>1.1</b> Filling in the Gaps</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#modern-approach-to-data-analysis"><i class="fa fa-check"></i><b>1.2</b> Modern Approach to Data Analysis</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#acknowledgements"><i class="fa fa-check"></i><b>1.3</b> Acknowledgements</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="data-analysts-toolbox.html"><a href="data-analysts-toolbox.html"><i class="fa fa-check"></i><b>2</b> Data Analyst’s Toolbox</a><ul>
+<li class="chapter" data-level="2.1" data-path="data-analysts-toolbox.html"><a href="data-analysts-toolbox.html#r-and-r-studio"><i class="fa fa-check"></i><b>2.1</b> R and R Studio</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="data-analysts-toolbox.html"><a href="data-analysts-toolbox.html#step-by-step-rrstudio"><i class="fa fa-check"></i><b>2.1.1</b> Step-by-step R/RStudio</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="intro-to-r.html"><a href="intro-to-r.html"><i class="fa fa-check"></i><b>3</b> Intro to R</a><ul>
+<li class="chapter" data-level="3.1" data-path="intro-to-r.html"><a href="intro-to-r.html#primary-resource"><i class="fa fa-check"></i><b>3.1</b> Primary Resource</a></li>
+<li class="chapter" data-level="3.2" data-path="intro-to-r.html"><a href="intro-to-r.html#data-transformation"><i class="fa fa-check"></i><b>3.2</b> Data Transformation</a></li>
+<li class="chapter" data-level="3.3" data-path="intro-to-r.html"><a href="intro-to-r.html#tidying-your-data"><i class="fa fa-check"></i><b>3.3</b> Tidying Your Data</a></li>
+<li class="chapter" data-level="3.4" data-path="intro-to-r.html"><a href="intro-to-r.html#visualizing-data"><i class="fa fa-check"></i><b>3.4</b> Visualizing Data</a></li>
+<li class="chapter" data-level="3.5" data-path="intro-to-r.html"><a href="intro-to-r.html#learning-objectives"><i class="fa fa-check"></i><b>3.5</b> Learning Objectives</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="general-principles.html"><a href="general-principles.html"><i class="fa fa-check"></i><b>4</b> General Principles</a><ul>
+<li class="chapter" data-level="4.1" data-path="general-principles.html"><a href="general-principles.html#reproducible-research"><i class="fa fa-check"></i><b>4.1</b> Reproducible Research</a></li>
+<li class="chapter" data-level="4.2" data-path="general-principles.html"><a href="general-principles.html#open-science-collaboration"><i class="fa fa-check"></i><b>4.2</b> Open Science Collaboration</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="general-principles.html"><a href="general-principles.html#peer-review"><i class="fa fa-check"></i><b>4.2.1</b> Peer Review</a></li>
+<li class="chapter" data-level="4.2.2" data-path="general-principles.html"><a href="general-principles.html#code-review"><i class="fa fa-check"></i><b>4.2.2</b> Code Review</a></li>
+<li class="chapter" data-level="4.2.3" data-path="general-principles.html"><a href="general-principles.html#collaboration"><i class="fa fa-check"></i><b>4.2.3</b> Collaboration</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="workflow-guidelines-for-developing-analyses.html"><a href="workflow-guidelines-for-developing-analyses.html"><i class="fa fa-check"></i><b>5</b> Workflow Guidelines for Developing Analyses</a><ul>
+<li class="chapter" data-level="5.1" data-path="workflow-guidelines-for-developing-analyses.html"><a href="workflow-guidelines-for-developing-analyses.html#create-a-new-r-studio-project"><i class="fa fa-check"></i><b>5.1</b> Create a new R-Studio Project</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="workflow-guidelines-for-developing-analyses.html"><a href="workflow-guidelines-for-developing-analyses.html#create-folder-structure"><i class="fa fa-check"></i><b>5.1.1</b> Create folder structure</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="workflow-guidelines-for-developing-analyses.html"><a href="workflow-guidelines-for-developing-analyses.html#analysis-workflow"><i class="fa fa-check"></i><b>5.2</b> Analysis Workflow</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="workflow-guidelines-for-developing-analyses.html"><a href="workflow-guidelines-for-developing-analyses.html#import-pre-process-tidy-data"><i class="fa fa-check"></i><b>5.2.1</b> Import, pre-process &amp; tidy data</a></li>
+<li class="chapter" data-level="5.2.2" data-path="workflow-guidelines-for-developing-analyses.html"><a href="workflow-guidelines-for-developing-analyses.html#exploratory-data-analysis"><i class="fa fa-check"></i><b>5.2.2</b> Exploratory data analysis</a></li>
+<li class="chapter" data-level="5.2.3" data-path="workflow-guidelines-for-developing-analyses.html"><a href="workflow-guidelines-for-developing-analyses.html#predict-and-model"><i class="fa fa-check"></i><b>5.2.3</b> Predict and Model</a></li>
+<li class="chapter" data-level="5.2.4" data-path="workflow-guidelines-for-developing-analyses.html"><a href="workflow-guidelines-for-developing-analyses.html#communicate"><i class="fa fa-check"></i><b>5.2.4</b> Communicate</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="version-control-with-git-and-github.html"><a href="version-control-with-git-and-github.html"><i class="fa fa-check"></i><b>6</b> Version Control with Git and GitHub</a><ul>
+<li class="chapter" data-level="6.1" data-path="version-control-with-git-and-github.html"><a href="version-control-with-git-and-github.html#step-by-step-gitgithub"><i class="fa fa-check"></i><b>6.1</b> Step-by-step Git/GitHub</a></li>
+<li class="chapter" data-level="6.2" data-path="version-control-with-git-and-github.html"><a href="version-control-with-git-and-github.html#start-an-r-studio-project-under-version-control"><i class="fa fa-check"></i><b>6.2</b> Start an R-Studio project under version control</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="version-control-with-git-and-github.html"><a href="version-control-with-git-and-github.html#set-up-a-repo-on-github"><i class="fa fa-check"></i><b>6.2.1</b> Set up a repo on GitHUB</a></li>
+<li class="chapter" data-level="6.2.2" data-path="version-control-with-git-and-github.html"><a href="version-control-with-git-and-github.html#start-a-new-r-studio-project"><i class="fa fa-check"></i><b>6.2.2</b> Start a new R-Studio project</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="version-control-with-git-and-github.html"><a href="version-control-with-git-and-github.html#more-on-version-control"><i class="fa fa-check"></i><b>6.3</b> More on Version Control</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="version-control-with-git-and-github.html"><a href="version-control-with-git-and-github.html#gitkraken"><i class="fa fa-check"></i><b>6.3.1</b> GitKraken</a></li>
+<li class="chapter" data-level="6.3.2" data-path="version-control-with-git-and-github.html"><a href="version-control-with-git-and-github.html#git-flow"><i class="fa fa-check"></i><b>6.3.2</b> Git Flow</a></li>
+<li class="chapter" data-level="6.3.3" data-path="version-control-with-git-and-github.html"><a href="version-control-with-git-and-github.html#fork-and-pull"><i class="fa fa-check"></i><b>6.3.3</b> Fork and Pull</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="resources-and-references.html"><a href="resources-and-references.html"><i class="fa fa-check"></i><b>7</b> Resources and References</a></li>
+<li class="chapter" data-level="8" data-path="glossary-of-terms.html"><a href="glossary-of-terms.html"><i class="fa fa-check"></i><b>8</b> Glossary of Terms</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Hakai Institute R Stats Guide</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="version-control-with-git-and-github" class="section level1">
+<h1><span class="header-section-number">6</span> Version Control with Git and GitHub</h1>
+<p><em>Version control</em> is an additional level of saving your files. There’s no need to have multiple versions of the same file on your computer with different dates or initials to identify the version you want to work on (eg. fishy_analysis_V9_2017_05_11_BJ_Bad_Scoobies.R, etc…) — this is what version control using Git and GitHub is for.</p>
+<p>The additional ‘save’ that comes from version control is known as a <em>commit</em>. You save your files like you normally would, but every once in a while you commit your files as an official version to be remembered. A commit can be thought of as a bullet point in the to do list of your analysis, and each commit you make must be accompanied by a message. For example; ‘read in data and tidy it up’, or ‘remove observations from non-standard sampling event, and re-fit GLM’. Git tracks the commits you make in R-Studio locally on your own computer. When you are ready for a series of commits to be made public, you <em>push</em> your commits to your <em>remote</em> repository at GitHub.</p>
+<p>Similar to the relationship between R and R-Studio, Git is the <em>local</em> version control system running in the background on your computer while GitHub is the remote user interface for saving, tracking, and sharing updated versions of your analyses that are hosted on a remote server. Git and GitHub are integral for tracking the evolution of a set of files, and ultimately the development of your analysis.</p>
+<p>If you’re interested in learning why version control is important, I encourage you to skim <a href="http://happygitwithr.com/big-picture.html#why-git">Chapter 1; ‘Why Git? Why GitHub’ from Jenny Bryan’s Book</a>. I recommend referring back to this book whenever you have a question about using git and GitHub with R-Studio. You can also watch <a href="https://www.youtube.com/watch?v=FyfwLX4HAxM">this video</a> for an introduction to Git and GitHub.</p>
+<div id="step-by-step-gitgithub" class="section level2">
+<h2><span class="header-section-number">6.1</span> Step-by-step Git/GitHub</h2>
+<ol style="list-style-type: decimal">
+<li><p><strong>Setup a GitHub Account</strong>: First, you’re going to want to <a href="https://github.com">sign up for a GitHub account</a></p></li>
+<li><p><strong>Install and set-up Git</strong>: Installing Git locally and getting Git to communicate to your remote GitHub website account, and then getting them to talk with R Studio takes a number of steps to complete…This next part can be painful to work through, but it is 100 % necessary and well worth it in the long-run. Install Git and GitHub and get them talking to R-Studio using <a href="http://happygitwithr.com/install-git.html">Jenny Bryan’s Guide</a>, start at chapter 7 and work to the end of chapter 13.</p></li>
+<li><p><strong>Put this all in context</strong>: To learn how to use Git, GitHub and R-Studio I recommend watching the <a href="https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-managing-part-2/">R-Studio Essentials tutorial; GitHub and R-Studio</a>.</p></li>
+</ol>
+<p>If you are working directly for Hakai, you should contact the IT department: <a href="mailto:eims@hakai.org">eims@hakai.org</a>, to request that you be brought on to the Hakai GitHub team so that your work is stored in the Hakai repositories rather than on your personal account.</p>
+<p>Congratulations you now have setup the main tools in the R Analyst toolbox: R, R Studio, Git and GitHub and learned the basics of each component. In the next chapter you will get an introduction working with R.</p>
+</div>
+<div id="start-an-r-studio-project-under-version-control" class="section level2">
+<h2><span class="header-section-number">6.2</span> Start an R-Studio project under version control</h2>
+<div id="set-up-a-repo-on-github" class="section level3">
+<h3><span class="header-section-number">6.2.1</span> Set up a repo on GitHUB</h3>
+<p>If you are working on a specific program, there’s a good chance your program already has a central GitHUB repo set up for all your programs analyses. If you’ve been asked to conduct some data summaries or analyses you should talk to your PI about storing the code you write in your program’s repo. If your program doesn’t have a repo, you’re going to want to set one up. Make sure you talk to your PI and someone from Hakai IT about this.</p>
+<p>Whether you’re setting up a repo on your own GitHub account or the Hakai one, your going to want to first create the repo, and then create your R-Studio project by following these instructions. If the repo you want to use already exists, then just go straight to the next section: ‘Start a new R-Studio project.’</p>
+<ol style="list-style-type: decimal">
+<li><p>Go to <a href="https://github.com" class="uri">https://github.com</a> and login.</p></li>
+<li><p>Create a new repository on your own account, or on the Hakai account depending on the scenario.</p></li>
+<li><p>Call it something-descriptive-but-concise.</p></li>
+<li><p>Make it private to start (talk to your PI or IT about making it Public) and click yes to initialize with a README.</p></li>
+<li><p>Click the big green button “Create repository.”</p></li>
+<li><p>Copy the HTTPS clone URL to your clipboard via the green “Clone or Download” button. You’ll need this to link the repo with R-Studio.</p></li>
+</ol>
+</div>
+<div id="start-a-new-r-studio-project" class="section level3">
+<h3><span class="header-section-number">6.2.2</span> Start a new R-Studio project</h3>
+<p>If you have just created a general repo for your program, you should create a directory on your local drive called Analyses. This folder will be put under version control and you can decide which scripts are submitted to the repo and made public.</p>
+<p>To link the gitHUB repo to your google drive folder and a new project in R-Studio:</p>
+<ol style="list-style-type: decimal">
+<li><p>Open R-Studio and go to File &gt; New Project &gt; Version Control &gt; Git. In the “repository URL” paste the URL of the Git Hub repository you just made. Under project directory name, type in the name of whatever this analysis is, for example “soft sediment spp diversity” — this will be the name of the analysis’ directory. Under ‘Create project as a sub-directory of’ navigate to your programs Google Drive folder for analyses. Click “Create Project”.</p></li>
+<li><p>Go to Tools in the menu bar, and navigate to Project Options. Click Packrat, and then check the box ‘Use Packrat with this project’. This may take a few minutes to initialize, but is important to make your analyses reproducibile in the long term.</p></li>
+</ol>
+<p>This should download the README.md file that we created on GitHub in the previous step. Look in RStudio’s file browser pane for the README.md file.&quot;</p>
+</div>
+</div>
+<div id="more-on-version-control" class="section level2">
+<h2><span class="header-section-number">6.3</span> More on Version Control</h2>
+<p>When you first start, using the git feature directly in R-Studio is more than adequate. If however, you’d like more features, then I recommend the following software and workflows.</p>
+<div id="gitkraken" class="section level3">
+<h3><span class="header-section-number">6.3.1</span> GitKraken</h3>
+<p>GitKraken is a graphical user interface that allows you to visualize your repositories branches and history. The Hakai IT team uses this software when developing tools, and it works quite well for backing up and monitoring the development of an analysis as well. Check out <a href="%22https://www.gitkraken.com/%22">GitKraken</a> to see if it’s something you’d like to use.</p>
+</div>
+<div id="git-flow" class="section level3">
+<h3><span class="header-section-number">6.3.2</span> Git Flow</h3>
+<p>Git Flow is a workflow that can be implemented in GitKraken by going to GitKraken &gt; Preferences &gt; GitFlow and then initialize gitflow. The workflow is generally good whether working individually or collaboratively. Some will argue that there’s no such thing as working individually, especially when you consider that you’re constantly collaborating with past-you, and future-you.</p>
+<p>Some terms related to verison control and Git Flow:</p>
+<ul>
+<li><p><strong>Branching</strong> - This is a core concept in Git Hub and version control in general – The master branch must always remain stable and working. When you initialize git flow it creates a development branch. Essentially, you are creating an environment where you can try out new ideas without directly manipulating the stable ‘master’ version of your analysis. When you are happy with the changes you <em>push</em> the development branch to the master branch.</p></li>
+<li><p><strong>Commits</strong> - Commits represent significant changes to your branch. I think of them as mini-milestones that add up to your complete analysis. Perhaps you’re mini-milestone is to create a linear model of something. You can work locally and make save files on your computer while working on the linear model like you normally would. When you finish your linear model, this is a good time to make a commit to your branch. You must name each commit, and this should be descriptive. In this case ‘fitted linear model’ would be ideal.</p></li>
+</ul>
+<p>To learn more about git flow check out <a href="%22https://www.atlassian.com/git/tutorials/comparing-workflows#gitflow-workflow%22">this article</a></p>
+</div>
+<div id="fork-and-pull" class="section level3">
+<h3><span class="header-section-number">6.3.3</span> Fork and Pull</h3>
+<p>If someone from outside the Hakai Institute GitHUB account wants to review your analysis and suggest changes, make additions, or generally collaborate with you, you can use a different workflow known as the <a href="%22https://www.atlassian.com/blog/git/git-branching-and-forking-in-the-enterprise-why-fork%22">fork and pull model</a>.</p>
+<ul>
+<li><p><strong>Fork</strong> - This is the process of copying someones repository and creating a fork in the development branch where you can work the forked copy all you want without affecting the original code. When you’re happy with the changes you made to the repo, you can make a pull request.</p></li>
+<li><p><strong>Pull Requests</strong> - I like to think of pull requests as an opportunity to review and assess external changes to the repo before you may decide to merge the fork back into the main branch. Something that helped clarify what a pull request is for me, was thinking about the difference between a push (write) request, and a pull (read) request. In the context of a shared repository, a pull request gives everyone that the repo is shared with a change to <em>read</em> your request to consider the sum of your mini-milestones. Pull requests should amount to the completion of a component of your project. See <a href="https://help.github.com/articles/about-pull-requests/">here</a> for more info.</p></li>
+<li><p><strong>Merge</strong> - Once a Pull Request has been sufficiently reviewed, discussed, and tested (deployed), the new code can be merged with the master branch, typically by the team owner, or maintainer.</p></li>
+<li><p><strong>Issues</strong> - When working ‘individually’, an excellent way to create a TODO list for yourself is to create new ‘Issues’. Again this could be something routine, like ‘filter data to include only sampling events in the morning.’ You can then leave yourself, and potential collaborators, a little note about why you’re doing this which will be preserved in a timeline for future you, or collaborators, to inspect. Each issue in your repo is given a number, and future commits can be labelled ‘fixes issue #45’ and when that commit is wrapped up in a pull-request which is eventually merged to the master branch, the issue will be marked as resolved. When working collaboratively, issues can be created by whomever is reviewing your code, and the issue can be assigned to you to fix.</p></li>
+</ul>
+<p>Unless you are added as an editor and part of the Hakai GitHUB team, you will likely be collaborating with Hakai analyses using the fork and pull method. To get comfortable using this technique I recommend completing the following steps:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Issues</strong>: (Need to make this repo public for this to be possible) Now that you have a Git Hub account, you should introduce yourself and let us know you’re going to work through this material. To do that go to the issues tab in this repo and ‘create a new issue’ and type a message to introduce yourself. Tell us what program you are working on, and what your first data analysis project will likely be. Using issues is also a great way to ask questions about course material, or suggest improvements to the guide. During a normal data analysis, the issues function on Git HUB can be used as a way for reviewers to identify issues with your analysis or code, or simply as a to-do list for yourself or your team.</p></li>
+<li><p><strong>Fork this repo</strong>: Next, you should fork this repo. Think of forking a repo as creating a divergent copy of a set of files — like a fork in the road, two versions of the same original set of files can develop. You can edit your fork without comprimising the master version. Normally when you are happy with your changes and you want to suggest your edits to the owner you make A <em>pull request</em>. A pull request is simply your request to the owner of the master copy to pull your edits into the master version. This is a simple explanation of how collaborative editing works with Git HUB. To successfully fork this repo and suggest edits simply go to <a href="https://github.com/Br-Johnson/Hakai-Data-Analyst">my repo here</a> and click on the name of this chapter: ‘new_analysts.Rmd’, once it’s open click on the pencil icon to suggest edits. Editing in this manner automatically forks the repo and makes a copy in your own list of repos where you will be able to see all the files that are available for others to view and edit. If you find an error anywher in this guide, edit it, and make a ‘pull request’ to suggest edits to me. This serves two purposes: i) the quality of this guide will be improved if you take time to edit chapters and contribute your insights on what didn’t work for you; and ii) forking repos and making pull-requests is training you for the workflow you will use when contributing to colleagues’ analyses in the very near future. Now you can make all the edits you’d like and when your happy you can click on ‘pull request’ to send the updates back to me so I can review them and decide if I should accept your edits and merge them into the master version.</p></li>
+</ol>
+<p>If you aren’t successful forking my repo, read <a href="http://happygitwithr.com/fork.html">Chapter 24 of Jenny Bryan’s Book; ‘Fork a Repo’</a>.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="workflow-guidelines-for-developing-analyses.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="resources-and-references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"download": null,
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

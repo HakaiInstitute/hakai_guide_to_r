@@ -1,53 +1,20 @@
-# Guidelines for Developing Analyses with the Hakai Institute
+# Workflow Guidelines for Developing Analyses 
 
-This chapter is currently under development.
+## Create a new R-Studio Project
 
-Worth talking about here, the difference methods to collaborate -> fork and pull
-public repos or direct editing capability of the repo
-## Step-by-step Analysis Example
+Generally I create a new project for every analysis I undertake, this makes things
+easy because the working directory remains constant amongst some other advantages.
 
-In this section I will walk you through the steps that brings together all the different concepts we've been talking about up to this point. This step by step guide should serve as an example of how to develop analyses when working with the Hakai Institute.
-
-### Set up a repo on GitHUB
-
-If you are working on a specific program, there's a good chance your program already has a central GitHUB repo set up for all your programs analyses. If you've been asked to conduct some data summaries or analyses you should talk to your PI about storing the code you write in your program's repo.
-If your program doesn't have a repo, you're going to want to set one up. Make sure you talk to your PI and someone from Hakai IT about  this.
-
-Whether you're setting up a repo on your own GitHub account or the Hakai one, your going to want to first create the repo, and then create your R-Studio project by following these instructions. If the repo you want to use already exists, then just go straight to the next section: 'Start a new R-Studio project.'
-
-1) Go to https://github.com and login.
-
-2) Create a new repository on your own account, or on the Hakai account depending on the scenario.
-
-3) Call it something-descriptive-but-concise. 
-
-4) Make it private to start (talk to your PI or IT about making it Public) and click yes to initialize with a README.
-
-5) Click the big green button “Create repository.”
-
-6) Copy the HTTPS clone URL to your clipboard via the green “Clone or Download” button. You'll need this to link the repo with R-Studio.
-
-### Start a new R-Studio project
-
-If you have just created a general repo for your program, you should create a directory on your local drive called Analyses. This folder will be put under version control and you can decide which scripts are submitted to the repo and made public.
-
-To link the gitHUB repo to your google drive folder and a new project in R-Studio:
-
-1) Open R-Studio and go to File > New Project > Version Control > Git. In the “repository URL” paste the URL of the  Git Hub repository you just made. Under project directory name, type in the name of whatever this analysis is, for example "soft sediment spp diversity" — this will be the name of the analysis' directory. Under 'Create project as a sub-directory of' navigate to your programs Google Drive folder for analyses. Click “Create Project”.
-
-2) Go to Tools in the menu bar, and navigate to Project Options. Click Packrat, and then check the box 'Use Packrat with this project'. This may take a few minutes to initialize, but is important to make your analyses reproducibile in the long term.
-
-This should download the README.md file that we created on GitHub in the previous step. Look in RStudio’s file browser pane for the README.md file."
+To start a new project, go to File > New Project.
 
 ### Create folder structure
 
-I use a default folder structure for every analysis based on the files that are produced from every analysis. Using the project directory that you created your new R-Studio project, create these sub-folders within the project folder:
+I use a default folder structure for every analysis based on the files that are produced from every analysis. It's not a bad idea to put your R project files in your Google Drive folder (if you have Google Drive installed on your desktop). This will give you some basic version control and the ability to collaborate by sharing more easily. Using the project directory that you created your new R-Studio project, create these sub-folders within the project folder:
 
 * raw data
 * processed data 
 * scripts
 * figures
-
 
 ## Analysis Workflow
 
@@ -58,7 +25,7 @@ Here is a general workflow I typically adhere to, and could be adopted as a star
 I usually create a few different scripts in any analysis, which helps me to compartmentalize the different steps of the analysis. I start with a pre-processing script that will read in and format all the different data sets I want to combine and analyze. This is where I make changes to data format that I want to apply to all subsequent uses of that data (so that I don't have to keep doing it in subsequent scripts).
 
 
-1) __Create pre_process.R script__ In your newly created R Studio project, go to File > New File > R Script. Save it in the raw scripts sub-directory of your project directory.
+1) __Create pre_process.R script__ In your newly created R Studio project, go to File > New File > R Script. Save it in the scripts sub-directory of your project directory.
 
 2) Set your working directory
 
@@ -73,6 +40,18 @@ Most often you're going to want to read in files that are .csv files. These are 
 The first module of an analysis I produce is a plain .R script that loads in my .csv data file and save it in my R environment as a tibble, a tidy table, using the `new_tbl <- read_csv("filepath")` format. Before you read in a file, you should load the packages that we will be required for every analysis you conduct using the `library(tidyverse)` function. Note that you should not use the base R function `read.csv` but rather use the tidy-verse function `read_csv`. The base version will inevitably cause frustration due to incorrect variable class assignment.
 
 __Method 2__: From Google Drive
+
+Using the googlesheets package in R is a pretty powerful tool and allows you to read googlesheets directly into R. This is great if your googlesheet is constantly changing as new data gets entered, and allows easy collaboration on data entry.
+
+To read in a googlesheet:
+
+`install.packages('googlesheets')
+library(googlesheets)
+
+your_workbook <- gs_title('Name_of_your_workbook')
+worksheet1 <- gs_read(your_workbook, ws = "sheet 1")
+
+See this [documentation](https://cran.r-project.org/web/packages/googlesheets/vignettes/basic-usage.html) on the googlesheets package for more info.
 
 __Method 3__:From Hakai database
 
@@ -126,7 +105,6 @@ EDA allows me to try many different summaries or visualizations without having t
 
 Exploratory analysis can probably go on forever depending on the complexity of your data. You will probably think of 1000 different ways to look at your data, but after some time you need to refocus on your original question and think carefully about what analyses and visualizations are best to communicate. Because you've been storing all of your EDA in and EDA script you've got a record of every path you went down while exploring your data. You can then cherry pick the analyses, plots, and summaries you want to include in your final scripts and simply copy and past them into a new .Rmd script.  
 
-
 ### Predict and Model
 
 The type of statistical modelling you are going to do is dependent on the question you are asking, and is outside the scope of this guide. For some general guidelines on predicting and modeling read the section [Model]("http://r4ds.had.co.nz/model-intro.html") in R for Data Science.
@@ -137,44 +115,3 @@ What your final data product is going to be (summary report, figures for your ma
 
 This is an area where R-Studio really shines. There are so many templates for communicating your analysis avaliable. Check out some of the [videos]("http://rmarkdown.rstudio.com/lesson-1.html") about RMarkdown and read the section in R for Data Science called [Communicate]("http://r4ds.had.co.nz/communicate-intro.html") to learn about the variety of ways you can communicate your analysis.
 
-
-## More on Version Control
-
-When you first start, using the git feature directly in R-Studio is more than adequate. If however, you'd like more features, then I recommend the following software and workflows.
-
-### GitKraken
-
-GitKraken is a graphical user interface that allows you to visualize your repositories branches and history. The Hakai IT team uses this software when developing tools, and it works quite well for backing up and monitoring the development of an analysis as well. Check out [GitKraken]("https://www.gitkraken.com/") to see if it's something you'd like to use. 
-
-### Git Flow
-
-Git Flow is a workflow that can be implemented in GitKraken by going to GitKraken > Preferences > GitFlow and then initialize gitflow. The workflow is generally good whether working individually or collaboratively. Some will argue that there's no such thing as working individually, especially when you consider that you're constantly collaborating with past-you, and future-you.
-
-Some terms related to verison control and Git Flow:
-
-* **Branching** - This is a core concept in Git Hub and version control in general -- The master branch must always remain stable and working. When you initialize git flow it creates a development branch. Essentially, you are creating an environment where you can try out new ideas without directly manipulating the stable 'master' version of your analysis. When you are happy with the changes you _push_ the development branch to the master branch. 
-
-* **Commits** - Commits represent significant changes to your branch. I think of them as mini-milestones that add up to your complete analysis. Perhaps you're mini-milestone is to create a linear model of something. You can work locally and make save files on your computer while working on the linear model like you normally would. When you finish your linear model, this is a good time to make a commit to your branch. You must name each commit, and this should be descriptive. In this case 'fitted linear model' would be ideal.
-
-To learn more about git flow check out [this article]("https://www.atlassian.com/git/tutorials/comparing-workflows#gitflow-workflow")
-
-
-### Fork and Pull
-
-If someone from outside the Hakai Institute GitHUB account wants to review your analysis and suggest changes, make additions, or generally collaborate with you, you can use a different workflow known as the [fork and pull model]("https://www.atlassian.com/blog/git/git-branching-and-forking-in-the-enterprise-why-fork").
-
-* **Fork** - This is the process of copying someones repository and creating a fork in the development branch where you can work the forked copy all you want without affecting the original code. When you're happy with the changes you made to the repo, you can make a pull request.
-
-* **Pull Requests** - I like to think of pull requests as an opportunity to review and assess external changes to the repo before you may decide to merge the fork back into the main branch. Something that helped clarify what a pull request is for me, was thinking about the difference between a push (write) request, and a pull (read) request. In the context of a shared repository, a pull request gives everyone that the repo is shared with a change to *read* your request to consider the sum of your mini-milestones. Pull requests should amount to the completion of a component of your project. See [here](https://help.github.com/articles/about-pull-requests/) for more info.
-
-* **Merge** - Once a Pull Request has been sufficiently reviewed, discussed, and tested (deployed), the new code can be merged with the master branch, typically by the team owner, or maintainer.
-
-* **Issues** - When working 'individually', an excellent way to create a TODO list for yourself is to create new 'Issues'. Again this could be something routine, like 'filter data to include only sampling events in the morning.' You can then leave yourself, and potential collaborators, a little note about why you're doing this which will be preserved in a timeline for future you, or collaborators, to inspect. Each issue in your repo is given a number, and future commits can be labelled 'fixes issue #45' and when that commit is wrapped up in a pull-request which is eventually merged to the master branch, the issue will be marked as resolved. When working collaboratively, issues can be created by whomever is reviewing your code, and the issue can be assigned to you to fix.
-
-Unless you are added as an editor and part of the Hakai GitHUB team, you will likely be collaborating with Hakai analyses using the fork and pull method. To get comfortable using this technique I recommend completing the following steps:
-
-1) __Issues__: (Need to make this repo public for this to be possible) Now that you have a Git Hub account, you should introduce yourself and let us know you're going to work through this material. To do that go to the issues tab in this repo and 'create a new issue' and type a message to introduce yourself. Tell us what program you are working on, and what your first data analysis project will likely be. Using issues is also a great way to ask questions about course material, or suggest improvements to the guide. During a normal data analysis, the issues function on Git HUB can be used as a way for reviewers to identify issues with your analysis or code, or simply as a to-do list for yourself or your team.
-
-2) __Fork this repo__: Next, you should fork this repo. Think of forking a repo as creating a divergent copy of a set of files — like a fork in the road, two versions of the same original set of files can develop. You can edit your fork without comprimising the master version. Normally when you are happy with your changes and you want to suggest your edits to the owner you make A _pull request_. A pull request is simply your request to the owner of the master copy to pull your edits into the master version. This is a simple explanation of how collaborative editing works with Git HUB.  To successfully fork this repo and suggest edits simply go to [my repo here](https://github.com/Br-Johnson/Hakai-Data-Analyst) and click on the name of this chapter: 'new_analysts.Rmd', once it's open click on the pencil icon to suggest edits. Editing in this manner automatically forks the repo and makes a copy in your own list of repos where you will be able to see all the files that are available for others to view and edit. If you find an error anywher in this guide, edit it, and make a 'pull request' to suggest edits to me. This serves two purposes: i) the quality of this guide will be improved if you take time to edit chapters and contribute your insights on what didn't work for you; and ii) forking repos and making pull-requests is training you for the workflow you will use when contributing to colleagues' analyses in the very near future.  Now you can make all the edits you'd like and when your happy you can click on 'pull request' to send the updates back to me so I can review them and decide if I should accept your edits and merge them into the master version.
-
-If you  aren't successful forking my repo, read [Chapter 24 of Jenny Bryan's Book; 'Fork a Repo'](http://happygitwithr.com/fork.html).
