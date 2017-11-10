@@ -1,7 +1,7 @@
 --- 
-title: "Hakai Institute Data Analyst Guide"
+title: "Hakai Institute R Stats Guide"
 author: "Brett Johnson"
-description: "This is the Hakai Institutes data analyst guide"
+description: "This is the Hakai Institutes R Guide"
 date: "Latest update: `r Sys.Date()`"
 cover-image: "images/analyst_red.png"
 output: bookdown::gitbook
@@ -29,10 +29,7 @@ knitr::include_graphics("images/analyst_red.png")
 ___
 One of Hakai's core themes that cross-cuts each [research axis]('https://www.hakai.org/research') is 'Big-Data and Modelling'. Our ability to gain insight from our long-term ecological data sets is limited only by our capacity to integrate, and digest data. To that end, this guide was developed to serve as a foundation from which to build the internal technical capacity — using a coherent and systematic approach — to turn data into insight, understanding, and ultimately knowledge about the ecosystems we study.
 
-Through this guide you can learn data wrangling skills, project workflow and organization, literate programming style, reproducible research techniques, and collaborative analysis development in an open-science context. These skills are learned through R and R-Studio in this guide granted the skills and principles are relevant to many programming languages or analysis softwares available.
+Through this guide you can learn data management skills, R programming basics, project workflow and organization, reproducible research techniques, and collaborative analysis development in an open-science context. These skills are learned through R and R-Studio, granted the skills and principles are relevant to many programming languages or analysis softwares available.
 
-This approach is currently being developed and piloted within the Juvenile Salmon Survival Program. This guide was originally intended to be useful to graduate students, Hakai staff, and research collaborators working with the Juvenile Salmon Survival Program. However, given the synergistic nature of many of Hakai's research programs, and the apparent appetite from research technicians for a guide to R, the guide has been extended for consideration by other Hakai programs more generally. 
-
-The Hakai Institute is a research organization based on the coast of
-British Columbia, Canada. See the [Hakai Institute Website](http://www.hakai.org) for more information.
+This guide was originally intended to be useful to graduate students, Hakai staff, and research collaborators working with the Juvenile Salmon Survival Program. However, given the synergistic nature of many of Hakai's research programs, and the apparent appetite from research technicians for a guide to R, the guide has been extended for consideration by other Hakai programs more generally. 
 

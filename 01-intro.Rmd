@@ -34,5 +34,5 @@ Much of this document refers you to material that others have worked very hard t
 
 * Dr. Jenny Bryan, Data Science Professor at UBC, RStudio Employee. [Twitter](https://twitter.com/JennyBryan), [GitHUB](https://github.com/jennybc).
 * Dr. Roger Peng, Professor of Bio-statistics at Johns Hopkins University. [Website](http://www.biostat.jhsph.edu/~rpeng/), [GitHUB](https://github.com/rdpeng).
-* Dr. Hadley Wickham, Chief Scientists at R-Studio. [Website](http://hadley.nz/), [Twitter](https://twitter.com/hadleywickham), [GitHUB](https://github.com/hadley).
+* Dr. Hadley Wickham, Chief Scientist at R-Studio. [Website](http://hadley.nz/), [Twitter](https://twitter.com/hadleywickham), [GitHUB](https://github.com/hadley).
 * Dr. Hillary Parker, Data Scientist at Stitch-fix. [Twitter]('https://twitter.com/hspter')
