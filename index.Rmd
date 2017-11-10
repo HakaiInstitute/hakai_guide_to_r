@@ -23,7 +23,7 @@ github-repo: HakaiInstitute/hakai_guide_to_r
 ___
 
 ```{r, echo = FALSE}
-knitr::include_graphics("images/analyst_red.png")
+knitr::include_graphics("images/r_stats_red.png")
 ```
 
 ___
