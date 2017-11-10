@@ -1,4 +1,4 @@
-# Learning Resources and Reference Material
+# Resources and References
 
 __The one and only introductory R book to read from front to back:__
 
