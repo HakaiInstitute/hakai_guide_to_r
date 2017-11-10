@@ -5,21 +5,21 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Hakai Institute Data Analyst Guide</title>
-  <meta name="description" content="This is the Hakai Institutes data analyst guide">
+  <title>Hakai Institute R Stats Guide</title>
+  <meta name="description" content="This is the Hakai Institutes R Guide">
   <meta name="generator" content="bookdown 0.4.1 and GitBook 2.6.7">
 
-  <meta property="og:title" content="Hakai Institute Data Analyst Guide" />
+  <meta property="og:title" content="Hakai Institute R Stats Guide" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="images/analyst_red.png" />
-  <meta property="og:description" content="This is the Hakai Institutes data analyst guide" />
+  <meta property="og:description" content="This is the Hakai Institutes R Guide" />
   <meta name="github-repo" content="HakaiInstitute/hakai_guide_to_r" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Hakai Institute Data Analyst Guide" />
+  <meta name="twitter:title" content="Hakai Institute R Stats Guide" />
   
-  <meta name="twitter:description" content="This is the Hakai Institutes data analyst guide" />
+  <meta name="twitter:description" content="This is the Hakai Institutes R Guide" />
   <meta name="twitter:image" content="images/analyst_red.png" />
 
 <meta name="author" content="Brett Johnson">
@@ -99,7 +99,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">Hakai Institute Data Analyst Guide</a></li>
+<li><a href="./">Hakai Institute R Stats Guide</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
@@ -111,9 +111,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2" data-path="data-analysts-toolbox.html"><a href="data-analysts-toolbox.html"><i class="fa fa-check"></i><b>2</b> Data Analyst’s Toolbox</a><ul>
 <li class="chapter" data-level="2.1" data-path="data-analysts-toolbox.html"><a href="data-analysts-toolbox.html#r-and-r-studio"><i class="fa fa-check"></i><b>2.1</b> R and R Studio</a><ul>
 <li class="chapter" data-level="2.1.1" data-path="data-analysts-toolbox.html"><a href="data-analysts-toolbox.html#step-by-step-rrstudio"><i class="fa fa-check"></i><b>2.1.1</b> Step-by-step R/RStudio</a></li>
-</ul></li>
-<li class="chapter" data-level="2.2" data-path="data-analysts-toolbox.html"><a href="data-analysts-toolbox.html#version-control-with-git-and-github"><i class="fa fa-check"></i><b>2.2</b> Version control with Git and GitHub</a><ul>
-<li class="chapter" data-level="2.2.1" data-path="data-analysts-toolbox.html"><a href="data-analysts-toolbox.html#step-by-step-gitgithub"><i class="fa fa-check"></i><b>2.2.1</b> Step-by-step Git/GitHub</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="intro-to-r.html"><a href="intro-to-r.html"><i class="fa fa-check"></i><b>3</b> Intro to R</a><ul>
@@ -143,7 +140,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Hakai Institute Data Analyst Guide</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Hakai Institute R Stats Guide</a>
           </h1>
         </div>
 
@@ -152,9 +149,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
             <section class="normal" id="section-">
 <div id="header">
-<h1 class="title">Hakai Institute Data Analyst Guide</h1>
+<h1 class="title">Hakai Institute R Stats Guide</h1>
 <h4 class="author"><em>Brett Johnson</em></h4>
-<h4 class="date"><em>Latest update: 2017-10-24</em></h4>
+<h4 class="date"><em>Latest update: 2017-11-10</em></h4>
 </div>
 <div id="preface" class="section level1 unnumbered">
 <h1>Preface</h1>
@@ -162,9 +159,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p><img src="images/analyst_red.png" /><!-- --></p>
 <hr />
 <p>One of Hakai’s core themes that cross-cuts each <a href="&#39;https://www.hakai.org/research&#39;">research axis</a> is ‘Big-Data and Modelling’. Our ability to gain insight from our long-term ecological data sets is limited only by our capacity to integrate, and digest data. To that end, this guide was developed to serve as a foundation from which to build the internal technical capacity — using a coherent and systematic approach — to turn data into insight, understanding, and ultimately knowledge about the ecosystems we study.</p>
-<p>Through this guide you can learn data wrangling skills, project workflow and organization, literate programming style, reproducible research techniques, and collaborative analysis development in an open-science context. These skills are learned through R and R-Studio in this guide granted the skills and principles are relevant to many programming languages or analysis softwares available.</p>
-<p>This approach is currently being developed and piloted within the Juvenile Salmon Survival Program. This guide was originally intended to be useful to graduate students, Hakai staff, and research collaborators working with the Juvenile Salmon Survival Program. However, given the synergistic nature of many of Hakai’s research programs, and the apparent appetite from research technicians for a guide to R, the guide has been extended for consideration by other Hakai programs more generally.</p>
-<p>The Hakai Institute is a research organization based on the coast of British Columbia, Canada. See the <a href="http://www.hakai.org">Hakai Institute Website</a> for more information.</p>
+<p>Through this guide you can learn data management skills, R programming basics, project workflow and organization, reproducible research techniques, and collaborative analysis development in an open-science context. These skills are learned through R and R-Studio, granted the skills and principles are relevant to many programming languages or analysis softwares available.</p>
+<p>This guide was originally intended to be useful to graduate students, Hakai staff, and research collaborators working with the Juvenile Salmon Survival Program. However, given the synergistic nature of many of Hakai’s research programs, and the apparent appetite from research technicians for a guide to R, the guide has been extended for consideration by other Hakai programs more generally.</p>
 
 </div>
             </section>

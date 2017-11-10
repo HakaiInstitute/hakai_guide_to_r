@@ -4,7 +4,7 @@ bookdown::gitbook:
     toc:
       collapse: section
       before: |
-        <li><a href="./">Hakai Institute Data Analyst Guide</a></li>
+        <li><a href="./">Hakai Institute R Stats Guide</a></li>
       after:
     download:
     edit: 

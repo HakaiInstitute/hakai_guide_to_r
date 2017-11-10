@@ -5,21 +5,21 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Hakai Institute Data Analyst Guide</title>
-  <meta name="description" content="This is the Hakai Institutes data analyst guide">
+  <title>Hakai Institute R Stats Guide</title>
+  <meta name="description" content="This is the Hakai Institutes R Guide">
   <meta name="generator" content="bookdown 0.4.1 and GitBook 2.6.7">
 
-  <meta property="og:title" content="Hakai Institute Data Analyst Guide" />
+  <meta property="og:title" content="Hakai Institute R Stats Guide" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="images/analyst_red.png" />
-  <meta property="og:description" content="This is the Hakai Institutes data analyst guide" />
+  <meta property="og:description" content="This is the Hakai Institutes R Guide" />
   <meta name="github-repo" content="HakaiInstitute/hakai_guide_to_r" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Hakai Institute Data Analyst Guide" />
+  <meta name="twitter:title" content="Hakai Institute R Stats Guide" />
   
-  <meta name="twitter:description" content="This is the Hakai Institutes data analyst guide" />
+  <meta name="twitter:description" content="This is the Hakai Institutes R Guide" />
   <meta name="twitter:image" content="images/analyst_red.png" />
 
 <meta name="author" content="Brett Johnson">
@@ -99,7 +99,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">Hakai Institute Data Analyst Guide</a></li>
+<li><a href="./">Hakai Institute R Stats Guide</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
@@ -111,9 +111,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2" data-path="data-analysts-toolbox.html"><a href="data-analysts-toolbox.html"><i class="fa fa-check"></i><b>2</b> Data Analyst’s Toolbox</a><ul>
 <li class="chapter" data-level="2.1" data-path="data-analysts-toolbox.html"><a href="data-analysts-toolbox.html#r-and-r-studio"><i class="fa fa-check"></i><b>2.1</b> R and R Studio</a><ul>
 <li class="chapter" data-level="2.1.1" data-path="data-analysts-toolbox.html"><a href="data-analysts-toolbox.html#step-by-step-rrstudio"><i class="fa fa-check"></i><b>2.1.1</b> Step-by-step R/RStudio</a></li>
-</ul></li>
-<li class="chapter" data-level="2.2" data-path="data-analysts-toolbox.html"><a href="data-analysts-toolbox.html#version-control-with-git-and-github"><i class="fa fa-check"></i><b>2.2</b> Version control with Git and GitHub</a><ul>
-<li class="chapter" data-level="2.2.1" data-path="data-analysts-toolbox.html"><a href="data-analysts-toolbox.html#step-by-step-gitgithub"><i class="fa fa-check"></i><b>2.2.1</b> Step-by-step Git/GitHub</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="intro-to-r.html"><a href="intro-to-r.html"><i class="fa fa-check"></i><b>3</b> Intro to R</a><ul>
@@ -143,7 +140,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Hakai Institute Data Analyst Guide</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Hakai Institute R Stats Guide</a>
           </h1>
         </div>
 
@@ -175,23 +172,6 @@ library(&#39;devtools&#39;)
 library(&#39;tidyverse&#39;)
 
 devtools::install_github(&quot;HakaiInstitute/hakai-api-client-r&quot;, subdir=&#39;hakaiApi&#39;)</code></pre>
-</div>
-</div>
-<div id="version-control-with-git-and-github" class="section level2">
-<h2><span class="header-section-number">2.2</span> Version control with Git and GitHub</h2>
-<p><em>Version control</em> is an additional level of saving your files. There’s no need to have multiple versions of the same file on your computer with different dates or initials to identify the version you want to work on (eg. fishy_analysis_V9_2017_05_11_BJ_Bad_Scoobies.R, etc…) — this is what version control using Git and GitHub is for.</p>
-<p>The additional ‘save’ that comes from version control is known as a <em>commit</em>. You save your files like you normally would, but every once in a while you commit your files as an official version to be remembered. A commit can be thought of as a bullet point in the to do list of your analysis, and each commit you make must be accompanied by a message. For example; ‘read in data and tidy it up’, or ‘remove observations from non-standard sampling event, and re-fit GLM’. Git tracks the commits you make in R-Studio locally on your own computer. When you are ready for a series of commits to be made public, you <em>push</em> your commits to your <em>remote</em> repository at GitHub.</p>
-<p>Similar to the relationship between R and R-Studio, Git is the <em>local</em> version control system running in the background on your computer while GitHub is the remote user interface for saving, tracking, and sharing updated versions of your analyses that are hosted on a remote server. Git and GitHub are integral for tracking the evolution of a set of files, and ultimately the development of your analysis.</p>
-<p>If you’re interested in learning why version control is important, I encourage you to skim <a href="http://happygitwithr.com/big-picture.html#why-git">Chapter 1; ‘Why Git? Why GitHub’ from Jenny Bryan’s Book</a>. I recommend referring back to this book whenever you have a question about using git and GitHub with R-Studio. You can also watch <a href="https://www.youtube.com/watch?v=FyfwLX4HAxM">this video</a> for an introduction to Git and GitHub.</p>
-<div id="step-by-step-gitgithub" class="section level3">
-<h3><span class="header-section-number">2.2.1</span> Step-by-step Git/GitHub</h3>
-<ol style="list-style-type: decimal">
-<li><p><strong>Setup a GitHub Account</strong>: First, you’re going to want to <a href="https://github.com">sign up for a GitHub account</a></p></li>
-<li><p><strong>Install and set-up Git</strong>: Installing Git locally and getting Git to communicate to your remote GitHub website account, and then getting them to talk with R Studio takes a number of steps to complete…This next part can be painful to work through, but it is 100 % necessary and well worth it in the long-run. Install Git and GitHub and get them talking to R-Studio using <a href="http://happygitwithr.com/install-git.html">Jenny Bryan’s Guide</a>, start at chapter 7 and work to the end of chapter 13.</p></li>
-<li><p><strong>Put this all in context</strong>: To learn how to use Git, GitHub and R-Studio I recommend watching the <a href="https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-managing-part-2/">R-Studio Essentials tutorial; GitHub and R-Studio</a>.</p></li>
-</ol>
-<p>If you are working directly for Hakai, you should contact the IT department: <a href="mailto:eims@hakai.org">eims@hakai.org</a>, to request that you be brought on to the Hakai GitHub team so that your work is stored in the Hakai repositories rather than on your personal account.</p>
-<p>Congratulations you now have setup the main tools in the R Analyst toolbox: R, R Studio, Git and GitHub and learned the basics of each component. In the next chapter you will get an introduction working with R.</p>
 
 </div>
 </div>
