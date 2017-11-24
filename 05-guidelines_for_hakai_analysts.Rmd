@@ -97,7 +97,7 @@ Once your data is imported into R and you are happy with the variable classes, i
 
 ### Exploratory data analysis
 
-This is where you start playing with the data. You will likely try many different summaries and visualizations while you seek a deeper understanding of your data. Read the [Exploratory Data Analysis]("http://r4ds.had.co.nz/exploratory-data-analysis.html") chapter in R for Data Science. 
+This is where you start playing with the data. You will likely try many different summaries and visualizations while you seek a deeper understanding of your data. Read the [Exploratory Data Analysis](http://r4ds.had.co.nz/exploratory-data-analysis.html) chapter in R for Data Science. 
 
 I typically create an exploratory data analysis (EDA) script specifically for this, and save all my figures to an exploratory_figures  sub-directory using the function `ggsave(./figures/exploratory_figures/figure_1.png`. I use R Markdown files (.Rmd) for my EDA. This allows me to weave narrative explanations of what exploration I am doing in each separate code chunk. Writing this narrative about why you chose to explore a certain analysis or summary, and why it did or didn't work is key in documenting your analysis so you can come back to it, make sense of what you've done, and pick up where you left off. 
 
@@ -107,11 +107,11 @@ Exploratory analysis can probably go on forever depending on the complexity of y
 
 ### Predict and Model
 
-The type of statistical modelling you are going to do is dependent on the question you are asking, and is outside the scope of this guide. For some general guidelines on predicting and modeling read the section [Model]("http://r4ds.had.co.nz/model-intro.html") in R for Data Science.
+The type of statistical modelling you are going to do is dependent on the question you are asking, and is outside the scope of this guide. For some general guidelines on predicting and modeling read the section [Model](http://r4ds.had.co.nz/model-intro.html) in R for Data Science.
 
 ### Communicate
 
 What your final data product is going to be (summary report, figures for your manuscript, an interactive dashboard for a website), will dictate what your final scripts will be. As a baseline I recommend .Rmd as the final format because this gives you a lot of flexibility in terms of polished data products.
 
-This is an area where R-Studio really shines. There are so many templates for communicating your analysis avaliable. Check out some of the [videos]("http://rmarkdown.rstudio.com/lesson-1.html") about RMarkdown and read the section in R for Data Science called [Communicate]("http://r4ds.had.co.nz/communicate-intro.html") to learn about the variety of ways you can communicate your analysis.
+This is an area where R-Studio really shines. There are so many templates for communicating your analysis avaliable. Check out some of the [videos](http://rmarkdown.rstudio.com/lesson-1.html) about RMarkdown and read the section in R for Data Science called [Communicate](http://r4ds.had.co.nz/communicate-intro.html) to learn about the variety of ways you can communicate your analysis.
 

@@ -60,7 +60,7 @@ When you first start, using the git feature directly in R-Studio is more than ad
 
 ### GitKraken
 
-GitKraken is a graphical user interface that allows you to visualize your repositories branches and history. The Hakai IT team uses this software when developing tools, and it works quite well for backing up and monitoring the development of an analysis as well. Check out [GitKraken]("https://www.gitkraken.com/") to see if it's something you'd like to use. 
+GitKraken is a graphical user interface that allows you to visualize your repositories branches and history. The Hakai IT team uses this software when developing tools, and it works quite well for backing up and monitoring the development of an analysis as well. Check out [GitKraken](https://www.gitkraken.com/) to see if it's something you'd like to use. 
 
 ### Git Flow
 
@@ -72,12 +72,12 @@ Some terms related to verison control and Git Flow:
 
 * **Commits** - Commits represent significant changes to your branch. I think of them as mini-milestones that add up to your complete analysis. Perhaps you're mini-milestone is to create a linear model of something. You can work locally and make save files on your computer while working on the linear model like you normally would. When you finish your linear model, this is a good time to make a commit to your branch. You must name each commit, and this should be descriptive. In this case 'fitted linear model' would be ideal.
 
-To learn more about git flow check out [this article]("https://www.atlassian.com/git/tutorials/comparing-workflows#gitflow-workflow")
+To learn more about git flow check out [this article](https://www.atlassian.com/git/tutorials/comparing-workflows#gitflow-workflow)
 
 
 ### Fork and Pull
 
-If someone from outside the Hakai Institute GitHUB account wants to review your analysis and suggest changes, make additions, or generally collaborate with you, you can use a different workflow known as the [fork and pull model]("https://www.atlassian.com/blog/git/git-branching-and-forking-in-the-enterprise-why-fork").
+If someone from outside the Hakai Institute GitHUB account wants to review your analysis and suggest changes, make additions, or generally collaborate with you, you can use a different workflow known as the [fork and pull model](https://www.atlassian.com/blog/git/git-branching-and-forking-in-the-enterprise-why-fork).
 
 * **Fork** - This is the process of copying someones repository and creating a fork in the development branch where you can work the forked copy all you want without affecting the original code. When you're happy with the changes you made to the repo, you can make a pull request.
 

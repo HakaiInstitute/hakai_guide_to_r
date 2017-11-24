@@ -2,7 +2,7 @@
 
 In this section you will learn the basics of data wrangling in R. Data wrangling is
 the process of importing, tidying, and transforming your data into a format that you 
-can visualize and model it. [Tidy data]("http://vita.had.co.nz/papers/tidy-data.pdf") 
+can visualize and model it. [Tidy data](http://vita.had.co.nz/papers/tidy-data.pdf) 
 is a consistent data format that, when followed closely, dramatically reduces the 
 mundane data formatting that is necessary otherwise. The basic concept is that every row is one observation and
 every column is a variable. For how simple it sounds, creating tidy data sets
@@ -29,10 +29,10 @@ I'd recommend learning these six data wrangling functions off-by-heart:
 6) `group_by()` to summarize based on the various groups of a variable
 
 To learn how to put this in to practice I recommend reading through the chapter called 
-[Data Transformation]("http://r4ds.had.co.nz/transform.html") in R for Data Science and working through all the exercises. This will be a bit of a learning curve but it's time to dive in!
+[Data Transformation](http://r4ds.had.co.nz/transform.html) in R for Data Science and working through all the exercises. This will be a bit of a learning curve but it's time to dive in!
 
 Starting at the Data Transformation chapter assumes you have some very basic knowledge of R already. 
-If that's not the case then I recommend starting at the [Workflow: Basics]("http://r4ds.had.co.nz/workflow-basics.html") chapter.
+If that's not the case then I recommend starting at the [Workflow: Basics](http://r4ds.had.co.nz/workflow-basics.html) chapter.
 
 ## Tidying Your Data
 
@@ -48,13 +48,13 @@ The basic tenets that make a data set tidy are:
 
 All of the data stored in Hakai's database is designed to be tidy, but sometimes you will receive data that is not in a tidy format. The most common problem I run into is that not every row is one observation, it is often many more than one because observations are stored as variables. To get your data into a tidy format you have to spread out the observations into different rows and create new variables that were once values. Luckily, the package `tidyr` has several functions that make this possible. 
 
-To get a really strong handle on what tidy data is, and to start practising getting data in to a tidy format I recommend working through the chapter on  [Tidying Data]("http://r4ds.had.co.nz/tidy-data.html") in the R for Data Science book. 
+To get a really strong handle on what tidy data is, and to start practising getting data in to a tidy format I recommend working through the chapter on  [Tidying Data](http://r4ds.had.co.nz/tidy-data.html) in the R for Data Science book. 
 
 ## Visualizing Data
 
 In the last chapter you had a teaser of what is possible in terms of making some nice 
 looking plots when you worked through the first few sections in the Data Visualization chapter in R for Data Science.
-To see what else is possible and to learn the principles of the layered grammar of graphics, I recommend you work through the remaining sections in the Data Visualization Chapter picking up where you left of at the [sub-section on facets]("http://r4ds.had.co.nz/data-visualisation.html#facets")
+To see what else is possible and to learn the principles of the layered grammar of graphics, I recommend you work through the remaining sections in the Data Visualization Chapter picking up where you left of at the [sub-section on facets](http://r4ds.had.co.nz/data-visualisation.html#facets)
 
 By the end of this you should have a really solid foundation from which to begin wrangling and visualizing your own data. In the next chapter I'll provide some gerenal principles for developing analyses.
 
@@ -62,9 +62,9 @@ By the end of this you should have a really solid foundation from which to begin
 
 Before moving on to the next chapter, work through these chapters mentioned above and complete their respective exercises:
 
-* [Workflow: Basics]("http://r4ds.had.co.nz/workflow-basics.html")
-* [Data Transformation]("http://r4ds.had.co.nz/transform.html")
-* [Tidying Data]("http://r4ds.had.co.nz/tidy-data.html")
-* [Data Visualization]("http://r4ds.had.co.nz/data-visualisation.html#facets")
+* [Workflow: Basics](http://r4ds.had.co.nz/workflow-basics.html)
+* [Data Transformation](http://r4ds.had.co.nz/transform.html)
+* [Tidying Data](http://r4ds.had.co.nz/tidy-data.html)
+* [Data Visualization](http://r4ds.had.co.nz/data-visualisation.html#facets)
 
 I highly reccommend working through all the chapters in this book at some point, but these first few chapters are a good start.

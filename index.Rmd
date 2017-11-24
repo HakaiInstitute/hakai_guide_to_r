@@ -27,7 +27,7 @@ knitr::include_graphics("images/r_stats_red.png")
 ```
 
 ___
-One of Hakai's core themes that cross-cuts each [research axis]('https://www.hakai.org/research') is 'Big-Data and Modelling'. Our ability to gain insight from our long-term ecological data sets is limited only by our capacity to integrate, and digest data. To that end, this guide was developed to serve as a foundation from which to build the internal technical capacity — using a coherent and systematic approach — to turn data into insight, understanding, and ultimately knowledge about the ecosystems we study.
+One of Hakai's core themes that cross-cuts each [research axis](https://www.hakai.org/research) is 'Big-Data and Modelling'. Our ability to gain insight from our long-term ecological data sets is limited only by our capacity to integrate, and digest data. To that end, this guide was developed to serve as a foundation from which to build the internal technical capacity — using a coherent and systematic approach — to turn data into insight, understanding, and ultimately knowledge about the ecosystems we study.
 
 Through this guide you can learn data management skills, R programming basics, project workflow and organization, reproducible research techniques, and collaborative analysis development in an open-science context. These skills are learned through R and R-Studio, granted the skills and principles are relevant to many programming languages or analysis softwares available.
 

@@ -172,7 +172,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="intro-to-r" class="section level1">
 <h1><span class="header-section-number">3</span> Intro to R</h1>
-<p>In this section you will learn the basics of data wrangling in R. Data wrangling is the process of importing, tidying, and transforming your data into a format that you can visualize and model it. <a href="%22http://vita.had.co.nz/papers/tidy-data.pdf%22">Tidy data</a> is a consistent data format that, when followed closely, dramatically reduces the mundane data formatting that is necessary otherwise. The basic concept is that every row is one observation and every column is a variable. For how simple it sounds, creating tidy data sets takes some time to get the hang of initially, but is essential for data wrangling in the tidyverse — the modern set of tools and packages developed in R around the concept of tidy data.</p>
+<p>In this section you will learn the basics of data wrangling in R. Data wrangling is the process of importing, tidying, and transforming your data into a format that you can visualize and model it. <a href="http://vita.had.co.nz/papers/tidy-data.pdf">Tidy data</a> is a consistent data format that, when followed closely, dramatically reduces the mundane data formatting that is necessary otherwise. The basic concept is that every row is one observation and every column is a variable. For how simple it sounds, creating tidy data sets takes some time to get the hang of initially, but is essential for data wrangling in the tidyverse — the modern set of tools and packages developed in R around the concept of tidy data.</p>
 <div id="primary-resource" class="section level2">
 <h2><span class="header-section-number">3.1</span> Primary Resource</h2>
 <p>The ‘bible for a new generation of Data Scientists’ is Hadley Wickham and Garrett Grolemund’s Book: <a href="http://r4ds.had.co.nz/">R For Data Science</a>. This book presents a modern approach to data analysis and leads you to master the tidyverse; a combination of R packages and a well thought out and systematic approach to “import, tidy, transform, visualize, and model data.” Using the tidyverse as a foundation for your coding replaces the ‘thousand and one ways’ of doing things in R into a modern and concise grammar of data analysis development.</p>
@@ -188,8 +188,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><code>summarize()</code> to collapse many values down to a summary</li>
 <li><code>group_by()</code> to summarize based on the various groups of a variable</li>
 </ol>
-<p>To learn how to put this in to practice I recommend reading through the chapter called <a href="%22http://r4ds.had.co.nz/transform.html%22">Data Transformation</a> in R for Data Science and working through all the exercises. This will be a bit of a learning curve but it’s time to dive in!</p>
-<p>Starting at the Data Transformation chapter assumes you have some very basic knowledge of R already. If that’s not the case then I recommend starting at the <a href="%22http://r4ds.had.co.nz/workflow-basics.html%22">Workflow: Basics</a> chapter.</p>
+<p>To learn how to put this in to practice I recommend reading through the chapter called <a href="http://r4ds.had.co.nz/transform.html">Data Transformation</a> in R for Data Science and working through all the exercises. This will be a bit of a learning curve but it’s time to dive in!</p>
+<p>Starting at the Data Transformation chapter assumes you have some very basic knowledge of R already. If that’s not the case then I recommend starting at the <a href="http://r4ds.had.co.nz/workflow-basics.html">Workflow: Basics</a> chapter.</p>
 </div>
 <div id="tidying-your-data" class="section level2">
 <h2><span class="header-section-number">3.3</span> Tidying Your Data</h2>
@@ -202,21 +202,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Each value must have its own cell</li>
 </ol>
 <p>All of the data stored in Hakai’s database is designed to be tidy, but sometimes you will receive data that is not in a tidy format. The most common problem I run into is that not every row is one observation, it is often many more than one because observations are stored as variables. To get your data into a tidy format you have to spread out the observations into different rows and create new variables that were once values. Luckily, the package <code>tidyr</code> has several functions that make this possible.</p>
-<p>To get a really strong handle on what tidy data is, and to start practising getting data in to a tidy format I recommend working through the chapter on <a href="%22http://r4ds.had.co.nz/tidy-data.html%22">Tidying Data</a> in the R for Data Science book.</p>
+<p>To get a really strong handle on what tidy data is, and to start practising getting data in to a tidy format I recommend working through the chapter on <a href="http://r4ds.had.co.nz/tidy-data.html">Tidying Data</a> in the R for Data Science book.</p>
 </div>
 <div id="visualizing-data" class="section level2">
 <h2><span class="header-section-number">3.4</span> Visualizing Data</h2>
-<p>In the last chapter you had a teaser of what is possible in terms of making some nice looking plots when you worked through the first few sections in the Data Visualization chapter in R for Data Science. To see what else is possible and to learn the principles of the layered grammar of graphics, I recommend you work through the remaining sections in the Data Visualization Chapter picking up where you left of at the <a href="%22http://r4ds.had.co.nz/data-visualisation.html#facets%22">sub-section on facets</a></p>
+<p>In the last chapter you had a teaser of what is possible in terms of making some nice looking plots when you worked through the first few sections in the Data Visualization chapter in R for Data Science. To see what else is possible and to learn the principles of the layered grammar of graphics, I recommend you work through the remaining sections in the Data Visualization Chapter picking up where you left of at the <a href="http://r4ds.had.co.nz/data-visualisation.html#facets">sub-section on facets</a></p>
 <p>By the end of this you should have a really solid foundation from which to begin wrangling and visualizing your own data. In the next chapter I’ll provide some gerenal principles for developing analyses.</p>
 </div>
 <div id="learning-objectives" class="section level2">
 <h2><span class="header-section-number">3.5</span> Learning Objectives</h2>
 <p>Before moving on to the next chapter, work through these chapters mentioned above and complete their respective exercises:</p>
 <ul>
-<li><a href="%22http://r4ds.had.co.nz/workflow-basics.html%22">Workflow: Basics</a></li>
-<li><a href="%22http://r4ds.had.co.nz/transform.html%22">Data Transformation</a></li>
-<li><a href="%22http://r4ds.had.co.nz/tidy-data.html%22">Tidying Data</a></li>
-<li><a href="%22http://r4ds.had.co.nz/data-visualisation.html#facets%22">Data Visualization</a></li>
+<li><a href="http://r4ds.had.co.nz/workflow-basics.html">Workflow: Basics</a></li>
+<li><a href="http://r4ds.had.co.nz/transform.html">Data Transformation</a></li>
+<li><a href="http://r4ds.had.co.nz/tidy-data.html">Tidying Data</a></li>
+<li><a href="http://r4ds.had.co.nz/data-visualisation.html#facets">Data Visualization</a></li>
 </ul>
 <p>I highly reccommend working through all the chapters in this book at some point, but these first few chapters are a good start.</p>
 
