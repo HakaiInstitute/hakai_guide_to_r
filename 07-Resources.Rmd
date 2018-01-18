@@ -4,6 +4,11 @@ __The one and only introductory R book to read from front to back:__
 
 * [R For Data Science](http://r4ds.had.co.nz/)
 
+__Workflows for Scientific Computing__
+
+* [Good Enough Practices for Scientific Computing](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510)
+* [Best Practices for Scientific Computing](http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745)
+
 __Functional Programming__ (Loops and stuff)
 
 * [Purr Tutorial](http://ctlente.com/en/purrr-magic/)
