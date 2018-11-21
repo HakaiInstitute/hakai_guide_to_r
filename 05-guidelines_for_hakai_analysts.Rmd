@@ -60,7 +60,8 @@ __Method 3__:From Hakai database
 
 It is possible to get data from the Hakai database directly into R without having to leave R Studio. This is accomplished by interacting with an application programming interface (API) that was developed for downloading data from Hakai's data portal. Earlier in the Data Analysts Toolbox section we installed Hakai's API. Now we will use it to get Hakai data from the database.
 
-Below is a quickstart example of how you can download some chlorophyll data. To be able to access Hakai data you must sign in with a Hakai email address that has the appropriate permissions to access the database. This authentication is done using a token. When you run the code below, a web URL will be displayed in the console. Copy and paste that URL into your browser. This should take to you a webpage that displays another web URL, this is your authentication token. Copy and paste the URL into the console in R Studio where it tells you to do so.
+Below is a quickstart example of how you can download some chlorophyll data. Run the code below one line at a time. When you run the 'client <- ...' line a web URL will be displayed in the console. Copy and paste that URL into your browser. This should take to you a webpage that displays another web URL, this is your authentication token that permits you access to the database. Copy and paste the URL into the console in R where it tells you to do so.
+
 
 ```
 devtools::install_github("HakaiInstitute/hakai-api-client-r", subdir='hakaiApi')
@@ -77,6 +78,7 @@ data <- client$get(endpoint)
 # Print out the data
 print(data)
 ```
+
 By running this code you should see chlorophyll data in your environment. 
 The above code can be modified to select different datasets other than chlorophyll and filter based on different logical parameters you set. This is accomplished by editing the text after the ? in `"eims/views/output/chlorophyll?limit=50"`.
 
@@ -84,11 +86,17 @@ The formula you set after the question mark is known as query string filtering. 
 
 To read generally about the API and how to use it for your first time [go here](https://github.com/HakaiInstitute/hakai-api/blob/master/docs/simplified-api-documentation.md#what-is-the-hakai-api).
 
-The list of datasets (endpoints) can be found [here](https://github.com/HakaiInstitute/hakai-api/blob/master/docs/simplified-api-documentation.md#endpoints).
+Here is a more advanced querystring that you could use as a template:
 
-To avoid writing the query string yourself you can export the query string right from the [Hakai Data Portal](https://hecate.hakai.org/portal2/). When searching for the data you'd like in the Data Portal and after limiting your results to certain dates, or sites or whatever, you can click the `options` button in the top right of the screen and click Display API Query. You can copy and paste the string of characters starting at "eims/view/..." and paste that into your definition of an endpoint in R.
+```
+chl_endpoint <- sprintf("%s/%s", client$api_root, 'eims/views/output/chlorophyll?date>=2016-11-01&date<2018-11-20&work_area&&{"CALVERT"}&site_id&&{"KC13","MG4"}&survey&&{"KWAK","MACRO_MGEO"}&limit=-1')
 
-In practice, I set the endpoint to the data table I'd like to retrieve and leave the default so I am returned the 20 most recent entries. I then look at the data file and remind myself what the exact names of the columns are so that I can construct the querystring filter so I can download the exact data I'd like.
+chl <- client$get(chl_endpoint)
+```
+
+Make sure to add &limit=-1 at the end of your query string so that not only the first 20 results are downloaded, but rather everything matching your query string is downloaded.
+
+The page documenting the API usage can be found [here](https://hakaiinstitute.github.io/hakai-api/)
 
 Once I have my data set in my work environment, I'll make sure that all the variable classes are what I want them to be. Luckily, when `read_csv` reads in your file, it prints a summary of the name and type of each variable in your data frame. 
 
