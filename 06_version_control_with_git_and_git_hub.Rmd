@@ -1,24 +1,24 @@
-# Version Control
+# Version Control and Collaboration
 
-_Version control_ is an additional level of saving your files. The old school method of version control is to have multiple versions of the same file on your computer with different dates or initials to identify the version you want to work on (eg. fishy_analysis_V9_2017_05_11_BJ_Bad_Scoobies.R, etc...) — this is what version control using Git and GitHub is aims to simplify.
+_Version control_ is an additional level of saving your files. The old school method of version control is to have multiple versions of the same file on your computer with different dates or initials to identify the version you want to work on (eg. fishy_analysis_V9_2017_05_11_BJ_edits.R, etc...) — this is what version control using Git and GitHub is aims to simplify.
 
-There are two methods that are recommended for version controlling your files: Google Drive and Git/GitHUB. Each has their own advantages and disadvantages
+There are two methods that are recommended for version controlling your files: Google Drive and Git/GitHUB. Each has their own advantages and disadvantages and can be used under different circumstances.
 
 ## Google Drive
 
-Googlesheets, Google Docs, Google Slides, has for me, replaced Excel, Word, and Powerpoint. The ability to collaborate in real time on the same file as someone else has great advantages and solved many of the issues with version controlling edits to a source file. The version controlling is taken care of for you and you can look into the version history to see exactly what and when changes were made and by whom. Essentially everyone workis off the master copy (or using git jargon — commits to the master branch). The version history of any Google file (Sheet, Doc, Slides) can found on the browser version of Google Drive by opening the document or sheet and selecting `file` > `version history`. The  If you'd like to make a specific version more memorable before or after some significant change, you can 'name the version'. The actual name of the file does not change, however the version will receive a name in the version history. This allows you to better keep track of important changes to a file.
+### Version Control
 
-Keeping data files and R scripts in Google Drive has some advantages compared to emailing colleuages different versions of files back and forth, simply asjudting the sharing settings of files in your Google Drive allows others to access the same file. Everytime you save a file that is located in a Google Drive folder on your computer, it is backed up in the cloud and the version of that file is saved. Managing the version history of files other than Google Sheets, Docs, Slides etc, is a little different. Only the most recent versions of your file will be saved unless you right-click the file in the web version of Google Drive and check the box that says 'Keep Forever'. 
+Googlesheets, Google Docs, Google Slides, has for me, replaced Excel, Word, and Powerpoint. The ability to collaborate in real time on the same file as someone else has great advantages and solved many of the issues with version controlling edits to a source file. The version controlling is taken care of for you and you can look into the version history to see exactly what and when changes were made and by whom. Essentially everyone works off the master copy (or using git jargon — commits to the master branch). The version history of any Google file (Sheet, Doc, Slides) can found on the browser version of Google Drive by opening the document or sheet and selecting `file` > `version history`. If you'd like to make a specific version more memorable before or after some significant change, you can 'name the version'. The actual name of the file does not change, however the version will receive a name in the version history. This allows you to better keep track of important changes to a file.
 
-There is a direct interface from R Studio into Google Drive via the `googledrive` package as well as the `googlesheets` package. Using the `googlesheets` package you can read in the most current version of data entry sheet that you and your team may be sharing. Everytime you run your script then it will automatically update your analysis based on the changes that have been made to a Google Sheet by yourself or your colleauges. 
+Keeping data files and R scripts in Google Drive for version controlling isn't quite as slick as it is for google products (sheets etc.). It does, however, certainly have some advantages compared to emailing colleuages different versions of files back and forth, and renaming them each time.
 
-For collaboration on R scripts with Google Drive to work you must have the desktop version of Google Drive installed. You must also use a project oriented workflow that utilizes R-Studio Projects, and the  `here()` package which solves the issues of different working directories.
+Everytime you save a file that is located in a Google Drive folder on your computer, it is backed up in the cloud and the version of that file is saved. Managing the version history of files other than Google Sheets, Docs, Slides etc, is a little different. Only the most recent versions of your file will be saved unless you right-click the file in the web version of Google Drive and check the box that says 'Keep Forever'. 
 
 Google Drive is a simplified and intuitive version control system that can work well under some scenarios. Google Drive falls short, however, when you and a colleauge are working in a collaborartive development of an .R file. Maybe you are both working on the same .R file to build a complicated analysis, and your part depends on their part so you have to do it in the same script. If there is a chance you could be working on the same script at the same time, then Google Drive will fail you. If you both opened the .R file from Google Drive at the same time and one person finished making their edits after the other, the first persons edits would be erased as the second person uploads their version. This is one of the major problems that Git and GitHUB solves.
 
 ## Git and GitHUB
 
-Similar to the relationship between R and R-Studio, Git is the _local_ version control system running in the background on your computer while GitHub is the remote user interface for saving, tracking, and sharing updated versions of your files that are hosted on a remote server. Git and GitHub are integral for tracking the evolution of a set of files, and ultimately the development of your analysis.  
+Similar to the relationship between R and R-Studio, Git is the _local_ version control system running in the background on your computer while GitHub is the remote user interface for saving, tracking, and sharing updated versions of your files that are hosted on a remote server. Git and GitHub are integral for tracking the evolution of a set of files, and the development of your analysis.  
 
 The additional 'save' that comes from version control using git is known as a _commit_. You save your files like you normally would, but every once in a while you commit your files as an official version to be remembered. A commit can be thought of as a bullet point in the to do list of your analysis, and each commit you make must be accompanied by a message. For example; 'read in data and tidy it up', or 'remove observations from non-standard sampling event, and re-fit GLM'. Git tracks the commits you make in R-Studio locally on your own computer. When you are ready for a series of commits to be made public, you _push_ your commits to your _remote_ repository at GitHub. 
 
@@ -32,14 +32,14 @@ If you're interested in learning why version control is important, I encourage y
 
 3) __Put this all in context__: To learn how to use Git, GitHub and R-Studio I recommend watching the [R-Studio Essentials tutorial; GitHub and R-Studio](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-managing-part-2/).
 
-If you are working directly for Hakai, you should contact the IT department: eims@hakai.org, to request that you be brought on to the Hakai GitHub team so that your work is stored in the Hakai repositories rather than on your personal account.
+If you are working directly for Hakai, you should contact the Ecological Information Management department: eims@hakai.org, to request that you be brought on to the Hakai GitHub team so that your work is stored in the Hakai repositories rather than on your personal account.
 
 ### Start an R-Studio project under version control
 
 #### Set up a repo on GitHUB
 
 If you are working on a specific program, there's a good chance your program already has a central GitHUB repo set up for all your programs analyses. If you've been asked to conduct some data summaries or analyses you should talk to your PI about storing the code you write in your program's repo.
-If your program doesn't have a repo, you're going to want to set one up. Make sure you talk to your PI and someone from Hakai IT about  this.
+If your program doesn't have a repo, you're going to want to set one up. Make sure you talk to your PI and someone from Hakai EIMS about  this.
 
 Whether you're setting up a repo on your own GitHub account or the Hakai one, your going to want to first create the repo, and then create your R-Studio project by following these instructions. If the repo you want to use already exists, then just go straight to the next section: 'Start a new R-Studio project.'
 
@@ -56,8 +56,6 @@ Whether you're setting up a repo on your own GitHub account or the Hakai one, yo
 6) Copy the HTTPS clone URL to your clipboard via the green “Clone or Download” button. You'll need this to link the repo with R-Studio.
 
 #### Start a new R-Studio project
-
-If you have just created a general repo for your program, you should create a directory on your local drive called Analyses. This folder will be put under version control and you can decide which scripts are submitted to the repo and made public.
 
 To link the gitHUB repo to your Google drive folder and a new project in R-Studio:
 
@@ -96,4 +94,33 @@ If someone from outside the Hakai Institute GitHUB account wants to review your 
 
 * **Merge** - Once a Pull Request has been sufficiently reviewed, discussed, and tested (deployed), the new code can be merged with the master branch, typically by the team owner, or maintainer.
 
-* **Issues** - When working 'individually', an excellent way to create a TODO list for yourself is to create new 'Issues'. Again this could be something routine, like 'filter data to include only sampling events in the morning.' You can then leave yourself, and potential collaborators, a little note about why you're doing this which will be preserved in a timeline for future you, or collaborators, to inspect. Each issue in your repo is given a number, and future commits can be labelled 'fixes issue #45' and when that commit is wrapped up in a pull-request which is eventually merged to the master branch, the issue will be marked as resolved. When working collaboratively, issues can be created by whomever is reviewing your code, and the issue can be assigned to you to fix.
+* **Issues** - You can create an issue to raise a bug report, suggest some functionality, or discuss the objectives of a certain project.
+
+## Best Practices
+
+### Citing analyses
+
+* Citing analyses can be done as text files that get included with data packages that can be distributed with manuscript. 
+
+* Hakai has the ability to zip scripts and data files from a gitHUB repo and assign a DOI to it with a metadata entry. This isn't mutually exclusive to maintaining a GitHUB repo and pointing collaborators to archived versions of a repo.
+
+### Private v. public repos
+
+* We don't really want anonymous use of our analyses, so it's best to use private repos and add external collaborators if we want them to review or contribute to our analysis.
+
+### Granularity of repos
+
+* Best practice is to not make repos too small.
+
+* In cases where you want to cite an analysis, need finer control of access permissions, or when a tool requires a separate repo (eg. creating an R package) you'll have to create a separate repo. 
+
+* There are ways to take folders out of one repo to create an independent repo which retains commit history. Therefore, if you are uncertain about whether you need to split into a different repo, it's best to lump folders and split later if need be.
+
+* Managing repos with gitHUB 'teams' is a good workflow.
+
+### Code Licensing
+
+* It's a good idea to license with MIT license to permit commercial use. 
+
+* This license should be included in every script or data package, but we will still control who has access to code and data by requiring them to request access to data packages or scripts.
+
