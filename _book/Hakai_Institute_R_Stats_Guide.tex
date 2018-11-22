@@ -660,14 +660,15 @@ creating to-do lists for yourself and your team. By creating
 identify issues with your analysis. We will cover Git HUB fundamentals
 in the next chapter.
 
-\chapter{R Workflow Tips}\label{r-workflow-tips}
+\chapter{Starting Your Project}\label{starting-your-project}
 
 \section{Create a new R-Studio
 Project}\label{create-a-new-r-studio-project}
 
-Generally I create a new project for every analysis I undertake, this
-makes things easy because the working directory remains constant amongst
-some other advantages.
+I create a new project for every analysis I undertake. Using R Studio
+Projects is one of the key benefits of using R Studio because it makes
+it easier to organize your projects, makes sharing projects easier,
+makes loading data easier, and improves reproducibility.
 
 To start a new project in R-Studio, go to File \textgreater{} New
 Project.
@@ -679,24 +680,24 @@ Often in an analysis you have to load or save files to a specific folder
 or file location on your computer. You should not use absolute paths to
 do this such as
 \texttt{write\_csv(file\_name,\ "C:Brett/documents/R\ projects/Hakai\ R\ Analyst/data/file\_name.csv")}.
-The absolute path starts at the root of your computers specific file
+The absolute path starts at the root of your computer's specific file
 system, and other people will have different absolute paths on their
 computer depending on where they saved their files. So if you shared a
 script with an absolute path, your collaborator won't be able to run the
 script without headaches of changing the abosulute path. Fortunately,
 you can use relative paths. Relative paths don't go all the way back to
 the root of your file system. A relative file path in this example would
-be \texttt{"/Hakai\ R\ analyst/data/file\_name.csv"}. Using relative
-paths makes the scripts or programs portable between computers. Defining
-where a relative path starts from can be done by setting your working
-directly, or by using the \texttt{here()} package.
+be \texttt{"/Hakai\ R\ analyst/data/file\_name.csv"} because that's
+where this R Project folder starts. Using relative paths makes the
+scripts or programs portable between computers.
 
-A recommended method to work with relative file paths is using the
-\texttt{here()} package in conjunction with R-Studio projects. When you
-create a new R-Studio project, a .Rproj file is automatically created in
-the new folder that you created for the project. The \texttt{here()}
-package will automatically set your working directory to wherever your
-.Rproj file is saved. That means you can save a file like this:
+To avoid having to set your working directory completely, a recommended
+method to work with relative file paths is using the \texttt{here()}
+package in conjunction with R-Studio projects. When you create a new
+R-Studio project, a .Rproj file is automatically created in the new
+folder that you created for the project. The \texttt{here()} package
+will automatically set your working directory to wherever your .Rproj
+file is saved. That means you can save a file like this:
 \texttt{write\_csv(file\_name,\ here("data",\ "file\_name.csv"))}. Using
 \texttt{here()} means that if you access your collaborators folder where
 the .Rproj file is and they have been using relative paths using
@@ -713,43 +714,31 @@ the project folder:
 \begin{itemize}
 \tightlist
 \item
-  raw data
+  data
 \item
-  processed data
+  data
 \item
   scripts
 \item
   figures
 \end{itemize}
 
-\section{Analysis Workflow}\label{analysis-workflow}
+\section{Importing Data}\label{importing-data}
 
 Here is a general workflow I typically adhere to, and could be adopted
 as a starting point from which individual analysts could modify.
 
-\subsection{Import, pre-process \& tidy
-data}\label{import-pre-process-tidy-data}
-
 I usually create at least two different scripts in any analysis, which
 helps me to compartmentalize the different steps of the analysis. I
-start with a pre-processing script that will read in and format all the
-different data sets I want to combine and analyze. This is where I make
-changes to data format that I want to apply to all subsequent uses of
-that data (so that I don't have to keep doing it in subsequent scripts).
+start with a data wrangling script that will read in and format all the
+different data sets I want to uses, and then write them to my data
+folder to be read from the actual analysis script.
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi})}
-\item
-  \textbf{Create pre\_process.R script} In your newly created R Studio
-  project, go to File \textgreater{} New File \textgreater{} R Script.
-  Save it in the scripts sub-directory of your project directory.
-\item
-  Load packages
-\item
-  Import data:
-\end{enumerate}
+\textbf{Create a data\_wrangle.R script} In your newly created R Studio
+project, go to File \textgreater{} New File \textgreater{} R Script.
+Save it in the scripts sub-directory of your project directory.
 
-\textbf{Method 1}:From spreadsheet you already have
+\subsection{From spreadsheets}\label{from-spreadsheets}
 
 Most often you're going to want to read in files that are .csv files.
 These are comma separated value files and can be produced from excel or
@@ -766,7 +755,7 @@ base R function \texttt{read.csv} but rather use the tidy-verse function
 \texttt{read\_csv}. The base version will inevitably cause frustration
 due to incorrect variable class assignment for dates.
 
-\textbf{Method 2}: From Google Drive
+\subsection{From Google Drive}\label{from-google-drive}
 
 Using the googlesheets package in R is a pretty powerful tool and allows
 you to read googlesheets directly into R. This is great if your
@@ -785,29 +774,31 @@ See this
 \href{https://cran.r-project.org/web/packages/googlesheets/vignettes/basic-usage.html}{documentation}
 on the googlesheets package for more info.
 
-\textbf{Method 3}:From Hakai database
+\subsection{From Hakai Data Portal
+API}\label{from-hakai-data-portal-api}
 
-It is possible to get data from the Hakai database directly into R
-without having to leave R Studio. This is accomplished by interacting
-with an application programming interface (API) that was developed for
+It is possible to download data from the Hakai EIMS Data Portal database
+directly from R Studio. This is accomplished by interacting with an
+application programming interface (API) that was developed for
 downloading data from Hakai's data portal. Earlier in the Data Analysts
 Toolbox section we installed Hakai's API. Now we will use it to get
 Hakai data from the database.
 
 Below is a quickstart example of how you can download some chlorophyll
-data. Run the code below one line at a time. When you run the `client
-\textless{}- \ldots{}' line a web URL will be displayed in the console.
-Copy and paste that URL into your browser. This should take to you a
-webpage that displays another web URL, this is your authentication token
-that permits you access to the database. Copy and paste the URL into the
-console in R where it tells you to do so.
+data. Run the code below one line at a time. When you run the
+\texttt{client\ \textless{}-\ ...} line a web URL will be displayed in
+the console. Copy and paste that URL into your browser. This should take
+to you a webpage that displays another web URL, this is your
+authentication token that permits you access to the database. Copy and
+paste the URL into the console in R where it tells you to do so.
 
 \begin{verbatim}
+# Run this first lone only if you haven't installedt the R API before
 devtools::install_github("HakaiInstitute/hakai-api-client-r", subdir='hakaiApi')
 
 library('hakaiApi')
 
-# Get the api request client, run this line independently before the rest of the code
+# Run this line independently before the rest of the code to get the API authentication
 client <- hakaiApi::Client$new() # Follow stdout prompts to get an API token
 
 # Make a data request for chlorophyll data
@@ -833,13 +824,18 @@ To read generally about the API and how to use it for your first time
 \href{https://github.com/HakaiInstitute/hakai-api/blob/master/docs/simplified-api-documentation.md\#what-is-the-hakai-api}{go
 here}.
 
-Here is a more advanced querystring that you could use as a template:
-
-\begin{verbatim}
-chl_endpoint <- sprintf("%s/%s", client$api_root, 'eims/views/output/chlorophyll?date>=2016-11-01&date<2018-11-20&work_area&&{"CALVERT"}&site_id&&{"KC13","MG4"}&survey&&{"KWAK","MACRO_MGEO"}&limit=-1')
-
-chl <- client$get(chl_endpoint)
-\end{verbatim}
+If you don't want to learn how to write a querystring yourself there is
+an option to just copy and paste the querystring from the
+\href{https://hecate.hakai.org/portal2/}{EIMS Data Portal}. Use the
+portal to select the sample type, and dates and sites you'd like to
+download as you normally would. To copy the querystring go to the top
+right of the window where it says Options and click `Display API query'.
+You can copy that string in to your endpoint definition in R. Just be
+sure to copy that string starting from \texttt{eims/views/...},
+excluding \texttt{https://hecate.hakai.org/api/} and then paste that
+into the definitions of your endpoint and surround that string with
+single quotes ie:
+\texttt{endpoint\ \textless{}-\ sprintf("\%s/\%s",\ client\$api\_root,\ \textquotesingle{}eims/views/output/chlorophyll?date\textgreater{}=2016-11-01\&date\textless{}2018-11-20\&work\_area\&\&\{"CALVERT"\}\&site\_id\&\&\{"KC13","MG4"\}\&survey\&\&\{"KWAK","MACRO\_MGEO"\}\&limit=-1\textquotesingle{}}
 
 Make sure to add \&limit=-1 at the end of your query string so that not
 only the first 20 results are downloaded, but rather everything matching
@@ -848,80 +844,21 @@ your query string is downloaded.
 The page documenting the API usage can be found
 \href{https://hakaiinstitute.github.io/hakai-api/}{here}
 
-Once I have my data set in my work environment, I'll make sure that all
-the variable classes are what I want them to be. Luckily, when
-\texttt{read\_csv} reads in your file, it prints a summary of the name
-and type of each variable in your data frame.
+Once you're happy with the formatting and filtering you've applied to
+your data make sure to write a new data file:
 
-I always check:
+\texttt{write\_csv(here("data",\ "my\_data.csv"))}
 
-\begin{itemize}
-\tightlist
-\item
-  that my Date column has the class `Date'
-\item
-  that categorical variables are stored as factors
-\item
-  anything that is not a categorical variable is not stored as a factor
-  but rather is numeric, character, or integer for example.
-\end{itemize}
+\subsection{Analysis}\label{analysis}
 
-One of the most common problems of why you get errors in R is from R
-assigning incorrect variable classes. Often you want your variable to be
-of class numeric, or character, but it is assigned as a factor. This is
-extremely common and can be remedied by coercing your variable class, or
-using tools that are part of the tidyverse
+Now create a new script for your analysis. I like to use R Markdown
+files (.Rmd) for my anlaysis which allows me to weave narrative
+explanations of what anlaysis I am doing in each separate code chunk.
+Read in the data you created in the \texttt{data\_wrangling.R} script.
 
-Once your data is imported into R and you are happy with the variable
-classes, it's time to start wrangling your data into a format you can
-visualize and model.
+\texttt{read\_csv(here("data",\ "my\_data.csv"))}
 
-\subsection{Exploratory data analysis}\label{exploratory-data-analysis}
-
-This is where you start playing with the data. You will likely try many
-different summaries and visualizations while you seek a deeper
-understanding of your data. Read the
-\href{http://r4ds.had.co.nz/exploratory-data-analysis.html}{Exploratory
-Data Analysis} chapter in R for Data Science.
-
-I typically create an exploratory data analysis (EDA) script
-specifically for this, and save all my figures to an
-exploratory\_figures sub-directory using the function
-\texttt{ggsave(here("figures",\ "figure\_1.png})). I use R Markdown
-files (.Rmd) for my EDA. This allows me to weave narrative explanations
-of what exploration I am doing in each separate code chunk. Writing this
-narrative about why you chose to explore a certain analysis or summary,
-and why it did or didn't work is key in documenting your analysis so you
-can come back to it, make sense of what you've done, and pick up where
-you left off.
-
-EDA allows me to try many different summaries or visualizations without
-having to worry about making the output perfect or pretty. This process
-will give you insight to your data as well as generate new questions and
-provoke new analyses. One excellent tool that can help you explore your
-data interactively is using \href{https://shiny.rstudio.com/}{shiny
-apps}. There's too much detail to focus on how to produce shiny apps
-here but suffice to say that creating interactivity with your data set
-is an excellent way to explore many different relationships between your
-data.
-
-Exploratory analysis can probably go on forever depending on the
-complexity of your data. You will probably think of 1000 different ways
-to look at your data, but after some time you need to refocus on your
-original question and think carefully about what analyses and
-visualizations are best to communicate. Because you've been storing all
-of your EDA in and EDA script you've got a record of every path you went
-down while exploring your data. You can then cherry pick the analyses,
-plots, and summaries you want to include in your final scripts and
-simply copy and past them into a new .Rmd script.
-
-\subsection{Predict and Model}\label{predict-and-model}
-
-The type of statistical modelling you are going to do is dependent on
-the question you are asking, and is outside the scope of this guide. For
-some general guidelines on predicting and modeling read the section
-\href{http://r4ds.had.co.nz/model-intro.html}{Model} in R for Data
-Science.
+Begin analyzing your data!
 
 \subsection{Communicate}\label{communicate}
 
