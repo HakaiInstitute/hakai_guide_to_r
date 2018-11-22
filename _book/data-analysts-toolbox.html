@@ -47,16 +47,6 @@
 
 
 
-<script src="libs/htmlwidgets-1.0/htmlwidgets.js"></script>
-<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-1.3.1/leaflet.js"></script>
-<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
-<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.0.2/leaflet.js"></script>
-<script src="libs/esri-leaflet-2.1.4/esri-leaflet-prod.js"></script>
-<script src="libs/esri-leaflet-2.1.4/esri-leaflet-bindings.js"></script>
 
 
 <style type="text/css">
@@ -97,7 +87,7 @@ code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* Com
 code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 </style>
 
-<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
 <body>
@@ -191,7 +181,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
             <section class="normal" id="section-">
 <div id="data-analysts-toolbox" class="section level1">
-<h1><span class="header-section-number">2</span> Data Analyst’s Toolbox</h1>
+<h1><span class="header-section-number">Chapter 2</span> Data Analyst’s Toolbox</h1>
 <div id="r-and-r-studio" class="section level2">
 <h2><span class="header-section-number">2.1</span> R and R Studio</h2>
 <p>R is the statistical programming language that R Studio provides and interface to. I think of R Studio as being the front-end user interface to the coding language R which works in the background. For this all to work you you need to download two things to start; R and R Studio.</p>
@@ -237,16 +227,33 @@ devtools::install_github(&quot;HakaiInstitute/hakai-api-client-r&quot;, subdir=&
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": null,
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
 "fontsettings": {
 "theme": "white",
 "family": "sans",
 "size": 2
 },
-"edit": null,
-"download": null,
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["testbook2.pdf", "testbook2.epub"],
 "toc": {
-"collapse": "section"
+"collapse": "subsection"
 }
 });
 });

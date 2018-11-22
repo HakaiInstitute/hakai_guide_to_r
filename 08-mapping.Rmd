@@ -29,14 +29,14 @@ Example:
 ```{r}
 library(leaflet)
 library(leaflet.esri)
-library(magrittr)
- leaflet() %>%
-        # Set the default lat and long and zoom level 
-        setView(lng = -126, lat = 50.3601, zoom = 7) %>% 
-        # Add default tile
-        addTiles() %>% 
-        # Add tile from Hakai AGOL 
-        addEsriTiledMapLayer(url = "https://ags.hakai.org:6443/arcgis/rest/services/AGOL_basemaps/Marine_charts/MapServer")
+# library(magrittr)
+#  leaflet() %>%
+#         # Set the default lat and long and zoom level 
+#         setView(lng = -126, lat = 50.3601, zoom = 7) %>% 
+#         # Add default tile
+#         addTiles() %>% 
+#         # Add tile from Hakai AGOL 
+#         addEsriTiledMapLayer(url = "https://ags.hakai.org:6443/arcgis/rest/services/AGOL_basemaps/Marine_charts/MapServer")
 
 ```
 

@@ -1,4 +1,5 @@
-book_filename: "Hakai_R_Guide"
+book_filename: "Hakai Institute R Stats Guide"
+delete_merged_file: true
 language:
   ui:
-delete_merged_file: TRUE
+    chapter_name: "Chapter "
