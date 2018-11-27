@@ -1,0 +1,44 @@
+# Mapping in R
+
+## Leaflet
+
+It is possible to use the Javascript based widget known as [Leaflet](https://rstudio.github.io/leaflet/) from within R. This is great for making some simple maps in an interactive R Markdown document, as well as in Shiny apps. You can use basemaps that Hakai hosts from the ArcGIS Online Server (AGOL), or you can use the basic maps that are provided. You are able to add points, visualize heat maps, legends, cloropleths, and other simple GIS tasks.
+
+To do this from R you need to:
+
+```{r, eval=FALSE}
+# The package that allows you add leaflet map widgets to your interactive web documents:
+install.packages('leaflet')
+
+# The package that allows you to use map tiles from Hakai's AGOL
+install.packages('leaflet.esri')
+
+
+```
+
+
+Follow the instructions on R-Studio's [Leaflet package webpage](https://rstudio.github.io/leaflet/) to create your map. The included basemaps can be viewed [here](https://leaflet-extras.github.io/leaflet-providers/preview/index.html)
+
+To use the basemaps on Hakai's AGOL server use the `addEsriTiledMapLayer()` function from the `esri.leaflet` package where the documentation can be read [here](https://bhaskarvk.github.io/leaflet.esri/reference/addEsriTiledMapLayer.html)
+
+
+Hakai ArcGIS Online maps can be viewed [here](https://ags.hakai.org:6443/arcgis/rest/services/AGOL_basemaps/). You can first view any of these basemaps in AGOL to decide which you'd like to use. Once you've decided, you simply copy the URL and paste it into the `addEsriTileMapLayer()` function
+
+Example:
+
+```{r}
+library(leaflet)
+library(leaflet.esri)
+# library(magrittr)
+#  leaflet() %>%
+#         # Set the default lat and long and zoom level 
+#         setView(lng = -126, lat = 50.3601, zoom = 7) %>% 
+#         # Add default tile
+#         addTiles() %>% 
+#         # Add tile from Hakai AGOL 
+#         addEsriTiledMapLayer(url = "https://ags.hakai.org:6443/arcgis/rest/services/AGOL_basemaps/Marine_charts/MapServer")
+
+```
+
+
+

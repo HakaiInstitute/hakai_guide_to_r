@@ -10,6 +10,7 @@ documentclass: book
 biblio-style: apalike
 link-citations: yes
 github-repo: HakaiInstitute/hakai_guide_to_r
+always_allow_html: yes
 ---
 
 ---
