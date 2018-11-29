@@ -121,7 +121,7 @@ If someone from outside the Hakai Institute GitHUB account wants to review your 
 
 ### Code Licensing
 
-* It's a good idea to license with MIT license to permit commercial use. 
+* We recommend licensing with the [AGPLv3](https://choosealicense.com/licenses/agpl-3.0/)
 
 * This license should be included in every script or data package, but we will still control who has access to code and data by requiring them to request access to data packages or scripts.
 
