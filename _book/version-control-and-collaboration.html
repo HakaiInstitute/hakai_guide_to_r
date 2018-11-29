@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Hakai Institute R Stats Guide</title>
+  <title>Hakai Institute R Stats Guide for Reproducible Analyses</title>
   <meta name="description" content="This is the Hakai Institutes R Guide">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Hakai Institute R Stats Guide" />
+  <meta property="og:title" content="Hakai Institute R Stats Guide for Reproducible Analyses" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="images/analyst_red.png" />
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="HakaiInstitute/hakai_guide_to_r" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Hakai Institute R Stats Guide" />
+  <meta name="twitter:title" content="Hakai Institute R Stats Guide for Reproducible Analyses" />
   
   <meta name="twitter:description" content="This is the Hakai Institutes R Guide" />
   <meta name="twitter:image" content="images/analyst_red.png" />
@@ -31,7 +31,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="starting-your-project.html">
+<link rel="prev" href="start-your-project.html">
 <link rel="next" href="mapping-in-r.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -47,6 +47,16 @@
 
 
 
+<script src="libs/htmlwidgets-1.0/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.2/leaflet.js"></script>
+<script src="libs/esri-leaflet-2.1.4/esri-leaflet-prod.js"></script>
+<script src="libs/esri-leaflet-2.1.4/esri-leaflet-bindings.js"></script>
 
 
 <style type="text/css">
@@ -100,46 +110,46 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">Hakai Institute R Stats Guide</a></li>
+<li><a href="./">Hakai Institute R Stats Guide for Reproducible Analyses</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
 <li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#filling-in-the-gaps"><i class="fa fa-check"></i><b>1.1</b> Filling in the Gaps</a></li>
-<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#modern-approach-to-data-analysis"><i class="fa fa-check"></i><b>1.2</b> Modern Approach to Data Analysis</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#tidyverse"><i class="fa fa-check"></i><b>1.2</b> Tidyverse</a></li>
 <li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#acknowledgements"><i class="fa fa-check"></i><b>1.3</b> Acknowledgements</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#contributors"><i class="fa fa-check"></i><b>1.4</b> Contributors</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="data-analysts-toolbox.html"><a href="data-analysts-toolbox.html"><i class="fa fa-check"></i><b>2</b> Data Analyst’s Toolbox</a><ul>
-<li class="chapter" data-level="2.1" data-path="data-analysts-toolbox.html"><a href="data-analysts-toolbox.html#r-and-r-studio"><i class="fa fa-check"></i><b>2.1</b> R and R Studio</a><ul>
-<li class="chapter" data-level="2.1.1" data-path="data-analysts-toolbox.html"><a href="data-analysts-toolbox.html#step-by-step-rrstudio"><i class="fa fa-check"></i><b>2.1.1</b> Step-by-step R/RStudio</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="intro-to-r.html"><a href="intro-to-r.html"><i class="fa fa-check"></i><b>3</b> Intro to R</a><ul>
-<li class="chapter" data-level="3.1" data-path="intro-to-r.html"><a href="intro-to-r.html#primary-resource"><i class="fa fa-check"></i><b>3.1</b> Primary Resource</a></li>
-<li class="chapter" data-level="3.2" data-path="intro-to-r.html"><a href="intro-to-r.html#data-transformation"><i class="fa fa-check"></i><b>3.2</b> Data Transformation</a></li>
-<li class="chapter" data-level="3.3" data-path="intro-to-r.html"><a href="intro-to-r.html#tidying-your-data"><i class="fa fa-check"></i><b>3.3</b> Tidying Your Data</a></li>
-<li class="chapter" data-level="3.4" data-path="intro-to-r.html"><a href="intro-to-r.html#visualizing-data"><i class="fa fa-check"></i><b>3.4</b> Visualizing Data</a></li>
-<li class="chapter" data-level="3.5" data-path="intro-to-r.html"><a href="intro-to-r.html#learning-objectives"><i class="fa fa-check"></i><b>3.5</b> Learning Objectives</a></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="general-principles.html"><a href="general-principles.html"><i class="fa fa-check"></i><b>4</b> General Principles</a><ul>
-<li class="chapter" data-level="4.1" data-path="general-principles.html"><a href="general-principles.html#reproducible-research"><i class="fa fa-check"></i><b>4.1</b> Reproducible Research</a></li>
-<li class="chapter" data-level="4.2" data-path="general-principles.html"><a href="general-principles.html#open-science-collaboration"><i class="fa fa-check"></i><b>4.2</b> Open Science Collaboration</a><ul>
-<li class="chapter" data-level="4.2.1" data-path="general-principles.html"><a href="general-principles.html#peer-review"><i class="fa fa-check"></i><b>4.2.1</b> Peer Review</a></li>
-<li class="chapter" data-level="4.2.2" data-path="general-principles.html"><a href="general-principles.html#code-review"><i class="fa fa-check"></i><b>4.2.2</b> Code Review</a></li>
-<li class="chapter" data-level="4.2.3" data-path="general-principles.html"><a href="general-principles.html#collaboration"><i class="fa fa-check"></i><b>4.2.3</b> Collaboration</a></li>
+<li class="chapter" data-level="2" data-path="general-principles.html"><a href="general-principles.html"><i class="fa fa-check"></i><b>2</b> General Principles</a><ul>
+<li class="chapter" data-level="2.1" data-path="general-principles.html"><a href="general-principles.html#reproducible-research"><i class="fa fa-check"></i><b>2.1</b> Reproducible Research</a></li>
+<li class="chapter" data-level="2.2" data-path="general-principles.html"><a href="general-principles.html#open-science-collaboration"><i class="fa fa-check"></i><b>2.2</b> Open Science Collaboration</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="general-principles.html"><a href="general-principles.html#peer-review"><i class="fa fa-check"></i><b>2.2.1</b> Peer Review</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="starting-your-project.html"><a href="starting-your-project.html"><i class="fa fa-check"></i><b>5</b> Starting Your Project</a><ul>
-<li class="chapter" data-level="5.1" data-path="starting-your-project.html"><a href="starting-your-project.html#create-a-new-r-studio-project"><i class="fa fa-check"></i><b>5.1</b> Create a new R-Studio Project</a></li>
-<li class="chapter" data-level="5.2" data-path="starting-your-project.html"><a href="starting-your-project.html#file-paths-and-the-working-directory"><i class="fa fa-check"></i><b>5.2</b> File paths and the working directory</a><ul>
-<li class="chapter" data-level="5.2.1" data-path="starting-your-project.html"><a href="starting-your-project.html#create-folder-structure"><i class="fa fa-check"></i><b>5.2.1</b> Create folder structure</a></li>
+<li class="chapter" data-level="3" data-path="data-analysts-toolbox.html"><a href="data-analysts-toolbox.html"><i class="fa fa-check"></i><b>3</b> Data Analyst’s Toolbox</a><ul>
+<li class="chapter" data-level="3.1" data-path="data-analysts-toolbox.html"><a href="data-analysts-toolbox.html#install-r-and-r-studio"><i class="fa fa-check"></i><b>3.1</b> Install R and R Studio</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="data-analysts-toolbox.html"><a href="data-analysts-toolbox.html#wet-your-feet"><i class="fa fa-check"></i><b>3.1.1</b> Wet Your Feet</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="starting-your-project.html"><a href="starting-your-project.html#importing-data"><i class="fa fa-check"></i><b>5.3</b> Importing Data</a><ul>
-<li class="chapter" data-level="5.3.1" data-path="starting-your-project.html"><a href="starting-your-project.html#from-spreadsheets"><i class="fa fa-check"></i><b>5.3.1</b> From spreadsheets</a></li>
-<li class="chapter" data-level="5.3.2" data-path="starting-your-project.html"><a href="starting-your-project.html#from-google-drive"><i class="fa fa-check"></i><b>5.3.2</b> From Google Drive</a></li>
-<li class="chapter" data-level="5.3.3" data-path="starting-your-project.html"><a href="starting-your-project.html#from-hakai-data-portal-api"><i class="fa fa-check"></i><b>5.3.3</b> From Hakai Data Portal API</a></li>
-<li class="chapter" data-level="5.3.4" data-path="starting-your-project.html"><a href="starting-your-project.html#analysis"><i class="fa fa-check"></i><b>5.3.4</b> Analysis</a></li>
-<li class="chapter" data-level="5.3.5" data-path="starting-your-project.html"><a href="starting-your-project.html#communicate"><i class="fa fa-check"></i><b>5.3.5</b> Communicate</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="intro-to-r.html"><a href="intro-to-r.html"><i class="fa fa-check"></i><b>4</b> Intro to R</a><ul>
+<li class="chapter" data-level="4.1" data-path="intro-to-r.html"><a href="intro-to-r.html#primary-resource"><i class="fa fa-check"></i><b>4.1</b> Primary Resource</a></li>
+<li class="chapter" data-level="4.2" data-path="intro-to-r.html"><a href="intro-to-r.html#data-transformation"><i class="fa fa-check"></i><b>4.2</b> Data Transformation</a></li>
+<li class="chapter" data-level="4.3" data-path="intro-to-r.html"><a href="intro-to-r.html#tidying-your-data"><i class="fa fa-check"></i><b>4.3</b> Tidying Your Data</a></li>
+<li class="chapter" data-level="4.4" data-path="intro-to-r.html"><a href="intro-to-r.html#visualizing-data"><i class="fa fa-check"></i><b>4.4</b> Visualizing Data</a></li>
+<li class="chapter" data-level="4.5" data-path="intro-to-r.html"><a href="intro-to-r.html#learning-objectives"><i class="fa fa-check"></i><b>4.5</b> Learning Objectives</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="start-your-project.html"><a href="start-your-project.html"><i class="fa fa-check"></i><b>5</b> Start Your Project</a><ul>
+<li class="chapter" data-level="5.1" data-path="start-your-project.html"><a href="start-your-project.html#create-a-new-r-studio-project"><i class="fa fa-check"></i><b>5.1</b> Create a new R-Studio Project</a></li>
+<li class="chapter" data-level="5.2" data-path="start-your-project.html"><a href="start-your-project.html#file-paths-and-the-working-directory"><i class="fa fa-check"></i><b>5.2</b> File Paths and the Working Directory</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="start-your-project.html"><a href="start-your-project.html#the-here-package"><i class="fa fa-check"></i><b>5.2.1</b> The <code>here()</code> package</a></li>
+<li class="chapter" data-level="5.2.2" data-path="start-your-project.html"><a href="start-your-project.html#create-folder-structure"><i class="fa fa-check"></i><b>5.2.2</b> Create folder structure</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="start-your-project.html"><a href="start-your-project.html#importing-data"><i class="fa fa-check"></i><b>5.3</b> Importing Data</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="start-your-project.html"><a href="start-your-project.html#from-spreadsheets"><i class="fa fa-check"></i><b>5.3.1</b> From spreadsheets</a></li>
+<li class="chapter" data-level="5.3.2" data-path="start-your-project.html"><a href="start-your-project.html#from-google-drive"><i class="fa fa-check"></i><b>5.3.2</b> From Google Drive</a></li>
+<li class="chapter" data-level="5.3.3" data-path="start-your-project.html"><a href="start-your-project.html#from-hakai-data-portal-api"><i class="fa fa-check"></i><b>5.3.3</b> From Hakai Data Portal API</a></li>
+<li class="chapter" data-level="5.3.4" data-path="start-your-project.html"><a href="start-your-project.html#analysis"><i class="fa fa-check"></i><b>5.3.4</b> Analysis</a></li>
+<li class="chapter" data-level="5.3.5" data-path="start-your-project.html"><a href="start-your-project.html#communicate"><i class="fa fa-check"></i><b>5.3.5</b> Communicate</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="version-control-and-collaboration.html"><a href="version-control-and-collaboration.html"><i class="fa fa-check"></i><b>6</b> Version Control and Collaboration</a><ul>
@@ -147,7 +157,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="6.1.1" data-path="version-control-and-collaboration.html"><a href="version-control-and-collaboration.html#version-control"><i class="fa fa-check"></i><b>6.1.1</b> Version Control</a></li>
 </ul></li>
 <li class="chapter" data-level="6.2" data-path="version-control-and-collaboration.html"><a href="version-control-and-collaboration.html#git-and-github"><i class="fa fa-check"></i><b>6.2</b> Git and GitHUB</a><ul>
-<li class="chapter" data-level="6.2.1" data-path="version-control-and-collaboration.html"><a href="version-control-and-collaboration.html#step-by-step-gitgithub"><i class="fa fa-check"></i><b>6.2.1</b> Step-by-step Git/GitHub</a></li>
+<li class="chapter" data-level="6.2.1" data-path="version-control-and-collaboration.html"><a href="version-control-and-collaboration.html#step-by-step-install-gitgithub"><i class="fa fa-check"></i><b>6.2.1</b> Step-by-step Install Git/GitHub</a></li>
 <li class="chapter" data-level="6.2.2" data-path="version-control-and-collaboration.html"><a href="version-control-and-collaboration.html#start-an-r-studio-project-under-version-control"><i class="fa fa-check"></i><b>6.2.2</b> Start an R-Studio project under version control</a></li>
 <li class="chapter" data-level="6.2.3" data-path="version-control-and-collaboration.html"><a href="version-control-and-collaboration.html#gitkraken"><i class="fa fa-check"></i><b>6.2.3</b> GitKraken</a></li>
 <li class="chapter" data-level="6.2.4" data-path="version-control-and-collaboration.html"><a href="version-control-and-collaboration.html#fork-and-pull"><i class="fa fa-check"></i><b>6.2.4</b> Fork and Pull</a></li>
@@ -160,7 +170,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="mapping-in-r.html"><a href="mapping-in-r.html"><i class="fa fa-check"></i><b>7</b> Mapping in R</a><ul>
-<li class="chapter" data-level="7.1" data-path="mapping-in-r.html"><a href="mapping-in-r.html#leaflet"><i class="fa fa-check"></i><b>7.1</b> Leaflet</a></li>
+<li class="chapter" data-level="7.1" data-path="mapping-in-r.html"><a href="mapping-in-r.html#site-maps"><i class="fa fa-check"></i><b>7.1</b> Site Maps</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="mapping-in-r.html"><a href="mapping-in-r.html#high-resolution-maps"><i class="fa fa-check"></i><b>7.1.1</b> High Resolution Maps</a></li>
+<li class="chapter" data-level="7.1.2" data-path="mapping-in-r.html"><a href="mapping-in-r.html#medium-resolution-pbs-mapping-package"><i class="fa fa-check"></i><b>7.1.2</b> Medium Resolution PBS Mapping Package</a></li>
+<li class="chapter" data-level="7.1.3" data-path="mapping-in-r.html"><a href="mapping-in-r.html#low-resolution-pacifc-coast-maps"><i class="fa fa-check"></i><b>7.1.3</b> Low Resolution Pacifc Coast Maps</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="mapping-in-r.html"><a href="mapping-in-r.html#interactive-maps-with-leaflet"><i class="fa fa-check"></i><b>7.2</b> Interactive Maps with Leaflet</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="resources-and-references.html"><a href="resources-and-references.html"><i class="fa fa-check"></i><b>8</b> Resources and References</a></li>
 <li class="chapter" data-level="9" data-path="glossary-of-terms.html"><a href="glossary-of-terms.html"><i class="fa fa-check"></i><b>9</b> Glossary of Terms</a></li>
@@ -173,7 +188,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Hakai Institute R Stats Guide</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Hakai Institute R Stats Guide for Reproducible Analyses</a>
           </h1>
         </div>
 
@@ -197,11 +212,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="git-and-github" class="section level2">
 <h2><span class="header-section-number">6.2</span> Git and GitHUB</h2>
-<p>Similar to the relationship between R and R-Studio, Git is the <em>local</em> version control system running in the background on your computer while GitHub is the remote user interface for saving, tracking, and sharing updated versions of your files that are hosted on a remote server. Git and GitHub are integral for tracking the evolution of a set of files, and the development of your analysis.</p>
+<p>While peer-review permits the scientific merit of your analyses to be assesed, code-review permits a colleague to assess your analyses for coding errors. Developing analyses is difficult and error prone. Using the <em>distributed version control</em> system <a href="https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control">GitHUB</a>, you are able to track changes to your code over time and enable others to suggest edits for your review, leaving you with a history of exactly what was added when and by whom — this is version control. The distributed aspect of ‘distributed version control’ means that multiple people can access the version control through your <em>repository</em> of all the files of your analysis (and their previous versions). You can make your repository (repo) private or public. By acessing your repo, which is hosted on GitHub, others can meaningfully collaborate, conduct peer-review, and code-review. Git is the <em>local</em> version control system running in the background on your computer while GitHub is the remote user interface for saving, tracking, and sharing updated versions of your files that are hosted on a remote server. Git and GitHub are integral for tracking the evolution of a set of files, and the development of your analysis.</p>
 <p>The additional ‘save’ that comes from version control using git is known as a <em>commit</em>. You save your files like you normally would, but every once in a while you commit your files as an official version to be remembered. A commit can be thought of as a bullet point in the to do list of your analysis, and each commit you make must be accompanied by a message. For example; ‘read in data and tidy it up’, or ‘remove observations from non-standard sampling event, and re-fit GLM’. Git tracks the commits you make in R-Studio locally on your own computer. When you are ready for a series of commits to be made public, you <em>push</em> your commits to your <em>remote</em> repository at GitHub.</p>
 <p>If you’re interested in learning why version control is important, I encourage you to skim <a href="http://happygitwithr.com/big-picture.html#why-git">Chapter 1; ‘Why Git? Why GitHub’ from Jenny Bryan’s Book</a>. I recommend referring back to this book whenever you have a question about using git and GitHub with R-Studio. You can also watch <a href="https://www.youtube.com/watch?v=FyfwLX4HAxM">this video</a> for an introduction to Git and GitHub.</p>
-<div id="step-by-step-gitgithub" class="section level3">
-<h3><span class="header-section-number">6.2.1</span> Step-by-step Git/GitHub</h3>
+<div id="step-by-step-install-gitgithub" class="section level3">
+<h3><span class="header-section-number">6.2.1</span> Step-by-step Install Git/GitHub</h3>
 <ol style="list-style-type: decimal">
 <li><p><strong>Setup a GitHub Account</strong>: First, you’re going to want to <a href="https://github.com">sign up for a GitHub account</a></p></li>
 <li><p><strong>Install and set-up Git</strong>: Installing Git locally and getting Git to communicate to your remote GitHub website account, and then getting them to talk with R Studio takes a number of steps to complete…This next part can be painful to work through, but it is 100 % necessary and well worth it in the long-run. Install Git and GitHub and get them talking to R-Studio using <a href="http://happygitwithr.com/install-git.html">Jenny Bryan’s Guide</a>, follwow along wth chapter 7, 8, 10, and 13.</p></li>
@@ -299,7 +314,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           </div>
         </div>
       </div>
-<a href="starting-your-project.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="start-your-project.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="mapping-in-r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
@@ -337,10 +352,11 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["Hakai Institute R Stats Guide.pdf", "Hakai Institute R Stats Guide.epub"],
+"download": ["Hakai-Institute-R-Stats-Guide-for-Reproducible-Analyses.pdf", "Hakai-Institute-R-Stats-Guide-for-Reproducible-Analyses.epub"],
 "toc": {
 "collapse": "subsection"
-}
+},
+"toc_depth": 1
 });
 });
 </script>

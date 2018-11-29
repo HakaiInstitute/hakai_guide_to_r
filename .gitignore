@@ -6,19 +6,12 @@ packrat/lib*/
 .build.sh
 .Rprofile
 DESCRIPTION
-
 _book/additional-references-and-learnig-resources\.html
-
 _book/developing-analyses-with-hakai-institute\.html
-
 _book/guide-for-the-new-r-analysis-developer-1\.html
-
 _book/Icon
-
 *.Rproj
-
 _book/data-analysts-toolbox-1\.html
-
 _book/additional-references-and-learnig-resources\.html
 _book/developing-analyses-with-hakai-institute\.html
 _book/guide-for-the-new-r-analysis-developer-1\.html
@@ -26,3 +19,4 @@ _book/Icon
 _book/data-analysts-toolbox-1\.html
 .httr-oauth
 Icon
+Fig1.pdf

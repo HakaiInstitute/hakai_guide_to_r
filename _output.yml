@@ -3,8 +3,9 @@ bookdown::gitbook:
   config:
     toc:
       before: |
-        <li><a href="./">Hakai Institute R Stats Guide</a></li>
+        <li><a href="./">Hakai Institute R Stats Guide for Reproducible Analyses</a></li>
     download: ["pdf", "epub"]
+    toc_depth: 1
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex

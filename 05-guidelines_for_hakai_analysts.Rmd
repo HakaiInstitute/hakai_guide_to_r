@@ -1,4 +1,4 @@
-# Starting Your Project
+# Start Your Project
 
 ## Create a new R-Studio Project
 
@@ -6,10 +6,11 @@ I create a new project for every analysis I undertake. Using R Studio Projects i
 
 To start a new project in R-Studio, go to File > New Project.
 
-## File paths and the working directory
+## File Paths and the Working Directory
 
 Often in an analysis you have to load or save files to a specific folder or file location on your computer. You should not use absolute paths to do this such as `write_csv(file_name, "C:Brett/documents/R projects/Hakai R Analyst/data/file_name.csv")`. The absolute path starts at the root of your computer's specific file system, and other people will have different absolute paths on their computer depending on where they saved their files. So if you shared a script with an absolute path, your collaborator won't be able to run the script without headaches of changing the abosulute path. Fortunately, you can use relative paths. Relative paths don't go all the way back to the root of your file system. A relative file path in this example would be `"/Hakai R analyst/data/file_name.csv"` because that's where this R Project folder starts. Using relative paths makes the scripts or programs portable between computers. 
 
+### The `here()` package
 To avoid having to set your working directory completely, a recommended method to work with relative file paths is using the `here()` package in conjunction with R-Studio projects. When you create a new R-Studio project, a .Rproj file is automatically created in the new folder that you created for the project. The `here()` package will automatically set your working directory to wherever your .Rproj file is saved. That means you can save a file like this: `write_csv(file_name, here("data", "file_name.csv"))`. Using `here()` means that if you access your collaborators folder where the .Rproj file is and they have been using relative paths using `here()`, the scripts should all just work—no chaning working directories or absolute file paths.
 
 ### Create folder structure
@@ -25,7 +26,7 @@ I use a default folder structure for every analysis based on the files that are 
 
 Here is a general workflow I typically adhere to, and could be adopted as a starting point from which individual analysts could modify.
 
-I usually create at least two different scripts in any analysis, which helps me to compartmentalize the different steps of the analysis. I start with a data wrangling script that will read in and format all the different data sets I want to uses, and then write them to my data folder to be read from the actual analysis script.
+I usually create at least two different scripts in any analysis, which helps me to compartmentalize the different steps of the analysis. I start with a data wrangling script that will read in and format all the different data sets I want to use, and then write them to my data folder to be read from the actual analysis script.
 
 __Create a data_wrangle.R script__ In your newly created R Studio project, go to File > New File > R Script. Save it in the scripts sub-directory of your project directory.
 
@@ -44,20 +45,23 @@ To read in a googlesheet:
 `install.packages('googlesheets')`
 `library(googlesheets)`
 
+```
 your_workbook <- gs_title('Name_of_your_workbook')
+
 worksheet1 <- gs_read(your_workbook, ws = "sheet 1")
+```
 
 See this [documentation](https://cran.r-project.org/web/packages/googlesheets/vignettes/basic-usage.html) on the googlesheets package for more info.
 
 ### From Hakai Data Portal API
 
-It is possible to download data from the Hakai EIMS Data Portal database directly from R Studio. This is accomplished by interacting with an application programming interface (API) that was developed for downloading data from Hakai's data portal. Earlier in the Data Analysts Toolbox section we installed Hakai's API. Now we will use it to get Hakai data from the database.
+It is possible to download data from the Hakai EIMS Data Portal database directly from R Studio. This is accomplished by interacting with an application programming interface (API) that was developed for downloading data from Hakai's data portal.
 
 Below is a quickstart example of how you can download some chlorophyll data. Run the code below one line at a time. When you run the `client <- ...` line a web URL will be displayed in the console. Copy and paste that URL into your browser. This should take to you a webpage that displays another web URL, this is your authentication token that permits you access to the database. Copy and paste the URL into the console in R where it tells you to do so.
 
 
 ```
-# Run this first lone only if you haven't installedt the R API before
+# Run this first line only if you haven't installedt the R API before
 devtools::install_github("HakaiInstitute/hakai-api-client-r", subdir='hakaiApi')
 
 library('hakaiApi')
@@ -86,7 +90,7 @@ Make sure to add &limit=-1 at the end of your query string so that not only the 
 
 The page documenting the API usage can be found [here](https://hakaiinstitute.github.io/hakai-api/)
 
-Once you're happy with the formatting and filtering you've applied to your data make sure to write a new data file:
+Once you're happy with the formatting and filtering you've applied to your data make sure to write a new data file that you can read in from your separate analysis script.
 
 `write_csv(here("data", "my_data.csv"))`
 

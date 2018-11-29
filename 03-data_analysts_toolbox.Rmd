@@ -1,0 +1,30 @@
+# Data Analyst's Toolbox
+
+## Install R and R Studio
+
+R is the statistical programming language that R Studio provides and interface to. I think of R Studio as being the front-end user interface to the coding language R which works in the background. For this all to work you you need to download two things to start; R and R Studio.
+
+1) __Install R__: Go to https://cran.r-project.org/ and follow the link to the download for your operating system.
+2) __Install R Studio__: Go to https://www.rstudio.com/products/rstudio/download/ to download R studio.
+
+Now that you have downloaded the tools you need, lets get familiar first with R-Studio and then the R programming language.
+
+### Wet Your Feet
+1) __R Studio Familiarization__: Watch [this R-Studio Tutorial](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/) for a nice introduction to the software.
+
+2) __Start Plotting__: Now that you're familiar with the software, lets get your feet wet in R and R-Studio. I recommend you start making some plots by working through the following exercises: [Section 3.1 to 3.4](http://r4ds.had.co.nz/data-visualisation.html) in Hadley Wickham's R for Data Science Book.
+
+3) __Projects Workflow__: Watch R-Studio tutorial: [Projects and R Studio](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-managing-change-part-1/)
+
+4) __Install Hakai's Application Programming Interface__
+This API is installed directly in R-Studio and allows you to download data from the Hakai Database. Open up R Studio and in the console window copy and paste the following code and hit enter: 
+
+```
+install.packages('devtools')
+install.packages('tidyverse')
+library('devtools')
+library('tidyverse')
+
+devtools::install_github("HakaiInstitute/hakai-api-client-r", subdir='hakaiApi')
+```
+

@@ -18,13 +18,14 @@ Google Drive is a simplified and intuitive version control system that can work 
 
 ## Git and GitHUB
 
-Similar to the relationship between R and R-Studio, Git is the _local_ version control system running in the background on your computer while GitHub is the remote user interface for saving, tracking, and sharing updated versions of your files that are hosted on a remote server. Git and GitHub are integral for tracking the evolution of a set of files, and the development of your analysis.  
+While peer-review permits the scientific merit of your analyses to be assesed, code-review permits a colleague to assess your analyses for coding errors. Developing analyses is difficult and error prone. Using the _distributed version control_ system [GitHUB](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control), you are able to track changes to your code over time and enable others to suggest edits for your review, leaving you with a history of exactly what was added when and by whom — this is version control. The distributed aspect of 'distributed version control' means that multiple people can access the version control through your _repository_ of all the files of your analysis (and their previous versions). You can make your repository (repo) private or public. By acessing your repo, which is hosted on GitHub, others can meaningfully collaborate, conduct peer-review, and code-review.
+Git is the _local_ version control system running in the background on your computer while GitHub is the remote user interface for saving, tracking, and sharing updated versions of your files that are hosted on a remote server. Git and GitHub are integral for tracking the evolution of a set of files, and the development of your analysis.  
 
 The additional 'save' that comes from version control using git is known as a _commit_. You save your files like you normally would, but every once in a while you commit your files as an official version to be remembered. A commit can be thought of as a bullet point in the to do list of your analysis, and each commit you make must be accompanied by a message. For example; 'read in data and tidy it up', or 'remove observations from non-standard sampling event, and re-fit GLM'. Git tracks the commits you make in R-Studio locally on your own computer. When you are ready for a series of commits to be made public, you _push_ your commits to your _remote_ repository at GitHub. 
 
 If you're interested in learning why version control is important, I encourage you to skim [Chapter 1; 'Why Git? Why GitHub' from Jenny Bryan's Book](http://happygitwithr.com/big-picture.html#why-git). I recommend referring back to this book whenever you have a question about using git and GitHub with R-Studio. You can also watch [this video](https://www.youtube.com/watch?v=FyfwLX4HAxM) for an introduction to Git and GitHub.
 
-### Step-by-step Git/GitHub
+### Step-by-step Install Git/GitHub
 
 1) __Setup a GitHub Account__: First, you're going to want to [sign up for a GitHub account](https://github.com)
 
