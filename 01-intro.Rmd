@@ -2,32 +2,31 @@
 
 ## Filling in the Gaps
 
-Most University courses that teach statistics and data analysis are focused on teaching statistical techniques such as generalized linear models, or logistic regression — which is very necessary and important — but they pay no attention to educating students on how to actually conduct an analysis from start to finish. Questions that often remain un-answered include:
+Most University courses that teach statistics and data analysis focus on teaching statistical techniques but they pay little attention to the tools, workflows, and data wrangling skills required to actually conduct an analysis from start to finish. Questions that often remain un-answered include:
 
 * What is an efficient workflow? 
 * How do I access and import data? 
 * How do I clean and manipulate my data into a format to analyze?
-* How do I maintain version-control of my analysis? 
 * How can I re-run my analysis in case I get new data or someone else wants to run my code? 
 * How can I collaborate on this analysis? 
 * How can I get my analysis into a format for someone to meaningfully conduct peer-review? 
 * How do I efficiently produce a professional report or other artifact of my analysis to communicate results?
 
-This guide aims to bridge this gap by taking you through the steps to produce a well-developed analysis that will form a template for conducting your own analyses while working with Hakai. You will be directed through an efficient way to learn the basics of R, and progress to modern methods of communicating results. Learning to develop analyses in R can be a very frustrating and difficult experience. Know that we have all suffered severely in this way, but that this guide will hasten you through the drudgery and frustration. No computer programming experience is required to work through this guide, though an undergraduate course in ecological statistics is recommended as pre-requisite.  
+This guide aims to bridge this gap by taking you through the steps to develop an analysis. Learning R can be a very frustrating and difficult experience. Know that we have all suffered severely in this way, but that this guide will hasten you through the frustration. No computer programming experience is required to work through this guide.
 
-## Modern Approach to Data Analysis
+## Tidyverse
 
-There is a vibrant 'open-source' community of people developing methods, packages, and workflows in the R programming world. Consequently, we have some of the most modern, flexible, and high-level methods to develop and communicate statistical analyses. 
-
-However, as the R community iterated ideas of how the programming language works at a very base level over the last couple of decades, we are left with a litany of methods and programming syntax. There are typically at least half a dozen ways to write a chunk of code to reach the same desired result in R. This, in part, has given R the reputation as being difficult to learn.
+As the R community iterated over ideas of how the programming language works at a very base level over the last couple of decades, we are left with a litany of methods and programming syntax. There are typically at least half a dozen ways to write a chunk of code to reach the same desired result in R. This, in part, has given R the reputation as being difficult to learn.
 
 This guide aims to address the 'thousand and one way of doing things' problem in R by focusing on the recent development of packages that form a simple, elegant, and coherent grammar of data analysis. This collection of packages and methods is known as the 'tidyverse', developed in large part by the Chief Scientist of R-Studio, Hadley Wickham, and has been widely adopted as the way forward for academic applications of the R language. 
 
-The objectives of this book are to serve as a:
+The objectives of this book are to serve as:
 
-1) Guide to install, set-up, and become familiar with analysis development tools; R, R-Studio, Git and Git Hub.
+1) A guide to install, set-up, and become familiar with analysis development tools; R, R-Studio, Git and Git Hub.
 
 2) Best-practice guidelines to develop reproducible, accurate, and collaborative analyses in R-Studio.
+
+3) Provide code templates for analyses and work common to Hakai employees and affiliates.
 
 ## Acknowledgements
 Much of this document refers you to material that others have worked very hard to make. I simply point to these resources in an order that makes sense and seems systematic to me. Many thanks to the following people for making this possible:
@@ -36,3 +35,11 @@ Much of this document refers you to material that others have worked very hard t
 * Dr. Roger Peng, Professor of Bio-statistics at Johns Hopkins University. [Website](http://www.biostat.jhsph.edu/~rpeng/), [GitHUB](https://github.com/rdpeng).
 * Dr. Hadley Wickham, Chief Scientist at R-Studio. [Website](http://hadley.nz/), [Twitter](https://twitter.com/hadleywickham), [GitHUB](https://github.com/hadley).
 * Dr. Hillary Parker, Data Scientist at Stitch-fix. [Twitter](https://twitter.com/hspter)
+
+## Contributors
+A number of people have make important contributions directly to this guide. This is highly recommended and can be done by submitting issues [here](https://github.com/HakaiInstitute/hakai_guide_to_r/issues) at the repository where this guide is hosted. Issues can be bugs, typos, or ideas for additional material. If you're already a GitHUB guru, feel free to fork the repositoory, make some changes or additions, and submit a pull-request!
+
+Thanks to the following people for significant contributions:
+
+* Dr. Daniel Okamoto
+* Jen Burt

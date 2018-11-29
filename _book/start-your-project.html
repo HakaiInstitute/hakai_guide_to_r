@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Hakai Institute R Stats Guide for Reproducible Analyses</title>
+  <meta name="description" content="This is the Hakai Institutes R Guide">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Hakai Institute R Stats Guide for Reproducible Analyses" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="images/analyst_red.png" />
+  <meta property="og:description" content="This is the Hakai Institutes R Guide" />
+  <meta name="github-repo" content="HakaiInstitute/hakai_guide_to_r" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Hakai Institute R Stats Guide for Reproducible Analyses" />
+  
+  <meta name="twitter:description" content="This is the Hakai Institutes R Guide" />
+  <meta name="twitter:image" content="images/analyst_red.png" />
+
+<meta name="author" content="Brett Johnson">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="intro-to-r.html">
+<link rel="next" href="version-control-and-collaboration.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.0/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.2/leaflet.js"></script>
+<script src="libs/esri-leaflet-2.1.4/esri-leaflet-prod.js"></script>
+<script src="libs/esri-leaflet-2.1.4/esri-leaflet-bindings.js"></script>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Hakai Institute R Stats Guide for Reproducible Analyses</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#filling-in-the-gaps"><i class="fa fa-check"></i><b>1.1</b> Filling in the Gaps</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#tidyverse"><i class="fa fa-check"></i><b>1.2</b> Tidyverse</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#acknowledgements"><i class="fa fa-check"></i><b>1.3</b> Acknowledgements</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#contributors"><i class="fa fa-check"></i><b>1.4</b> Contributors</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="general-principles.html"><a href="general-principles.html"><i class="fa fa-check"></i><b>2</b> General Principles</a><ul>
+<li class="chapter" data-level="2.1" data-path="general-principles.html"><a href="general-principles.html#reproducible-research"><i class="fa fa-check"></i><b>2.1</b> Reproducible Research</a></li>
+<li class="chapter" data-level="2.2" data-path="general-principles.html"><a href="general-principles.html#open-science-collaboration"><i class="fa fa-check"></i><b>2.2</b> Open Science Collaboration</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="general-principles.html"><a href="general-principles.html#peer-review"><i class="fa fa-check"></i><b>2.2.1</b> Peer Review</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-analysts-toolbox.html"><a href="data-analysts-toolbox.html"><i class="fa fa-check"></i><b>3</b> Data Analyst’s Toolbox</a><ul>
+<li class="chapter" data-level="3.1" data-path="data-analysts-toolbox.html"><a href="data-analysts-toolbox.html#install-r-and-r-studio"><i class="fa fa-check"></i><b>3.1</b> Install R and R Studio</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="data-analysts-toolbox.html"><a href="data-analysts-toolbox.html#wet-your-feet"><i class="fa fa-check"></i><b>3.1.1</b> Wet Your Feet</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="intro-to-r.html"><a href="intro-to-r.html"><i class="fa fa-check"></i><b>4</b> Intro to R</a><ul>
+<li class="chapter" data-level="4.1" data-path="intro-to-r.html"><a href="intro-to-r.html#primary-resource"><i class="fa fa-check"></i><b>4.1</b> Primary Resource</a></li>
+<li class="chapter" data-level="4.2" data-path="intro-to-r.html"><a href="intro-to-r.html#data-transformation"><i class="fa fa-check"></i><b>4.2</b> Data Transformation</a></li>
+<li class="chapter" data-level="4.3" data-path="intro-to-r.html"><a href="intro-to-r.html#tidying-your-data"><i class="fa fa-check"></i><b>4.3</b> Tidying Your Data</a></li>
+<li class="chapter" data-level="4.4" data-path="intro-to-r.html"><a href="intro-to-r.html#visualizing-data"><i class="fa fa-check"></i><b>4.4</b> Visualizing Data</a></li>
+<li class="chapter" data-level="4.5" data-path="intro-to-r.html"><a href="intro-to-r.html#learning-objectives"><i class="fa fa-check"></i><b>4.5</b> Learning Objectives</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="start-your-project.html"><a href="start-your-project.html"><i class="fa fa-check"></i><b>5</b> Start Your Project</a><ul>
+<li class="chapter" data-level="5.1" data-path="start-your-project.html"><a href="start-your-project.html#create-a-new-r-studio-project"><i class="fa fa-check"></i><b>5.1</b> Create a new R-Studio Project</a></li>
+<li class="chapter" data-level="5.2" data-path="start-your-project.html"><a href="start-your-project.html#file-paths-and-the-working-directory"><i class="fa fa-check"></i><b>5.2</b> File Paths and the Working Directory</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="start-your-project.html"><a href="start-your-project.html#the-here-package"><i class="fa fa-check"></i><b>5.2.1</b> The <code>here()</code> package</a></li>
+<li class="chapter" data-level="5.2.2" data-path="start-your-project.html"><a href="start-your-project.html#create-folder-structure"><i class="fa fa-check"></i><b>5.2.2</b> Create folder structure</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="start-your-project.html"><a href="start-your-project.html#importing-data"><i class="fa fa-check"></i><b>5.3</b> Importing Data</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="start-your-project.html"><a href="start-your-project.html#from-spreadsheets"><i class="fa fa-check"></i><b>5.3.1</b> From spreadsheets</a></li>
+<li class="chapter" data-level="5.3.2" data-path="start-your-project.html"><a href="start-your-project.html#from-google-drive"><i class="fa fa-check"></i><b>5.3.2</b> From Google Drive</a></li>
+<li class="chapter" data-level="5.3.3" data-path="start-your-project.html"><a href="start-your-project.html#from-hakai-data-portal-api"><i class="fa fa-check"></i><b>5.3.3</b> From Hakai Data Portal API</a></li>
+<li class="chapter" data-level="5.3.4" data-path="start-your-project.html"><a href="start-your-project.html#analysis"><i class="fa fa-check"></i><b>5.3.4</b> Analysis</a></li>
+<li class="chapter" data-level="5.3.5" data-path="start-your-project.html"><a href="start-your-project.html#communicate"><i class="fa fa-check"></i><b>5.3.5</b> Communicate</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="version-control-and-collaboration.html"><a href="version-control-and-collaboration.html"><i class="fa fa-check"></i><b>6</b> Version Control and Collaboration</a><ul>
+<li class="chapter" data-level="6.1" data-path="version-control-and-collaboration.html"><a href="version-control-and-collaboration.html#google-drive"><i class="fa fa-check"></i><b>6.1</b> Google Drive</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="version-control-and-collaboration.html"><a href="version-control-and-collaboration.html#version-control"><i class="fa fa-check"></i><b>6.1.1</b> Version Control</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="version-control-and-collaboration.html"><a href="version-control-and-collaboration.html#git-and-github"><i class="fa fa-check"></i><b>6.2</b> Git and GitHUB</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="version-control-and-collaboration.html"><a href="version-control-and-collaboration.html#step-by-step-install-gitgithub"><i class="fa fa-check"></i><b>6.2.1</b> Step-by-step Install Git/GitHub</a></li>
+<li class="chapter" data-level="6.2.2" data-path="version-control-and-collaboration.html"><a href="version-control-and-collaboration.html#start-an-r-studio-project-under-version-control"><i class="fa fa-check"></i><b>6.2.2</b> Start an R-Studio project under version control</a></li>
+<li class="chapter" data-level="6.2.3" data-path="version-control-and-collaboration.html"><a href="version-control-and-collaboration.html#gitkraken"><i class="fa fa-check"></i><b>6.2.3</b> GitKraken</a></li>
+<li class="chapter" data-level="6.2.4" data-path="version-control-and-collaboration.html"><a href="version-control-and-collaboration.html#fork-and-pull"><i class="fa fa-check"></i><b>6.2.4</b> Fork and Pull</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="version-control-and-collaboration.html"><a href="version-control-and-collaboration.html#best-practices"><i class="fa fa-check"></i><b>6.3</b> Best Practices</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="version-control-and-collaboration.html"><a href="version-control-and-collaboration.html#citing-analyses"><i class="fa fa-check"></i><b>6.3.1</b> Citing analyses</a></li>
+<li class="chapter" data-level="6.3.2" data-path="version-control-and-collaboration.html"><a href="version-control-and-collaboration.html#private-v.-public-repos"><i class="fa fa-check"></i><b>6.3.2</b> Private v. public repos</a></li>
+<li class="chapter" data-level="6.3.3" data-path="version-control-and-collaboration.html"><a href="version-control-and-collaboration.html#granularity-of-repos"><i class="fa fa-check"></i><b>6.3.3</b> Granularity of repos</a></li>
+<li class="chapter" data-level="6.3.4" data-path="version-control-and-collaboration.html"><a href="version-control-and-collaboration.html#code-licensing"><i class="fa fa-check"></i><b>6.3.4</b> Code Licensing</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="mapping-in-r.html"><a href="mapping-in-r.html"><i class="fa fa-check"></i><b>7</b> Mapping in R</a><ul>
+<li class="chapter" data-level="7.1" data-path="mapping-in-r.html"><a href="mapping-in-r.html#site-maps"><i class="fa fa-check"></i><b>7.1</b> Site Maps</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="mapping-in-r.html"><a href="mapping-in-r.html#high-resolution-maps"><i class="fa fa-check"></i><b>7.1.1</b> High Resolution Maps</a></li>
+<li class="chapter" data-level="7.1.2" data-path="mapping-in-r.html"><a href="mapping-in-r.html#medium-resolution-pbs-mapping-package"><i class="fa fa-check"></i><b>7.1.2</b> Medium Resolution PBS Mapping Package</a></li>
+<li class="chapter" data-level="7.1.3" data-path="mapping-in-r.html"><a href="mapping-in-r.html#low-resolution-pacifc-coast-maps"><i class="fa fa-check"></i><b>7.1.3</b> Low Resolution Pacifc Coast Maps</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="mapping-in-r.html"><a href="mapping-in-r.html#interactive-maps-with-leaflet"><i class="fa fa-check"></i><b>7.2</b> Interactive Maps with Leaflet</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="resources-and-references.html"><a href="resources-and-references.html"><i class="fa fa-check"></i><b>8</b> Resources and References</a></li>
+<li class="chapter" data-level="9" data-path="glossary-of-terms.html"><a href="glossary-of-terms.html"><i class="fa fa-check"></i><b>9</b> Glossary of Terms</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Hakai Institute R Stats Guide for Reproducible Analyses</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="start-your-project" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Start Your Project</h1>
+<div id="create-a-new-r-studio-project" class="section level2">
+<h2><span class="header-section-number">5.1</span> Create a new R-Studio Project</h2>
+<p>I create a new project for every analysis I undertake. Using R Studio Projects is one of the key benefits of using R Studio because it makes it easier to organize your projects, makes sharing projects easier, makes loading data easier, and improves reproducibility.</p>
+<p>To start a new project in R-Studio, go to File &gt; New Project.</p>
+</div>
+<div id="file-paths-and-the-working-directory" class="section level2">
+<h2><span class="header-section-number">5.2</span> File Paths and the Working Directory</h2>
+<p>Often in an analysis you have to load or save files to a specific folder or file location on your computer. You should not use absolute paths to do this such as <code>write_csv(file_name, &quot;C:Brett/documents/R projects/Hakai R Analyst/data/file_name.csv&quot;)</code>. The absolute path starts at the root of your computer’s specific file system, and other people will have different absolute paths on their computer depending on where they saved their files. So if you shared a script with an absolute path, your collaborator won’t be able to run the script without headaches of changing the abosulute path. Fortunately, you can use relative paths. Relative paths don’t go all the way back to the root of your file system. A relative file path in this example would be <code>&quot;/Hakai R analyst/data/file_name.csv&quot;</code> because that’s where this R Project folder starts. Using relative paths makes the scripts or programs portable between computers.</p>
+<div id="the-here-package" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> The <code>here()</code> package</h3>
+<p>To avoid having to set your working directory completely, a recommended method to work with relative file paths is using the <code>here()</code> package in conjunction with R-Studio projects. When you create a new R-Studio project, a .Rproj file is automatically created in the new folder that you created for the project. The <code>here()</code> package will automatically set your working directory to wherever your .Rproj file is saved. That means you can save a file like this: <code>write_csv(file_name, here(&quot;data&quot;, &quot;file_name.csv&quot;))</code>. Using <code>here()</code> means that if you access your collaborators folder where the .Rproj file is and they have been using relative paths using <code>here()</code>, the scripts should all just work—no chaning working directories or absolute file paths.</p>
+</div>
+<div id="create-folder-structure" class="section level3">
+<h3><span class="header-section-number">5.2.2</span> Create folder structure</h3>
+<p>I use a default folder structure for every analysis based on the files that are produced from every analysis. Using the project directory that you created your new R-Studio project, create these sub-folders within the project folder:</p>
+<ul>
+<li>data</li>
+<li>data</li>
+<li>scripts</li>
+<li>figures</li>
+</ul>
+</div>
+</div>
+<div id="importing-data" class="section level2">
+<h2><span class="header-section-number">5.3</span> Importing Data</h2>
+<p>Here is a general workflow I typically adhere to, and could be adopted as a starting point from which individual analysts could modify.</p>
+<p>I usually create at least two different scripts in any analysis, which helps me to compartmentalize the different steps of the analysis. I start with a data wrangling script that will read in and format all the different data sets I want to use, and then write them to my data folder to be read from the actual analysis script.</p>
+<p><strong>Create a data_wrangle.R script</strong> In your newly created R Studio project, go to File &gt; New File &gt; R Script. Save it in the scripts sub-directory of your project directory.</p>
+<div id="from-spreadsheets" class="section level3">
+<h3><span class="header-section-number">5.3.1</span> From spreadsheets</h3>
+<p>Most often you’re going to want to read in files that are .csv files. These are comma separated value files and can be produced from excel or Google Sheets by saving your excel or Google Sheet file as a .csv file.</p>
+<p>The first module of an analysis I produce is a plain .R script that loads in my .csv data file and save it in my R environment as a tibble, a tidy table, using the <code>new_tbl &lt;- read_csv(here(&quot;data&quot;, &quot;new_tbl.csv&quot;)</code> format. Before you read in a file, you should load the packages that we will be required for every analysis you conduct using the <code>library(tidyverse)</code> function. Note that you should not use the base R function <code>read.csv</code> but rather use the tidy-verse function <code>read_csv</code>. The base version will inevitably cause frustration due to incorrect variable class assignment for dates.</p>
+</div>
+<div id="from-google-drive" class="section level3">
+<h3><span class="header-section-number">5.3.2</span> From Google Drive</h3>
+<p>Using the googlesheets package in R is a pretty powerful tool and allows you to read googlesheets directly into R. This is great if your googlesheet is constantly changing as new data gets entered, and allows easy collaboration on data entry.</p>
+<p>To read in a googlesheet:</p>
+<p><code>install.packages('googlesheets')</code> <code>library(googlesheets)</code></p>
+<pre><code>your_workbook &lt;- gs_title(&#39;Name_of_your_workbook&#39;)
+
+worksheet1 &lt;- gs_read(your_workbook, ws = &quot;sheet 1&quot;)</code></pre>
+<p>See this <a href="https://cran.r-project.org/web/packages/googlesheets/vignettes/basic-usage.html">documentation</a> on the googlesheets package for more info.</p>
+</div>
+<div id="from-hakai-data-portal-api" class="section level3">
+<h3><span class="header-section-number">5.3.3</span> From Hakai Data Portal API</h3>
+<p>It is possible to download data from the Hakai EIMS Data Portal database directly from R Studio. This is accomplished by interacting with an application programming interface (API) that was developed for downloading data from Hakai’s data portal.</p>
+<p>Below is a quickstart example of how you can download some chlorophyll data. Run the code below one line at a time. When you run the <code>client &lt;- ...</code> line a web URL will be displayed in the console. Copy and paste that URL into your browser. This should take to you a webpage that displays another web URL, this is your authentication token that permits you access to the database. Copy and paste the URL into the console in R where it tells you to do so.</p>
+<pre><code># Run this first line only if you haven&#39;t installedt the R API before
+devtools::install_github(&quot;HakaiInstitute/hakai-api-client-r&quot;, subdir=&#39;hakaiApi&#39;)
+
+library(&#39;hakaiApi&#39;)
+
+# Run this line independently before the rest of the code to get the API authentication
+client &lt;- hakaiApi::Client$new() # Follow stdout prompts to get an API token
+
+# Make a data request for chlorophyll data
+endpoint &lt;- sprintf(&quot;%s/%s&quot;, client$api_root, &quot;eims/views/output/chlorophyll?limit=50&quot;)
+data &lt;- client$get(endpoint)
+
+# Print out the data
+print(data)</code></pre>
+<p>By running this code you should see chlorophyll data in your environment. The above code can be modified to select different datasets other than chlorophyll and filter based on different logical parameters you set. This is accomplished by editing the text after the ? in <code>&quot;eims/views/output/chlorophyll?limit=50&quot;</code>.</p>
+<p>The formula you set after the question mark is known as query string filtering. To learn how to filter your data <a href="https://github.com/HakaiInstitute/hakai-api/blob/master/docs/querying-data.md">read this</a>.</p>
+<p>To read generally about the API and how to use it for your first time <a href="https://github.com/HakaiInstitute/hakai-api/blob/master/docs/simplified-api-documentation.md#what-is-the-hakai-api">go here</a>.</p>
+<p>If you don’t want to learn how to write a querystring yourself there is an option to just copy and paste the querystring from the <a href="https://hecate.hakai.org/portal2/">EIMS Data Portal</a>. Use the portal to select the sample type, and dates and sites you’d like to download as you normally would. To copy the querystring go to the top right of the window where it says Options and click ‘Display API query’. You can copy that string in to your endpoint definition in R. Just be sure to copy that string starting from <code>eims/views/...</code>, excluding <code>https://hecate.hakai.org/api/</code> and then paste that into the definitions of your endpoint and surround that string with single quotes ie: <code>endpoint &lt;- sprintf(&quot;%s/%s&quot;, client$api_root, 'eims/views/output/chlorophyll?date&gt;=2016-11-01&amp;date&lt;2018-11-20&amp;work_area&amp;&amp;{&quot;CALVERT&quot;}&amp;site_id&amp;&amp;{&quot;KC13&quot;,&quot;MG4&quot;}&amp;survey&amp;&amp;{&quot;KWAK&quot;,&quot;MACRO_MGEO&quot;}&amp;limit=-1'</code></p>
+<p>Make sure to add &amp;limit=-1 at the end of your query string so that not only the first 20 results are downloaded, but rather everything matching your query string is downloaded.</p>
+<p>The page documenting the API usage can be found <a href="https://hakaiinstitute.github.io/hakai-api/">here</a></p>
+<p>Once you’re happy with the formatting and filtering you’ve applied to your data make sure to write a new data file that you can read in from your separate analysis script.</p>
+<p><code>write_csv(here(&quot;data&quot;, &quot;my_data.csv&quot;))</code></p>
+</div>
+<div id="analysis" class="section level3">
+<h3><span class="header-section-number">5.3.4</span> Analysis</h3>
+<p>Now create a new script for your analysis. I like to use R Markdown files (.Rmd) for my anlaysis which allows me to weave narrative explanations of what anlaysis I am doing in each separate code chunk. Read in the data you created in the <code>data_wrangling.R</code> script.</p>
+<p><code>read_csv(here(&quot;data&quot;, &quot;my_data.csv&quot;))</code></p>
+<p>Begin analyzing your data!</p>
+</div>
+<div id="communicate" class="section level3">
+<h3><span class="header-section-number">5.3.5</span> Communicate</h3>
+<p>What your final data product is going to be (summary report, figures for your manuscript, an interactive dashboard for a website), will dictate what your final scripts will be. As a baseline I recommend .Rmd as the final format because this gives you a lot of flexibility in terms of polished data products.</p>
+<p>This is an area where R-Studio really shines. There are so many templates for communicating your analysis avaliable. Check out some of the <a href="http://rmarkdown.rstudio.com/lesson-1.html">videos</a> about RMarkdown and read the section in R for Data Science called <a href="http://r4ds.had.co.nz/communicate-intro.html">Communicate</a> to learn about the variety of ways you can communicate your analysis.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="intro-to-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="version-control-and-collaboration.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["Hakai-Institute-R-Stats-Guide-for-Reproducible-Analyses.pdf", "Hakai-Institute-R-Stats-Guide-for-Reproducible-Analyses.epub"],
+"toc": {
+"collapse": "subsection"
+},
+"toc_depth": 1
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+# Intro to R
+
+In this section you will learn the basics of data wrangling in R. Data wrangling is
+the process of importing, tidying, and transforming your data into a format that you 
+can visualize and model it. [Tidy data](http://vita.had.co.nz/papers/tidy-data.pdf) 
+is a consistent data format that, when followed closely, dramatically reduces the 
+mundane data formatting that is necessary otherwise. The basic concept is that every row is one observation and
+every column is a variable. For how simple it sounds, creating tidy data sets
+takes some time to get the hang of initially, but is essential for data wrangling in the
+tidyverse.
+
+## Primary Resource
+
+The 'bible for a new generation of Data Scientists' is Hadley Wickham and Garrett Grolemund's Book: [R For Data Science](http://r4ds.had.co.nz/). This book presents a modern approach to data analysis and leads you to master the tidyverse; a combination of R packages and a well thought out and systematic approach to "import, tidy, transform, visualize, and model data." Using the tidyverse as a foundation for your coding replaces the 'thousand and one ways' of doing things in R into a modern and concise grammar of data analysis development.
+
+## Data Transformation
+
+The most important set of tools for data wrangling that you will use constantly are
+from the package `dplyr`. They allow you to solve almost all of the data manipulation problems you 
+will encounter. Those who are able to quickly manipulate their data into a format
+they can visualize and model, will explore their data the most and therefore learn the most.
+I'd recommend learning these six data wrangling functions off-by-heart:
+
+1) `filter()` to pick observations (rows) based on their values
+2) `select()` to pick variables (columns) based on the names
+3) `arrange()` to reorder the rows of your data set
+4) `mutate()` to create new variables (columns) as a function of existing variables
+5) `summarize()` to collapse many values down to a summary
+6) `group_by()` to summarize based on the various groups of a variable
+
+To learn how to put this in to practice I recommend reading through the chapter called 
+[Data Transformation](http://r4ds.had.co.nz/transform.html) in R for Data Science and working through all the exercises. This will be a bit of a learning curve but it's time to dive in!
+
+Starting at the Data Transformation chapter assumes you have some very basic knowledge of R already. 
+If that's not the case then I recommend starting at the [Workflow: Basics](http://r4ds.had.co.nz/workflow-basics.html) chapter.
+
+## Tidying Your Data
+
+Tidy data is best explained by a quote from [Hadley Wickham's paper](http://www.jstatsoft.org/v59/i10/paper) in the Journal of Statistical Software: 
+
+"Tidy data sets are easy to manipulate, model and visualize, and have a specific structure: each variable is a column, each observation is a row, and each type of observational unit is a table."
+
+The basic tenets that make a data set tidy are:
+
+1. Each variable must have its own column
+2. Each observation must have its own row
+3. Each value must have its own cell
+
+All of the data stored in Hakai's database is designed to be tidy, but sometimes you will receive data that is not in a tidy format. The most common problem I run into is that not every row is one observation, it is often many more than one because observations are stored as variables. To get your data into a tidy format you have to spread out the observations into different rows and create new variables that were once values. Luckily, the package `tidyr` has several functions that make this possible. 
+
+To get a really strong handle on what tidy data is, and to start practising getting data in to a tidy format I recommend working through the chapter on  [Tidying Data](http://r4ds.had.co.nz/tidy-data.html) in the R for Data Science book. 
+
+## Visualizing Data
+
+In the last chapter you had a teaser of what is possible in terms of making some nice 
+looking plots when you worked through the first few sections in the Data Visualization chapter in R for Data Science.
+To see what else is possible and to learn the principles of the layered grammar of graphics, I recommend you work through the remaining sections in the Data Visualization Chapter picking up where you left of at the [sub-section on facets](http://r4ds.had.co.nz/data-visualisation.html#facets)
+
+By the end of this you should have a really solid foundation from which to begin wrangling and visualizing your own data. In the next chapter I'll provide some gerenal principles for developing analyses.
+
+## Learning Objectives
+
+Before moving on to the next chapter, work through these chapters mentioned above and complete their respective exercises:
+
+* [Workflow: Basics](http://r4ds.had.co.nz/workflow-basics.html)
+* [Data Transformation](http://r4ds.had.co.nz/transform.html)
+* [Tidying Data](http://r4ds.had.co.nz/tidy-data.html)
+* [Data Visualization](http://r4ds.had.co.nz/data-visualisation.html#facets)
+
+I highly reccommend working through all the chapters in this book at some point, but these first few chapters are a good start.
