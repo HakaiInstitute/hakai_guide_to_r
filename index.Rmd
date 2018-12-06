@@ -14,7 +14,7 @@ always_allow_html: yes
 ---
 
 ---
-```{r serve the book}
+```{r serve the book, eval = FALSE}
 #Once you build this book, you can serve the book to auto update in the viewer window by removing the hashtag in the code line below
 
 #bookdown::serve_book(dir = ".", output_dir = "_book", preview = TRUE, in_session = TRUE)
