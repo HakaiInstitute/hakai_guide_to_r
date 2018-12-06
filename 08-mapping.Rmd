@@ -43,6 +43,9 @@ This script assumes you are using the `here()` package in conjunction with R-Stu
 ############## Make a map with sites ################## 
 ########## Using high resolution shapefile ################
 
+# To download the required shape file, first create a folder in your working directory called data
+download.file("https://github.com/HakaiInstitute/hakai_guide_to_r/raw/master/data/2_Shapefile/COAST_TEST2.shp", destfile = here("data", "COAST_TEST2.shp"))
+
 BC.shp <- readOGR(here("data","2_Shapefile", "COAST_TEST2.shp"))
 
 ### chose the lat/long extent you want to show
