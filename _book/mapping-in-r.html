@@ -173,9 +173,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="7.1" data-path="mapping-in-r.html"><a href="mapping-in-r.html#site-maps"><i class="fa fa-check"></i><b>7.1</b> Site Maps</a><ul>
 <li class="chapter" data-level="7.1.1" data-path="mapping-in-r.html"><a href="mapping-in-r.html#high-resolution-maps"><i class="fa fa-check"></i><b>7.1.1</b> High Resolution Maps</a></li>
 <li class="chapter" data-level="7.1.2" data-path="mapping-in-r.html"><a href="mapping-in-r.html#medium-resolution-pbs-mapping-package"><i class="fa fa-check"></i><b>7.1.2</b> Medium Resolution PBS Mapping Package</a></li>
-<li class="chapter" data-level="7.1.3" data-path="mapping-in-r.html"><a href="mapping-in-r.html#low-resolution-pacifc-coast-maps"><i class="fa fa-check"></i><b>7.1.3</b> Low Resolution Pacifc Coast Maps</a></li>
+<li class="chapter" data-level="7.1.3" data-path="mapping-in-r.html"><a href="mapping-in-r.html#low-resolution-pacific-coast-maps"><i class="fa fa-check"></i><b>7.1.3</b> Low Resolution Pacific Coast Maps</a></li>
 </ul></li>
 <li class="chapter" data-level="7.2" data-path="mapping-in-r.html"><a href="mapping-in-r.html#interactive-maps-with-leaflet"><i class="fa fa-check"></i><b>7.2</b> Interactive Maps with Leaflet</a></li>
+<li class="chapter" data-level="7.3" data-path="mapping-in-r.html"><a href="mapping-in-r.html#working-with-other-file-types"><i class="fa fa-check"></i><b>7.3</b> Working with other file types</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="resources-and-references.html"><a href="resources-and-references.html"><i class="fa fa-check"></i><b>8</b> Resources and References</a></li>
 <li class="chapter" data-level="9" data-path="glossary-of-terms.html"><a href="glossary-of-terms.html"><i class="fa fa-check"></i><b>9</b> Glossary of Terms</a></li>
@@ -203,10 +204,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Section Contributors:</p>
 <ul>
 <li>Dr. Daniel Okamoto</li>
-<li>Jenn Burt</li>
+<li>Dr. Jenn Burt</li>
+<li>Matt Whalen</li>
 </ul>
-<p>A common task amongst most field researchers is the need to make a basic site map to describe the location of your sampling. Using Arc GIS is the most common way to produce maps at Hakai, but sometimes a simple solution that could be implemented in R is desired.</p>
-<p>For a high resolution map with the resolution needed to see detailed coastline features you can use the following code and shapefile. To get this to work on your computer, download the shape file and put it in a R Studio project sub-folder called data.</p>
+<p>A common task among most field researchers is the need to make a basic site map to describe the location of your sampling. Using Arc GIS is the most common way to produce maps at Hakai and requests can be made to the GIS department, but sometimes a simple solution that could be implemented in R is desired.</p>
+<p>For a high resolution map with the resolution needed to see detailed coastline features you can use the following code and shape file. To get this to work on your computer, download the shape file and put it in a R Studio project sub-folder called data.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span>opts_chunk<span class="op">$</span><span class="kw">set</span>(<span class="dt">message =</span> <span class="ot">FALSE</span>, <span class="dt">warning =</span> <span class="ot">FALSE</span>)
 ###################################################### #
 ###  Script to make a BC map                       <span class="al">###</span> #
@@ -226,12 +228,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="kw">library</span>(here)</code></pre></div>
 <div id="high-resolution-maps" class="section level3">
 <h3><span class="header-section-number">7.1.1</span> High Resolution Maps</h3>
-<p>The high resolution map used here requires that you download a set of ESRI shape files from this book’s GitHUB repository. Those files can be downloaded from the <code>2_Shapefile</code> folder <a href="https://github.com/HakaiInstitute/hakai_guide_to_r/tree/master/data">here</a>. Put the <code>2_Shapefile</code> folder into the data folder of your R-Studio project.</p>
+<p>Download the folder <code>2_Shapefile</code> <a href="https://drive.google.com/drive/folders/1GoEhACuGPGaQxn48ACkSc_qePx29TqC5?usp=sharing">here</a> and put it in a sub-directory of your working directory called <code>data</code>.</p>
 <p>This script assumes you are using the <code>here()</code> package in conjunction with R-Studio projects to obviate setting your working directory. See chapter 5 and the sub-section about the here() package to read more.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">############## Make a map with sites ################## 
 ########## Using high resolution shapefile ################
 
-BC.shp &lt;-<span class="st"> </span><span class="kw">readOGR</span>(<span class="kw">here</span>(<span class="st">&quot;data&quot;</span>,<span class="st">&quot;2_Shapefile&quot;</span>, <span class="st">&quot;COAST_TEST2.shp&quot;</span>))</code></pre></div>
+<span class="co"># To download the required shape file, first create a folder in your working directory called data</span>
+
+
+BC.shp &lt;-<span class="st"> </span><span class="kw">readOGR</span>(<span class="kw">here</span>(<span class="st">&quot;data&quot;</span>, <span class="st">&quot;2_Shapefile&quot;</span>, <span class="st">&quot;COAST_TEST2.shp&quot;</span>))</code></pre></div>
 <pre><code>## OGR data source with driver: ESRI Shapefile 
 ## Source: &quot;/Users/brett.johnson/Documents/Projects/R-guide/data/2_Shapefile/COAST_TEST2.shp&quot;, layer: &quot;COAST_TEST2&quot;
 ## with 1 features
@@ -319,12 +324,14 @@ fig1 &lt;-<span class="st"> </span><span class="kw">ggplot</span>()<span class="
 <span class="co"># # add site points</span>
 <span class="co"># points(EXPTsites$long, EXPTsites$lat, cex=1.5, pch=20, size=2)</span></code></pre></div>
 </div>
-<div id="low-resolution-pacifc-coast-maps" class="section level3">
-<h3><span class="header-section-number">7.1.3</span> Low Resolution Pacifc Coast Maps</h3>
+<div id="low-resolution-pacific-coast-maps" class="section level3">
+<h3><span class="header-section-number">7.1.3</span> Low Resolution Pacific Coast Maps</h3>
 <p>For lower resolution maps to represent larger scales you can use the maps from the <code>maps</code> and <code>mapdata</code> packages.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">############## Pacific Coast Map ##################
 ################################################### #
 
+<span class="kw">library</span>(maps)
+<span class="kw">library</span>(mapdata)
 
 <span class="co">#creata a data file to make a basemap</span>
 <span class="co"># this database has a lower resolution (which is fine for large scale map)</span>
@@ -375,7 +382,7 @@ d &lt;-<span class="st"> </span><span class="kw">map_data</span>(<span class="st
 </div>
 <div id="interactive-maps-with-leaflet" class="section level2">
 <h2><span class="header-section-number">7.2</span> Interactive Maps with Leaflet</h2>
-<p>It is possible to use the Javascript based widget known as <a href="https://rstudio.github.io/leaflet/">Leaflet</a> from within R which is great for making interactive maps in an interactive R Markdown document, as well as in Shiny apps. You can use basemaps that Hakai hosts from the ArcGIS Online Server (AGOL), or you can use the basic maps that are provided. You are able to add points, visualize heat maps, legends, cloropleths, and other simple GIS tasks.</p>
+<p>It is possible to use the JavaScript based widget known as <a href="https://rstudio.github.io/leaflet/">Leaflet</a> from within R which is great for making interactive maps in an interactive R Markdown document, as well as in Shiny apps. You can use base maps that Hakai hosts from the ArcGIS Online Server (AGOL), or you can use the basic maps that are provided. You are able to add points, visualize heat maps, legends, cloropleths, and other simple GIS tasks.</p>
 <p>To do this from R you need to install these packages:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># The package that allows you add leaflet map widgets to your interactive web documents:</span>
 <span class="kw">install.packages</span>(<span class="st">&#39;leaflet&#39;</span>)
@@ -393,24 +400,62 @@ d &lt;-<span class="st"> </span><span class="kw">map_data</span>(<span class="st
 <span class="st">        </span><span class="kw">addTiles</span>() <span class="op">%&gt;%</span>
 <span class="st">        </span><span class="co"># Add tile from Hakai AGOL</span>
 <span class="st">        </span><span class="kw">addEsriTiledMapLayer</span>(<span class="dt">url =</span> <span class="st">&quot;https://ags.hakai.org:6443/arcgis/rest/services/AGOL_basemaps/Marine_charts/MapServer&quot;</span>)</code></pre></div>
-<div id="htmlwidget-de4e41eba1cb67bd2041" style="width:672px;height:480px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-de4e41eba1cb67bd2041">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"setView":[[50.3601,-126],7,[]],"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addEsriTiledMapLayer","args":["https://ags.hakai.org:6443/arcgis/rest/services/AGOL_basemaps/Marine_charts/MapServer",null,null,{"correctZoomLevels":true,"zoomOffsetAllowance":0.1,"useCors":true}]}]},"evals":[],"jsHooks":[]}</script>
-<p>Follow the instructions on R-Studio’s <a href="https://rstudio.github.io/leaflet/">Leaflet package webpage</a> to create your map. The included basemaps can be viewed <a href="https://leaflet-extras.github.io/leaflet-providers/preview/index.html">here</a></p>
-<p>To use the basemaps on Hakai’s AGOL server use the <code>addEsriTiledMapLayer()</code> function from the <code>esri.leaflet</code> package where the documentation can be read <a href="https://bhaskarvk.github.io/leaflet.esri/reference/addEsriTiledMapLayer.html">here</a></p>
-<p>Hakai ArcGIS Online maps can be viewed <a href="https://ags.hakai.org:6443/arcgis/rest/services/AGOL_basemaps/">here</a>. You can first view any of these basemaps in AGOL to decide which you’d like to use. Once you’ve decided, you simply copy the URL and paste it into the <code>addEsriTileMapLayer()</code> function</p>
-<p>Example:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(leaflet)
-<span class="kw">library</span>(leaflet.esri)
-<span class="kw">library</span>(magrittr)
- <span class="kw">leaflet</span>() <span class="op">%&gt;%</span>
-<span class="st">        </span><span class="co"># Set the default lat and long and zoom level</span>
-<span class="st">        </span><span class="kw">setView</span>(<span class="dt">lng =</span> <span class="op">-</span><span class="dv">126</span>, <span class="dt">lat =</span> <span class="fl">50.3601</span>, <span class="dt">zoom =</span> <span class="dv">7</span>) <span class="op">%&gt;%</span>
-<span class="st">        </span><span class="co"># Add default tile</span>
-<span class="st">        </span><span class="kw">addTiles</span>() <span class="op">%&gt;%</span>
-<span class="st">        </span><span class="co"># Add tile from Hakai AGOL</span>
-<span class="st">        </span><span class="kw">addEsriTiledMapLayer</span>(<span class="dt">url =</span> <span class="st">&quot;https://ags.hakai.org:6443/arcgis/rest/services/AGOL_basemaps/Marine_charts/MapServer&quot;</span>)</code></pre></div>
-<div id="htmlwidget-4a5f33740e3f6b5acfdf" style="width:672px;height:480px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-4a5f33740e3f6b5acfdf">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"setView":[[50.3601,-126],7,[]],"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addEsriTiledMapLayer","args":["https://ags.hakai.org:6443/arcgis/rest/services/AGOL_basemaps/Marine_charts/MapServer",null,null,{"correctZoomLevels":true,"zoomOffsetAllowance":0.1,"useCors":true}]}]},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-c1cdf0c1da871e0c9287" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c1cdf0c1da871e0c9287">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"setView":[[50.3601,-126],7,[]],"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addEsriTiledMapLayer","args":["https://ags.hakai.org:6443/arcgis/rest/services/AGOL_basemaps/Marine_charts/MapServer",null,null,{"correctZoomLevels":true,"zoomOffsetAllowance":0.1,"useCors":true}]}]},"evals":[],"jsHooks":[]}</script>
+<p>Follow the instructions on R-Studio’s <a href="https://rstudio.github.io/leaflet/">Leaflet package webpage</a> to create your map. The included base maps can be viewed <a href="https://leaflet-extras.github.io/leaflet-providers/preview/index.html">here</a></p>
+<p>To use the base maps on Hakai’s AGOL server use the <code>addEsriTiledMapLayer()</code> function from the <code>esri.leaflet</code> package where the documentation can be read <a href="https://bhaskarvk.github.io/leaflet.esri/reference/addEsriTiledMapLayer.html">here</a></p>
+<p>Hakai ArcGIS Online maps can be viewed <a href="https://ags.hakai.org:6443/arcgis/rest/services/AGOL_basemaps/">here</a>. You can first view any of these base maps in AGOL to decide which you’d like to use. Once you’ve decided, you simply copy the URL and paste it into the <code>addEsriTileMapLayer()</code> function</p>
+</div>
+<div id="working-with-other-file-types" class="section level2">
+<h2><span class="header-section-number">7.3</span> Working with other file types</h2>
+<p>You can work with almost any georeferenced file in R. Here’s an example in which use google drive to access a GeoTIFF of Calvert Island generated by the Hakai Geospatial Team, then plot locations of Hakai’s Autonomous Reef Monitoring Systems (<a href="http://www.oceanarms.org/" class="uri">http://www.oceanarms.org/</a>)</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Author: Matt Whalen</span>
+
+<span class="co"># load additional libraries</span>
+<span class="kw">library</span>( googledrive ) <span class="co"># to access GeoTIFF</span>
+<span class="kw">library</span>( scales ) <span class="co"># for transparent colors</span>
+
+<span class="co"># read the GeoTIFF using package googledrive</span>
+<span class="co"># note: you need to be able to log in to google drive to use this method</span>
+temp &lt;-<span class="st"> </span><span class="kw">tempfile</span>( <span class="dt">fileext =</span> <span class="st">&quot;.tif&quot;</span> )
+<span class="kw">drive_download</span>( 
+  <span class="kw">as_id</span>(<span class="st">&quot;1hj5KpiRGcPF11pM-oMd13LRCL1uG0pCm&quot;</span>), <span class="dt">path =</span> temp, <span class="dt">overwrite =</span> <span class="ot">TRUE</span> )
+
+<span class="co"># use raster package to load the file into R</span>
+ras &lt;-<span class="st"> </span><span class="kw">brick</span>( temp )
+<span class="co"># warning message suggests the file has &quot;rotation&quot;. Can override this</span>
+ras<span class="op">@</span>rotated &lt;-<span class="st"> </span><span class="ot">FALSE</span>
+
+<span class="co"># Either read in a .csv file of your sites with lat and long, or create the dataframe manually as done here.</span>
+xy &lt;-<span class="st"> </span><span class="kw">data.frame</span>(
+  <span class="dt">x =</span> <span class="kw">c</span>( <span class="op">-</span><span class="fl">128.0946</span>,<span class="op">-</span><span class="fl">128.0739</span>,<span class="op">-</span><span class="fl">128.0714</span>,<span class="op">-</span><span class="fl">128.2643</span>,<span class="op">-</span><span class="fl">128.2370</span>,<span class="op">-</span><span class="fl">128.2542</span>,<span class="op">-</span><span class="fl">128.0091</span>,
+         <span class="op">-</span><span class="fl">128.1512</span>,<span class="op">-</span><span class="fl">127.9967</span>,<span class="op">-</span><span class="fl">128.1552</span>,<span class="op">-</span><span class="fl">128.1261</span>,<span class="op">-</span><span class="fl">128.1399</span> ),
+  <span class="dt">y =</span> <span class="kw">c</span>( <span class="fl">51.66462</span>,<span class="fl">51.70118</span>,<span class="fl">51.74418</span>,<span class="fl">51.84152</span>,<span class="fl">51.81435</span>,<span class="fl">51.80363</span>,<span class="fl">51.73073</span>,<span class="fl">51.64908</span>,
+        <span class="fl">51.73390</span>,<span class="fl">51.64910</span>,<span class="fl">51.68025</span>,<span class="fl">51.66703</span>),
+  <span class="dt">habitat =</span> <span class="kw">c</span>( <span class="st">&quot;Macro&quot;</span>,<span class="st">&quot;Barren&quot;</span>,<span class="st">&quot;Barren&quot;</span>,<span class="st">&quot;Nereo&quot;</span>,<span class="st">&quot;Macro&quot;</span>,<span class="st">&quot;Macro&quot;</span>,<span class="st">&quot;Barren&quot;</span>,
+               <span class="st">&quot;Macro&quot;</span>,<span class="st">&quot;Barren&quot;</span>,<span class="st">&quot;Nereo&quot;</span>,<span class="st">&quot;Nereo&quot;</span>,<span class="st">&quot;Nereo&quot;</span> )
+)
+
+<span class="co"># project coordinates for sites to match geotiff</span>
+<span class="co"># identify latitude and longitude to make SpatialPointsDataFrame</span>
+<span class="kw">coordinates</span>( xy ) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;x&quot;</span>,<span class="st">&quot;y&quot;</span>)
+<span class="co"># give it some kind of coordinate reference system</span>
+<span class="kw">proj4string</span>( xy ) &lt;-<span class="st"> </span><span class="kw">CRS</span>(<span class="st">&quot;+proj=longlat +datum=WGS84&quot;</span>)  
+<span class="co"># reporject to the CRS of the GeoTIFF raster</span>
+res &lt;-<span class="st"> </span><span class="kw">spTransform</span>( xy, ras<span class="op">@</span>crs )
+
+<span class="co"># crop the map to focus on the area that contains all sites</span>
+rasc &lt;-<span class="st"> </span><span class="kw">crop</span>( ras, <span class="kw">extent</span>(res)<span class="op">*</span><span class="fl">1.5</span> ) <span class="co"># multiplying by 1.5 gives a buffer</span>
+
+<span class="co"># plot the cropped raster</span>
+<span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))
+<span class="kw">plotRGB</span>( rasc, <span class="dt">maxpixels=</span><span class="dv">5000000</span> )
+
+<span class="co"># add points with custom color scheme</span>
+cols &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;gray25&quot;</span>,<span class="st">&quot;#5ab4ac&quot;</span>,<span class="st">&quot;#d8b365&quot;</span>)
+<span class="kw">points</span>( res, <span class="dt">cex=</span><span class="dv">2</span>, <span class="dt">pch=</span><span class="dv">21</span>, 
+        <span class="dt">bg=</span>scales<span class="op">::</span><span class="kw">alpha</span>(cols[<span class="kw">as.numeric</span>(xy<span class="op">$</span>habitat)],<span class="fl">0.7</span>) )  </code></pre></div>
+<p><img src="Hakai-Institute-R-Stats-Guide-for-Reproducible-Analyses_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 
 </div>
 </div>

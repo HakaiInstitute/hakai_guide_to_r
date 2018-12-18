@@ -47,7 +47,7 @@ This script assumes you are using the `here()` package in conjunction with R-Stu
 # To download the required shape file, first create a folder in your working directory called data
 
 
-BC.shp <- readOGR(here("data", "COAST_TEST2.shp"))
+BC.shp <- readOGR(here("data", "2_Shapefile", "COAST_TEST2.shp"))
 
 ### chose the lat/long extent you want to show
 Ncalvert <- extent(-128.18, -127.94, 51.61, 51.78)

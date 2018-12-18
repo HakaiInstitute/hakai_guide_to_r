@@ -125,7 +125,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{Latest update: 2018-11-28}
+    \date{Latest update: 2018-12-18}
 
 \usepackage{booktabs}
 
@@ -282,7 +282,9 @@ Thanks to the following people for significant contributions:
 \item
   Dr.~Daniel Okamoto
 \item
-  Jen Burt
+  Dr.~Jen Burt
+\item
+  Matt Whalen
 \end{itemize}
 
 \chapter{General Principles}\label{general-principles}
@@ -1164,7 +1166,8 @@ and pull model}.
 
 \begin{itemize}
 \item
-  It's a good idea to license with MIT license to permit commercial use.
+  We recommend licensing with the
+  \href{https://choosealicense.com/licenses/agpl-3.0/}{AGPLv3}
 \item
   This license should be included in every script or data package, but
   we will still control who has access to code and data by requiring
@@ -1182,16 +1185,19 @@ Section Contributors:
 \item
   Dr.~Daniel Okamoto
 \item
-  Jenn Burt
+  Dr.~Jenn Burt
+\item
+  Matt Whalen
 \end{itemize}
 
-A common task amongst most field researchers is the need to make a basic
+A common task among most field researchers is the need to make a basic
 site map to describe the location of your sampling. Using Arc GIS is the
-most common way to produce maps at Hakai, but sometimes a simple
-solution that could be implemented in R is desired.
+most common way to produce maps at Hakai and requests can be made to the
+GIS department, but sometimes a simple solution that could be
+implemented in R is desired.
 
 For a high resolution map with the resolution needed to see detailed
-coastline features you can use the following code and shapefile. To get
+coastline features you can use the following code and shape file. To get
 this to work on your computer, download the shape file and put it in a R
 Studio project sub-folder called data.
 
@@ -1219,12 +1225,10 @@ Studio project sub-folder called data.
 
 \subsection{High Resolution Maps}\label{high-resolution-maps}
 
-The high resolution map used here requires that you download a set of
-ESRI shape files from this book's GitHUB repository. Those files can be
-downloaded from the \texttt{2\_Shapefile} folder
-\href{https://github.com/HakaiInstitute/hakai_guide_to_r/tree/master/data}{here}.
-Put the \texttt{2\_Shapefile} folder into the data folder of your
-R-Studio project.
+Download the folder \texttt{2\_Shapefile}
+\href{https://drive.google.com/drive/folders/1GoEhACuGPGaQxn48ACkSc_qePx29TqC5?usp=sharing}{here}
+and put it in a sub-directory of your working directory called
+\texttt{data}.
 
 This script assumes you are using the \texttt{here()} package in
 conjunction with R-Studio projects to obviate setting your working
@@ -1236,7 +1240,10 @@ read more.
 \NormalTok{############## Make a map with sites ################## }
 \NormalTok{########## Using high resolution shapefile ################}
 
-\NormalTok{BC.shp <-}\StringTok{ }\KeywordTok{readOGR}\NormalTok{(}\KeywordTok{here}\NormalTok{(}\StringTok{"data"}\NormalTok{,}\StringTok{"2_Shapefile"}\NormalTok{, }\StringTok{"COAST_TEST2.shp"}\NormalTok{))}
+\CommentTok{# To download the required shape file, first create a folder in your working directory called data}
+
+
+\NormalTok{BC.shp <-}\StringTok{ }\KeywordTok{readOGR}\NormalTok{(}\KeywordTok{here}\NormalTok{(}\StringTok{"data"}\NormalTok{, }\StringTok{"2_Shapefile"}\NormalTok{, }\StringTok{"COAST_TEST2.shp"}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1362,8 +1369,8 @@ package that contains some medium resolution files of the Pacific Coast.
 \end{Highlighting}
 \end{Shaded}
 
-\subsection{Low Resolution Pacifc Coast
-Maps}\label{low-resolution-pacifc-coast-maps}
+\subsection{Low Resolution Pacific Coast
+Maps}\label{low-resolution-pacific-coast-maps}
 
 For lower resolution maps to represent larger scales you can use the
 maps from the \texttt{maps} and \texttt{mapdata} packages.
@@ -1373,6 +1380,8 @@ maps from the \texttt{maps} and \texttt{mapdata} packages.
 \NormalTok{############## Pacific Coast Map ##################}
 \NormalTok{################################################### #}
 
+\KeywordTok{library}\NormalTok{(maps)}
+\KeywordTok{library}\NormalTok{(mapdata)}
 
 \CommentTok{#creata a data file to make a basemap}
 \CommentTok{# this database has a lower resolution (which is fine for large scale map)}
@@ -1444,10 +1453,10 @@ maps from the \texttt{maps} and \texttt{mapdata} packages.
 \section{Interactive Maps with
 Leaflet}\label{interactive-maps-with-leaflet}
 
-It is possible to use the Javascript based widget known as
+It is possible to use the JavaScript based widget known as
 \href{https://rstudio.github.io/leaflet/}{Leaflet} from within R which
 is great for making interactive maps in an interactive R Markdown
-document, as well as in Shiny apps. You can use basemaps that Hakai
+document, as well as in Shiny apps. You can use base maps that Hakai
 hosts from the ArcGIS Online Server (AGOL), or you can use the basic
 maps that are provided. You are able to add points, visualize heat maps,
 legends, cloropleths, and other simple GIS tasks.
@@ -1481,42 +1490,84 @@ Example:
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{htmlwidget-4971c593cda9a1b0991a}{}
+\hypertarget{htmlwidget-22474e4b02ff188e2adc}{}
 
 Follow the instructions on R-Studio's
 \href{https://rstudio.github.io/leaflet/}{Leaflet package webpage} to
-create your map. The included basemaps can be viewed
+create your map. The included base maps can be viewed
 \href{https://leaflet-extras.github.io/leaflet-providers/preview/index.html}{here}
 
-To use the basemaps on Hakai's AGOL server use the
+To use the base maps on Hakai's AGOL server use the
 \texttt{addEsriTiledMapLayer()} function from the \texttt{esri.leaflet}
 package where the documentation can be read
 \href{https://bhaskarvk.github.io/leaflet.esri/reference/addEsriTiledMapLayer.html}{here}
 
 Hakai ArcGIS Online maps can be viewed
 \href{https://ags.hakai.org:6443/arcgis/rest/services/AGOL_basemaps/}{here}.
-You can first view any of these basemaps in AGOL to decide which you'd
+You can first view any of these base maps in AGOL to decide which you'd
 like to use. Once you've decided, you simply copy the URL and paste it
 into the \texttt{addEsriTileMapLayer()} function
 
-Example:
+\section{Working with other file
+types}\label{working-with-other-file-types}
+
+You can work with almost any georeferenced file in R. Here's an example
+in which use google drive to access a GeoTIFF of Calvert Island
+generated by the Hakai Geospatial Team, then plot locations of Hakai's
+Autonomous Reef Monitoring Systems (\url{http://www.oceanarms.org/})
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{library}\NormalTok{(leaflet)}
-\KeywordTok{library}\NormalTok{(leaflet.esri)}
-\KeywordTok{library}\NormalTok{(magrittr)}
- \KeywordTok{leaflet}\NormalTok{() }\OperatorTok{%>%}
-\StringTok{        }\CommentTok{# Set the default lat and long and zoom level}
-\StringTok{        }\KeywordTok{setView}\NormalTok{(}\DataTypeTok{lng =} \OperatorTok{-}\DecValTok{126}\NormalTok{, }\DataTypeTok{lat =} \FloatTok{50.3601}\NormalTok{, }\DataTypeTok{zoom =} \DecValTok{7}\NormalTok{) }\OperatorTok{%>%}
-\StringTok{        }\CommentTok{# Add default tile}
-\StringTok{        }\KeywordTok{addTiles}\NormalTok{() }\OperatorTok{%>%}
-\StringTok{        }\CommentTok{# Add tile from Hakai AGOL}
-\StringTok{        }\KeywordTok{addEsriTiledMapLayer}\NormalTok{(}\DataTypeTok{url =} \StringTok{"https://ags.hakai.org:6443/arcgis/rest/services/AGOL_basemaps/Marine_charts/MapServer"}\NormalTok{)}
+\CommentTok{# Author: Matt Whalen}
+
+\CommentTok{# load additional libraries}
+\KeywordTok{library}\NormalTok{( googledrive ) }\CommentTok{# to access GeoTIFF}
+\KeywordTok{library}\NormalTok{( scales ) }\CommentTok{# for transparent colors}
+
+\CommentTok{# read the GeoTIFF using package googledrive}
+\CommentTok{# note: you need to be able to log in to google drive to use this method}
+\NormalTok{temp <-}\StringTok{ }\KeywordTok{tempfile}\NormalTok{( }\DataTypeTok{fileext =} \StringTok{".tif"}\NormalTok{ )}
+\KeywordTok{drive_download}\NormalTok{( }
+  \KeywordTok{as_id}\NormalTok{(}\StringTok{"1hj5KpiRGcPF11pM-oMd13LRCL1uG0pCm"}\NormalTok{), }\DataTypeTok{path =}\NormalTok{ temp, }\DataTypeTok{overwrite =} \OtherTok{TRUE}\NormalTok{ )}
+
+\CommentTok{# use raster package to load the file into R}
+\NormalTok{ras <-}\StringTok{ }\KeywordTok{brick}\NormalTok{( temp )}
+\CommentTok{# warning message suggests the file has "rotation". Can override this}
+\NormalTok{ras}\OperatorTok{@}\NormalTok{rotated <-}\StringTok{ }\OtherTok{FALSE}
+
+\CommentTok{# Either read in a .csv file of your sites with lat and long, or create the dataframe manually as done here.}
+\NormalTok{xy <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}
+  \DataTypeTok{x =} \KeywordTok{c}\NormalTok{( }\OperatorTok{-}\FloatTok{128.0946}\NormalTok{,}\OperatorTok{-}\FloatTok{128.0739}\NormalTok{,}\OperatorTok{-}\FloatTok{128.0714}\NormalTok{,}\OperatorTok{-}\FloatTok{128.2643}\NormalTok{,}\OperatorTok{-}\FloatTok{128.2370}\NormalTok{,}\OperatorTok{-}\FloatTok{128.2542}\NormalTok{,}\OperatorTok{-}\FloatTok{128.0091}\NormalTok{,}
+         \OperatorTok{-}\FloatTok{128.1512}\NormalTok{,}\OperatorTok{-}\FloatTok{127.9967}\NormalTok{,}\OperatorTok{-}\FloatTok{128.1552}\NormalTok{,}\OperatorTok{-}\FloatTok{128.1261}\NormalTok{,}\OperatorTok{-}\FloatTok{128.1399}\NormalTok{ ),}
+  \DataTypeTok{y =} \KeywordTok{c}\NormalTok{( }\FloatTok{51.66462}\NormalTok{,}\FloatTok{51.70118}\NormalTok{,}\FloatTok{51.74418}\NormalTok{,}\FloatTok{51.84152}\NormalTok{,}\FloatTok{51.81435}\NormalTok{,}\FloatTok{51.80363}\NormalTok{,}\FloatTok{51.73073}\NormalTok{,}\FloatTok{51.64908}\NormalTok{,}
+        \FloatTok{51.73390}\NormalTok{,}\FloatTok{51.64910}\NormalTok{,}\FloatTok{51.68025}\NormalTok{,}\FloatTok{51.66703}\NormalTok{),}
+  \DataTypeTok{habitat =} \KeywordTok{c}\NormalTok{( }\StringTok{"Macro"}\NormalTok{,}\StringTok{"Barren"}\NormalTok{,}\StringTok{"Barren"}\NormalTok{,}\StringTok{"Nereo"}\NormalTok{,}\StringTok{"Macro"}\NormalTok{,}\StringTok{"Macro"}\NormalTok{,}\StringTok{"Barren"}\NormalTok{,}
+               \StringTok{"Macro"}\NormalTok{,}\StringTok{"Barren"}\NormalTok{,}\StringTok{"Nereo"}\NormalTok{,}\StringTok{"Nereo"}\NormalTok{,}\StringTok{"Nereo"}\NormalTok{ )}
+\NormalTok{)}
+
+\CommentTok{# project coordinates for sites to match geotiff}
+\CommentTok{# identify latitude and longitude to make SpatialPointsDataFrame}
+\KeywordTok{coordinates}\NormalTok{( xy ) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"x"}\NormalTok{,}\StringTok{"y"}\NormalTok{)}
+\CommentTok{# give it some kind of coordinate reference system}
+\KeywordTok{proj4string}\NormalTok{( xy ) <-}\StringTok{ }\KeywordTok{CRS}\NormalTok{(}\StringTok{"+proj=longlat +datum=WGS84"}\NormalTok{)  }
+\CommentTok{# reporject to the CRS of the GeoTIFF raster}
+\NormalTok{res <-}\StringTok{ }\KeywordTok{spTransform}\NormalTok{( xy, ras}\OperatorTok{@}\NormalTok{crs )}
+
+\CommentTok{# crop the map to focus on the area that contains all sites}
+\NormalTok{rasc <-}\StringTok{ }\KeywordTok{crop}\NormalTok{( ras, }\KeywordTok{extent}\NormalTok{(res)}\OperatorTok{*}\FloatTok{1.5}\NormalTok{ ) }\CommentTok{# multiplying by 1.5 gives a buffer}
+
+\CommentTok{# plot the cropped raster}
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mfrow=}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{))}
+\KeywordTok{plotRGB}\NormalTok{( rasc, }\DataTypeTok{maxpixels=}\DecValTok{5000000}\NormalTok{ )}
+
+\CommentTok{# add points with custom color scheme}
+\NormalTok{cols <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"gray25"}\NormalTok{,}\StringTok{"#5ab4ac"}\NormalTok{,}\StringTok{"#d8b365"}\NormalTok{)}
+\KeywordTok{points}\NormalTok{( res, }\DataTypeTok{cex=}\DecValTok{2}\NormalTok{, }\DataTypeTok{pch=}\DecValTok{21}\NormalTok{, }
+        \DataTypeTok{bg=}\NormalTok{scales}\OperatorTok{::}\KeywordTok{alpha}\NormalTok{(cols[}\KeywordTok{as.numeric}\NormalTok{(xy}\OperatorTok{$}\NormalTok{habitat)],}\FloatTok{0.7}\NormalTok{) )  }
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{htmlwidget-6f7873598278fb668f1e}{}
+\includegraphics{Hakai-Institute-R-Stats-Guide-for-Reproducible-Analyses_files/figure-latex/unnamed-chunk-12-1.pdf}
 
 \chapter{Resources and References}\label{resources-and-references}
 
